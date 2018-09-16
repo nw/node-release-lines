@@ -122,3 +122,44 @@ describe('NodeRelease', function () {
   it('should set unsupported values to null')
   it('should error on bad Date input')
 })
+
+describe('NodeReleaseMeta', function () {
+  it('should return published release details', function () {
+    let release = getVersion('v8')
+    let meta = release.getPublicationDetails()
+    let latest = meta[0]
+    let oldest = meta[meta.length - 1]
+
+    assert.strictEqual(release.version, 'v8', 'version release line')
+    assert.strictEqual(meta.length, 26, 'number of published releases')
+    // latest should be safe
+    assert.strictEqual(latest.isSafe(), true, 'vuln check')
+    //
+    assert.strictEqual(oldest.version, 'v8.0.0', 'pub version')
+    assert.strictEqual(oldest.npm, '5.0.0', 'pub npm version')
+    assert.strictEqual(oldest.v8, '5.8.283.41', 'pub v8 version')
+    assert.strictEqual(oldest.uv, '1.11.0', 'pub uv version')
+    assert.strictEqual(oldest.zlib, '1.2.11', 'pub zlib version')
+    assert.strictEqual(oldest.openssl, '1.0.2k', 'pub openssl version')
+    //
+    assert.strictEqual(oldest.isSafe(), false, 'vuln check')
+    assert.strictEqual(oldest.vulns.length, 9, 'number of vulns')
+
+    assert.strictEqual(meta.filter(m => m.isSafe()).length, 2, 'safe versions')
+  })
+
+  it('should provide details of vulns', function () {
+    let release = getVersion('v8')
+    let meta = release.getPublicationDetails()
+    let oldest = meta[meta.length - 1]
+    let vuln = oldest.vulns[oldest.vulns.length - 1]
+
+    assert.strictEqual(vuln.cve.length, 1, 'CVEs')
+    assert.strictEqual(vuln.cve[0], 'CVE-2018-7167', 'cve')
+    assert.strictEqual(vuln.vulnerable, '^6.0.0 || ^8.0.0 || ^9.0.0', 'vulnerable versions')
+    assert.strictEqual(vuln.patched, '^6.14.3 || ^8.11.3 || ^9.11.2', 'patched')
+    assert.strictEqual(!!vuln.ref, true, 'ref')
+    assert.strictEqual(vuln.overview.length > 50, true, 'over')
+    assert.strictEqual(!!vuln.source.match('github.com/nodejs/security-wg'), true, 'source url')
+  })
+})
