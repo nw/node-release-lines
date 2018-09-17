@@ -126,7 +126,7 @@ describe('NodeRelease', function () {
 describe('NodeReleaseMeta', function () {
   it('should return published release details', function () {
     let release = getVersion('v8')
-    let meta = release.getPublicationDetails()
+    let meta = release.releases
     let latest = meta[0]
     let oldest = meta[meta.length - 1]
 
@@ -150,7 +150,7 @@ describe('NodeReleaseMeta', function () {
 
   it('should provide details of vulns', function () {
     let release = getVersion('v8')
-    let meta = release.getPublicationDetails()
+    let meta = release.releases
     let oldest = meta[meta.length - 1]
     let vuln = oldest.vulns[oldest.vulns.length - 1]
 

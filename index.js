@@ -1,11 +1,11 @@
 'use strict'
 
-const NodeReleaseGroup = require('./lib/NodeReleaseGroup')
-const NodeRelease = require('./lib/NodeRelease')
-const NodeReleaseMeta = require('./lib/NodeReleaseMeta')
+const ReleaseLines = require('./lib/ReleaseLines')
+const ReleaseLine = require('./lib/ReleaseLine')
+const Release = require('./lib/Release')
 
 module.exports = {
-  NodeReleaseGroup: NodeReleaseGroup,
-  NodeRelease: NodeRelease,
-  NodeReleaseMeta: NodeReleaseMeta
+  ReleaseLines: ReleaseLines,
+  ReleaseLine: ReleaseLine,
+  Release: Release
 }
