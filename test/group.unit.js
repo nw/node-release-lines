@@ -1,7 +1,7 @@
 /* global describe it */
 const { NodeReleaseGroup } = require('../')
 const assert = require('assert')
-const data = require('./fixtures/release.json')
+const data = require('../data/schedule.json')
 const controlDate = new Date('2018-09-01')
 
 describe('NodeReleaseGroup', function () {

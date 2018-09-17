@@ -1,12 +1,12 @@
 /* global describe it */
-const { NodeRelease } = require('../')
+const { ReleaseLine } = require('../')
 const assert = require('assert')
-const data = require('./fixtures/release.json')
+const data = require('../data/schedule.json')
 const controlDate = new Date('2018-09-01')
 
 // Helper function
 function getVersion (name, date) {
-  return new NodeRelease(Object.assign({ version: name }, data[name]), date || controlDate)
+  return new ReleaseLine(Object.assign({ version: name }, data[name]), date || controlDate)
 }
 
 describe('NodeRelease', function () {
