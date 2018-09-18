@@ -30,13 +30,13 @@ describe('NodeRelease', function () {
   it('work with date changes', function () {
     let release = getVersion('v6')
     // change to active LTS date
-    release.update(new Date('2018-01-01'))
+    release.setDate(new Date('2018-01-01'))
 
     assert.strictEqual(release.inLTS, true, 'in LTS')
     assert.strictEqual(release.isMaintenance, false, 'maintenance')
     assert.strictEqual(release.isActive, true, 'active')
     // change to EOL date
-    release.update(new Date('2019-06-01'))
+    release.setDate(new Date('2019-06-01'))
 
     assert.strictEqual(release.isEOL, true, 'EOL')
     assert.strictEqual(release.notStarted, false, 'not started')
@@ -56,7 +56,7 @@ describe('NodeRelease', function () {
     assert.strictEqual(stats.days.until.start, 52, 'until it starts')
     assert.strictEqual(stats.percent.total, 0, 'percent complete')
 
-    release.update(new Date('2018-10-31'))
+    release.setDate(new Date('2018-10-31'))
     stats = release.getStats()
 
     assert.strictEqual(stats.days.completed.current, 8, 'completed current')
@@ -72,7 +72,7 @@ describe('NodeRelease', function () {
     assert.strictEqual(stats.days.until.start, 69, 'till start')
     assert.strictEqual(stats.days.until.eol, 1399, 'until eol')
 
-    release.update(new Date('2013-09-01'))
+    release.setDate(new Date('2013-09-01'))
     stats = release.getStats()
 
     assert.strictEqual(stats.days.maintenance, 0, 'maintenance days')
@@ -82,7 +82,7 @@ describe('NodeRelease', function () {
     assert.strictEqual(stats.days.completed.current, 174, 'completed current')
     assert.strictEqual(stats.percent.total, 13, 'percent complete')
 
-    release.update(controlDate)
+    release.setDate(controlDate)
     stats = release.getStats()
 
     assert.strictEqual(release.isEOL, true, 'eol')
