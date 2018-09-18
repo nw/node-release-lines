@@ -16,3 +16,8 @@ installed.
 After making changes, you should run `npm test` to ensure all the tests
 currently pass.  If you are adding or changing function, you should add tests
 in either an existing test module or a new one.
+
+Updating Data
+--------------------------------------------------------------------------------
+
+Run `npm run refresh`
