@@ -9,7 +9,7 @@ function getVersion (name, date) {
   return new ReleaseLine(Object.assign({ version: name }, data[name]), date || controlDate)
 }
 
-describe('NodeRelease', function () {
+describe('ReleaseLine', function () {
   it('load properly', function () {
     let release = getVersion('v6')
 
@@ -123,7 +123,7 @@ describe('NodeRelease', function () {
   it('should error on bad Date input')
 })
 
-describe('NodeReleaseMeta', function () {
+describe('Release', function () {
   it('should return published release details', function () {
     let release = getVersion('v8')
     let meta = release.releases
@@ -133,7 +133,7 @@ describe('NodeReleaseMeta', function () {
     assert.strictEqual(release.version, 'v8', 'version release line')
     assert.strictEqual(meta.length, 26, 'number of published releases')
     // latest should be safe
-    assert.strictEqual(latest.isSafe(), true, 'vuln check')
+    assert.strictEqual(latest.isSafe, true, 'vuln check')
     //
     assert.strictEqual(oldest.version, 'v8.0.0', 'pub version')
     assert.strictEqual(oldest.npm, '5.0.0', 'pub npm version')
@@ -142,10 +142,10 @@ describe('NodeReleaseMeta', function () {
     assert.strictEqual(oldest.zlib, '1.2.11', 'pub zlib version')
     assert.strictEqual(oldest.openssl, '1.0.2k', 'pub openssl version')
     //
-    assert.strictEqual(oldest.isSafe(), false, 'vuln check')
+    assert.strictEqual(oldest.isSafe, false, 'vuln check')
     assert.strictEqual(oldest.vulns.length, 9, 'number of vulns')
 
-    assert.strictEqual(meta.filter(m => m.isSafe()).length, 2, 'safe versions')
+    assert.strictEqual(meta.filter(m => m.isSafe).length, 2, 'safe versions')
   })
 
   it('should provide details of vulns', function () {
