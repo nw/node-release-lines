@@ -29,7 +29,7 @@ let loader = async () => {
     let version = c.version.match(/(v\d+)\./)[1]
     if (version === 'v0') return p // filter out old release lines
     if (!p[version]) p[version] = []
-    else p[version].push(c)
+    p[version].push(c)
     return p
   }, {})
 
