@@ -21,7 +21,9 @@ npm install node-release-lines
 - [Release][] _class_
 - [Releases][] extends `Array` _class_
 - [Vulnerability][] _class_
-
+- [ChangeLog][] _class_
+- [Commit][] _class_
+ 
 ## Usage
 
 ``` js
@@ -378,6 +380,42 @@ Filters `Release` items by **isSafe**
 - **source**: `String` - url to specific vulnerability in [nodejs/security-wg][] repo.
 - **isValid**: `Boolean`
 
+<a name="ChangeLog"></a>
+## `ChangeLog` _class_
+
+Currently `deprecations` and `notable changes` are not fully supported.
+
+**Instance properties**:
+- **version**: `String`
+- **line**: `String` current release line (example: `Current`)
+- **date**: `Date` release date
+- **releasedBy**: `String` individual who performed the release
+- **text**: `String` meta text above other sub headers
+- **raw**: `String` raw markdown text of the whole release
+- **commits**: `Array` of `Commit`
+
+### `load(version)` _static_
+
+**options**:
+- **version**: `String`
+
+**Returns**: `ChangeLog` instance or `null`
+
+<a name="Commit"></a>
+## `Commit` _class_
+
+**Instance properties**:
+- **sha**: `String` commit sha 
+- **pr**: `String` pr number associated with commit
+- **author**: `String` author of commit
+- **reverts**: `Boolean` if commit reverts prior commit(s) or behavior
+- **desc**: `String` commit description
+- **topics**: `Array` areas the commit touches (example: ['build', 'win'])
+
+**Instance getters**:
+- **shaUrl**: `String` url to the commit in github
+- **prUrl**: `String` url to the pr on github
+
 ## Acknowledgements
 
 Thank you [Node.js Release Team][] and all the contributors to the [Node.js project][], without you none of this is possible. Special thanks goes out to [Tierney Cyren][]. His relentless desire to improve accessibility, visibility and communication inspired this project.
@@ -409,5 +447,7 @@ See the included [LICENSE.md][] file for more details.
 [Release]: #Release
 [Releases]: #Releases
 [Vulnerability]: #Vulnerability
+[ChangeLog]: #ChangeLog
+[Commit]: #Commit
 [CONTRIBUTING.md]: CONTRIBUTING.md
 [LICENSE.md]: LICENSE.md
