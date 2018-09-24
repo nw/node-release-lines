@@ -306,7 +306,6 @@ Filters `ReleaseLine` items by **isLTS**
 ## `Release` _class_
 
 **Instance properties**:
-- **vulns**: `Array` of [Vulnerability][]
 - **version**: `String` - version number of release
 - **date**: `Date` - date of release
 - **modules**: `Number` - number of modules
@@ -317,7 +316,9 @@ Filters `ReleaseLine` items by **isLTS**
 - **openssl**: `String` - version
 
 **Instance getters**:
-- **isSafe**: `Boolean` whether a `Release` has any known vulnerabilities.
+- **vulns**: `Array` of [Vulnerability][] (lazy loading)
+- **isSafe**: `Boolean` - `true` if `Release` has no known vulnerabilities.
+- **isVulnerable**: `Boolean` - `true` if `Release` has one or more vulnerabilities.
 - **doc**: `String` url of docs for the specific release
 
 ### `download(arch, type)`
