@@ -155,7 +155,7 @@ function loader (changelogUrl, callback) {
       version: current,
       line: title[4],
       lts: title[3],
-      date: meta[0],
+      date: meta[0].replace(/^#+/, '').trim(),
       releasedBy: meta[2],
       text: [],
       raw: [line]
