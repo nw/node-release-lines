@@ -1,6 +1,6 @@
 {
-  "7.10.1": {
-    "version": "7.10.1",
+  "v7.10.1": {
+    "version": "v7.10.1",
     "line": "Current",
     "date": "## 2017-07-11",
     "releasedBy": "@evanlucas",
@@ -40,8 +40,8 @@
     ],
     "deprecations": []
   },
-  "7.10.0": {
-    "version": "7.10.0",
+  "v7.10.0": {
+    "version": "v7.10.0",
     "line": "Current",
     "date": "## 2017-05-02",
     "releasedBy": "@evanlucas",
@@ -1857,8 +1857,8 @@
     ],
     "deprecations": []
   },
-  "7.9.0": {
-    "version": "7.9.0",
+  "v7.9.0": {
+    "version": "v7.9.0",
     "line": "Current",
     "date": "## 2017-04-11",
     "releasedBy": "@italoacasas",
@@ -2399,8 +2399,8 @@
     ],
     "deprecations": []
   },
-  "7.8.0": {
-    "version": "7.8.0",
+  "v7.8.0": {
+    "version": "v7.8.0",
     "line": "Current",
     "date": "## 2017-03-28",
     "releasedBy": "@MylesBorins",
@@ -3070,8 +3070,8 @@
     ],
     "deprecations": []
   },
-  "7.7.4": {
-    "version": "7.7.4",
+  "v7.7.4": {
+    "version": "v7.7.4",
     "line": "Current",
     "date": "## 2017-03-21",
     "releasedBy": "@cjihrig",
@@ -3542,8 +3542,8 @@
     ],
     "deprecations": []
   },
-  "7.7.3": {
-    "version": "7.7.3",
+  "v7.7.3": {
+    "version": "v7.7.3",
     "line": "Current",
     "date": "## 2017-03-14",
     "releasedBy": "@italoacasas",
@@ -3823,8 +3823,8 @@
     ],
     "deprecations": []
   },
-  "7.7.2": {
-    "version": "7.7.2",
+  "v7.7.2": {
+    "version": "v7.7.2",
     "line": "Current",
     "date": "## 2017-03-08",
     "releasedBy": "@evanlucas",
@@ -4309,8 +4309,8 @@
     ],
     "deprecations": []
   },
-  "7.7.1": {
-    "version": "7.7.1",
+  "v7.7.1": {
+    "version": "v7.7.1",
     "line": "Current",
     "date": "## 2017-03-01",
     "releasedBy": "@italoacasas",
@@ -4400,8 +4400,8 @@
     ],
     "deprecations": []
   },
-  "7.7.0": {
-    "version": "7.7.0",
+  "v7.7.0": {
+    "version": "v7.7.0",
     "line": "Current",
     "date": "## 2017-02-28",
     "releasedBy": "@italoacasas",
@@ -5995,8 +5995,8 @@
     ],
     "deprecations": []
   },
-  "7.6.0": {
-    "version": "7.6.0",
+  "v7.6.0": {
+    "version": "v7.6.0",
     "line": "Current",
     "date": "## 2017-02-21",
     "releasedBy": "@italoacasas",
@@ -7187,8 +7187,8 @@
     ],
     "deprecations": []
   },
-  "7.5.0": {
-    "version": "7.5.0",
+  "v7.5.0": {
+    "version": "v7.5.0",
     "line": "Current",
     "date": "## 2017-01-31",
     "releasedBy": "@evanlucas",
@@ -10100,8 +10100,8 @@
     ],
     "deprecations": []
   },
-  "7.4.0": {
-    "version": "7.4.0",
+  "v7.4.0": {
+    "version": "v7.4.0",
     "line": "Current",
     "date": "## 2017-01-04",
     "releasedBy": "@evanlucas",
@@ -11531,8 +11531,8 @@
     ],
     "deprecations": []
   },
-  "7.3.0": {
-    "version": "7.3.0",
+  "v7.3.0": {
+    "version": "v7.3.0",
     "line": "Current",
     "date": "## 2016-12-20",
     "releasedBy": "@cjihrig",
@@ -12825,8 +12825,8 @@
     ],
     "deprecations": []
   },
-  "7.2.1": {
-    "version": "7.2.1",
+  "v7.2.1": {
+    "version": "v7.2.1",
     "line": "Current",
     "date": "## 2016-12-06",
     "releasedBy": "@Fishrock123",
@@ -14766,8 +14766,8 @@
     ],
     "deprecations": []
   },
-  "7.2.0": {
-    "version": "7.2.0",
+  "v7.2.0": {
+    "version": "v7.2.0",
     "line": "Current",
     "date": "## 2016-11-22",
     "releasedBy": "@Fishrock123",
@@ -15808,8 +15808,8 @@
     ],
     "deprecations": []
   },
-  "7.1.0": {
-    "version": "7.1.0",
+  "v7.1.0": {
+    "version": "v7.1.0",
     "line": "Current",
     "date": "## 2016-11-08",
     "releasedBy": "@evanlucas",
@@ -16994,8 +16994,8 @@
     ],
     "deprecations": []
   },
-  "7.0.0": {
-    "version": "7.0.0",
+  "v7.0.0": {
+    "version": "v7.0.0",
     "line": "Current",
     "date": "## 2016-10-25",
     "releasedBy": "@jasnell",

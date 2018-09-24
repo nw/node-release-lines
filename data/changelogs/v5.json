@@ -1,6 +1,6 @@
 {
-  "5.12.0": {
-    "version": "5.12.0",
+  "v5.12.0": {
+    "version": "v5.12.0",
     "line": "Stable",
     "date": "## 2016-06-23",
     "releasedBy": "@evanlucas",
@@ -60,8 +60,8 @@
     ],
     "deprecations": []
   },
-  "5.11.1": {
-    "version": "5.11.1",
+  "v5.11.1": {
+    "version": "v5.11.1",
     "line": "Stable",
     "date": "## 2016-05-05",
     "releasedBy": "@evanlucas",
@@ -171,8 +171,8 @@
     ],
     "deprecations": []
   },
-  "5.11.0": {
-    "version": "5.11.0",
+  "v5.11.0": {
+    "version": "v5.11.0",
     "line": "Stable",
     "date": "## 2016-04-20",
     "releasedBy": "@thealphanerd",
@@ -1160,8 +1160,8 @@
     ],
     "deprecations": []
   },
-  "5.10.1": {
-    "version": "5.10.1",
+  "v5.10.1": {
+    "version": "v5.10.1",
     "line": "Stable",
     "date": "## 2016-04-05",
     "releasedBy": "@thealphanerd",
@@ -1471,8 +1471,8 @@
     ],
     "deprecations": []
   },
-  "5.10.0": {
-    "version": "5.10.0",
+  "v5.10.0": {
+    "version": "v5.10.0",
     "line": "Stable",
     "date": "## 2016-03-31",
     "releasedBy": "@evanlucas",
@@ -2047,8 +2047,8 @@
     ],
     "deprecations": []
   },
-  "5.9.1": {
-    "version": "5.9.1",
+  "v5.9.1": {
+    "version": "v5.9.1",
     "line": "Stable",
     "date": "## 2016-03-23",
     "releasedBy": "@Fishrock123",
@@ -2479,8 +2479,8 @@
     ],
     "deprecations": []
   },
-  "5.9.0": {
-    "version": "5.9.0",
+  "v5.9.0": {
+    "version": "v5.9.0",
     "line": "Stable",
     "date": "## 2016-03-16",
     "releasedBy": "@evanlucas",
@@ -2971,8 +2971,8 @@
     ],
     "deprecations": []
   },
-  "5.8.0": {
-    "version": "5.8.0",
+  "v5.8.0": {
+    "version": "v5.8.0",
     "line": "Stable",
     "date": "## 2016-03-08",
     "releasedBy": "@Fishrock123",
@@ -3293,8 +3293,8 @@
     ],
     "deprecations": []
   },
-  "5.7.1": {
-    "version": "5.7.1",
+  "v5.7.1": {
+    "version": "v5.7.1",
     "line": "Stable",
     "date": "## 2016-03-02",
     "releasedBy": "@Fishrock123",
@@ -4050,8 +4050,8 @@
     ],
     "deprecations": []
   },
-  "5.7.0": {
-    "version": "5.7.0",
+  "v5.7.0": {
+    "version": "v5.7.0",
     "line": "Stable",
     "date": "## 2016-02-23",
     "releasedBy": "@rvagg",
@@ -5175,8 +5175,8 @@
     ],
     "deprecations": []
   },
-  "5.6.0": {
-    "version": "5.6.0",
+  "v5.6.0": {
+    "version": "v5.6.0",
     "line": "Stable",
     "date": "## 2016-02-09",
     "releasedBy": "@jasnell",
@@ -6618,8 +6618,8 @@
     ],
     "deprecations": []
   },
-  "5.5.0": {
-    "version": "5.5.0",
+  "v5.5.0": {
+    "version": "v5.5.0",
     "line": "Stable",
     "date": "## 2016-01-20",
     "releasedBy": "@evanlucas",
@@ -7221,8 +7221,8 @@
     ],
     "deprecations": []
   },
-  "5.4.1": {
-    "version": "5.4.1",
+  "v5.4.1": {
+    "version": "v5.4.1",
     "line": "Stable",
     "date": "## 2016-01-12",
     "releasedBy": "@TheAlphaNerd",
@@ -7493,8 +7493,8 @@
     ],
     "deprecations": []
   },
-  "5.4.0": {
-    "version": "5.4.0",
+  "v5.4.0": {
+    "version": "v5.4.0",
     "line": "Stable",
     "date": "## 2016-01-06",
     "releasedBy": "@Fishrock123",
@@ -8484,8 +8484,8 @@
     ],
     "deprecations": []
   },
-  "5.3.0": {
-    "version": "5.3.0",
+  "v5.3.0": {
+    "version": "v5.3.0",
     "line": "Stable",
     "date": "## 2015-12-16",
     "releasedBy": "@cjihrig",
@@ -9005,8 +9005,8 @@
     ],
     "deprecations": []
   },
-  "5.2.0": {
-    "version": "5.2.0",
+  "v5.2.0": {
+    "version": "v5.2.0",
     "line": "Stable",
     "date": "## 2015-12-09",
     "releasedBy": "@rvagg",
@@ -10070,8 +10070,8 @@
     ],
     "deprecations": []
   },
-  "5.1.1": {
-    "version": "5.1.1",
+  "v5.1.1": {
+    "version": "v5.1.1",
     "line": "Stable",
     "date": "## 2015-12-04",
     "releasedBy": "@rvagg",
@@ -10121,8 +10121,8 @@
     ],
     "deprecations": []
   },
-  "5.1.0": {
-    "version": "5.1.0",
+  "v5.1.0": {
+    "version": "v5.1.0",
     "line": "Stable",
     "date": "## 2015-11-17",
     "releasedBy": "@Fishrock123",
@@ -11492,8 +11492,8 @@
     ],
     "deprecations": []
   },
-  "5.0.0": {
-    "version": "5.0.0",
+  "v5.0.0": {
+    "version": "v5.0.0",
     "line": "Stable",
     "date": "## 2015-10-29",
     "releasedBy": "@rvagg",

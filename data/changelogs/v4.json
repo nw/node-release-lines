@@ -1,6 +1,6 @@
 {
-  "4.9.1": {
-    "version": "4.9.1",
+  "v4.9.1": {
+    "version": "v4.9.1",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2018-03-29",
@@ -10,8 +10,8 @@
     "commits": [],
     "deprecations": []
   },
-  "4.9.0": {
-    "version": "4.9.0",
+  "v4.9.0": {
+    "version": "v4.9.0",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2018-03-28",
@@ -152,8 +152,8 @@
     ],
     "deprecations": []
   },
-  "4.8.7": {
-    "version": "4.8.7",
+  "v4.8.7": {
+    "version": "v4.8.7",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2017-12-08",
@@ -234,8 +234,8 @@
     ],
     "deprecations": []
   },
-  "4.8.6": {
-    "version": "4.8.6",
+  "v4.8.6": {
+    "version": "v4.8.6",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2017-11-07",
@@ -717,8 +717,8 @@
     ],
     "deprecations": []
   },
-  "4.8.5": {
-    "version": "4.8.5",
+  "v4.8.5": {
+    "version": "v4.8.5",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2017-10-24",
@@ -739,8 +739,8 @@
     ],
     "deprecations": []
   },
-  "4.8.4": {
-    "version": "4.8.4",
+  "v4.8.4": {
+    "version": "v4.8.4",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2017-07-11",
@@ -791,8 +791,8 @@
     ],
     "deprecations": []
   },
-  "4.8.3": {
-    "version": "4.8.3",
+  "v4.8.3": {
+    "version": "v4.8.3",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2017-05-02",
@@ -942,8 +942,8 @@
     ],
     "deprecations": []
   },
-  "4.8.2": {
-    "version": "4.8.2",
+  "v4.8.2": {
+    "version": "v4.8.2",
     "line": "Maintenance",
     "lts": "Argon",
     "date": "## 2017-04-04",
@@ -984,8 +984,8 @@
     ],
     "deprecations": []
   },
-  "4.8.1": {
-    "version": "4.8.1",
+  "v4.8.1": {
+    "version": "v4.8.1",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2017-03-21",
@@ -2468,8 +2468,8 @@
     ],
     "deprecations": []
   },
-  "4.8.0": {
-    "version": "4.8.0",
+  "v4.8.0": {
+    "version": "v4.8.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2017-02-21",
@@ -3718,8 +3718,8 @@
     ],
     "deprecations": []
   },
-  "4.7.3": {
-    "version": "4.7.3",
+  "v4.7.3": {
+    "version": "v4.7.3",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2017-01-31",
@@ -3800,8 +3800,8 @@
     ],
     "deprecations": []
   },
-  "4.7.2": {
-    "version": "4.7.2",
+  "v4.7.2": {
+    "version": "v4.7.2",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2017-01-05",
@@ -3811,8 +3811,8 @@
     "commits": [],
     "deprecations": []
   },
-  "4.7.1": {
-    "version": "4.7.1",
+  "v4.7.1": {
+    "version": "v4.7.1",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2017-01-03",
@@ -5627,8 +5627,8 @@
     ],
     "deprecations": []
   },
-  "4.7.0": {
-    "version": "4.7.0",
+  "v4.7.0": {
+    "version": "v4.7.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-12-06",
@@ -6720,8 +6720,8 @@
     ],
     "deprecations": []
   },
-  "4.6.2": {
-    "version": "4.6.2",
+  "v4.6.2": {
+    "version": "v4.6.2",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-11-08",
@@ -8941,8 +8941,8 @@
     ],
     "deprecations": []
   },
-  "4.6.1": {
-    "version": "4.6.1",
+  "v4.6.1": {
+    "version": "v4.6.1",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-10-18",
@@ -8974,8 +8974,8 @@
     ],
     "deprecations": []
   },
-  "4.6.0": {
-    "version": "4.6.0",
+  "v4.6.0": {
+    "version": "v4.6.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-09-27",
@@ -9166,8 +9166,8 @@
     ],
     "deprecations": []
   },
-  "4.5.0": {
-    "version": "4.5.0",
+  "v4.5.0": {
+    "version": "v4.5.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-08-15",
@@ -11790,8 +11790,8 @@
     ],
     "deprecations": []
   },
-  "4.4.7": {
-    "version": "4.4.7",
+  "v4.4.7": {
+    "version": "v4.4.7",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-06-28",
@@ -12717,8 +12717,8 @@
     ],
     "deprecations": []
   },
-  "4.4.6": {
-    "version": "4.4.6",
+  "v4.4.6": {
+    "version": "v4.4.6",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-06-23",
@@ -12739,8 +12739,8 @@
     ],
     "deprecations": []
   },
-  "4.4.5": {
-    "version": "4.4.5",
+  "v4.4.5": {
+    "version": "v4.4.5",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-05-24",
@@ -13508,8 +13508,8 @@
     ],
     "deprecations": []
   },
-  "4.4.4": {
-    "version": "4.4.4",
+  "v4.4.4": {
+    "version": "v4.4.4",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-05-05",
@@ -13610,8 +13610,8 @@
     ],
     "deprecations": []
   },
-  "4.4.3": {
-    "version": "4.4.3",
+  "v4.4.3": {
+    "version": "v4.4.3",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-04-12",
@@ -14145,8 +14145,8 @@
     ],
     "deprecations": []
   },
-  "4.4.2": {
-    "version": "4.4.2",
+  "v4.4.2": {
+    "version": "v4.4.2",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-03-31",
@@ -14557,8 +14557,8 @@
     ],
     "deprecations": []
   },
-  "4.4.1": {
-    "version": "4.4.1",
+  "v4.4.1": {
+    "version": "v4.4.1",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-03-22",
@@ -15702,8 +15702,8 @@
     ],
     "deprecations": []
   },
-  "4.4.0": {
-    "version": "4.4.0",
+  "v4.4.0": {
+    "version": "v4.4.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-03-08",
@@ -17889,8 +17889,8 @@
     ],
     "deprecations": []
   },
-  "4.3.2": {
-    "version": "4.3.2",
+  "v4.3.2": {
+    "version": "v4.3.2",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-03-02",
@@ -17911,8 +17911,8 @@
     ],
     "deprecations": []
   },
-  "4.3.1": {
-    "version": "4.3.1",
+  "v4.3.1": {
+    "version": "v4.3.1",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-02-16",
@@ -18564,8 +18564,8 @@
     ],
     "deprecations": []
   },
-  "4.3.0": {
-    "version": "4.3.0",
+  "v4.3.0": {
+    "version": "v4.3.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-02-09",
@@ -18636,8 +18636,8 @@
     ],
     "deprecations": []
   },
-  "4.2.6": {
-    "version": "4.2.6",
+  "v4.2.6": {
+    "version": "v4.2.6",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-01-21",
@@ -18669,8 +18669,8 @@
     ],
     "deprecations": []
   },
-  "4.2.5": {
-    "version": "4.2.5",
+  "v4.2.5": {
+    "version": "v4.2.5",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2016-01-20",
@@ -20576,8 +20576,8 @@
     ],
     "deprecations": []
   },
-  "4.2.4": {
-    "version": "4.2.4",
+  "v4.2.4": {
+    "version": "v4.2.4",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2015-12-23",
@@ -22106,8 +22106,8 @@
     ],
     "deprecations": []
   },
-  "4.2.3": {
-    "version": "4.2.3",
+  "v4.2.3": {
+    "version": "v4.2.3",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2015-12-04",
@@ -22158,8 +22158,8 @@
     ],
     "deprecations": []
   },
-  "4.2.2": {
-    "version": "4.2.2",
+  "v4.2.2": {
+    "version": "v4.2.2",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2015-11-03",
@@ -22790,8 +22790,8 @@
     ],
     "deprecations": []
   },
-  "4.2.1": {
-    "version": "4.2.1",
+  "v4.2.1": {
+    "version": "v4.2.1",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2015-10-13",
@@ -22832,8 +22832,8 @@
     ],
     "deprecations": []
   },
-  "4.2.0": {
-    "version": "4.2.0",
+  "v4.2.0": {
+    "version": "v4.2.0",
     "line": "LTS",
     "lts": "Argon",
     "date": "## 2015-10-07",
@@ -23434,8 +23434,8 @@
     ],
     "deprecations": []
   },
-  "4.1.2": {
-    "version": "4.1.2",
+  "v4.1.2": {
+    "version": "v4.1.2",
     "line": "Stable",
     "date": "## 2015-10-05",
     "releasedBy": "@rvagg",
@@ -23846,8 +23846,8 @@
     ],
     "deprecations": []
   },
-  "4.1.1": {
-    "version": "4.1.1",
+  "v4.1.1": {
+    "version": "v4.1.1",
     "line": "Stable",
     "date": "## 2015-09-22",
     "releasedBy": "@rvagg",
@@ -24128,8 +24128,8 @@
     ],
     "deprecations": []
   },
-  "4.1.0": {
-    "version": "4.1.0",
+  "v4.1.0": {
+    "version": "v4.1.0",
     "line": "Stable",
     "date": "## 2015-09-17",
     "releasedBy": "@Fishrock123",
@@ -24686,8 +24686,8 @@
     ],
     "deprecations": []
   },
-  "4.0.0": {
-    "version": "4.0.0",
+  "v4.0.0": {
+    "version": "v4.0.0",
     "line": "Stable",
     "date": "## 2015-09-08",
     "releasedBy": "@rvagg",

@@ -1,6 +1,6 @@
 {
-  "6.14.4": {
-    "version": "6.14.4",
+  "v6.14.4": {
+    "version": "v6.14.4",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-08-15",
@@ -121,8 +121,8 @@
     ],
     "deprecations": []
   },
-  "6.14.3": {
-    "version": "6.14.3",
+  "v6.14.3": {
+    "version": "v6.14.3",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-06-12",
@@ -143,8 +143,8 @@
     ],
     "deprecations": []
   },
-  "6.14.2": {
-    "version": "6.14.2",
+  "v6.14.2": {
+    "version": "v6.14.2",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-04-30",
@@ -2422,8 +2422,8 @@
     ],
     "deprecations": []
   },
-  "6.14.1": {
-    "version": "6.14.1",
+  "v6.14.1": {
+    "version": "v6.14.1",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-03-29",
@@ -2433,8 +2433,8 @@
     "commits": [],
     "deprecations": []
   },
-  "6.14.0": {
-    "version": "6.14.0",
+  "v6.14.0": {
+    "version": "v6.14.0",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-03-28",
@@ -2575,8 +2575,8 @@
     ],
     "deprecations": []
   },
-  "6.13.1": {
-    "version": "6.13.1",
+  "v6.13.1": {
+    "version": "v6.13.1",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-03-06",
@@ -2819,8 +2819,8 @@
     ],
     "deprecations": []
   },
-  "6.13.0": {
-    "version": "6.13.0",
+  "v6.13.0": {
+    "version": "v6.13.0",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-02-13",
@@ -3953,8 +3953,8 @@
     ],
     "deprecations": []
   },
-  "6.12.3": {
-    "version": "6.12.3",
+  "v6.12.3": {
+    "version": "v6.12.3",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2018-01-02",
@@ -5117,8 +5117,8 @@
     ],
     "deprecations": []
   },
-  "6.12.2": {
-    "version": "6.12.2",
+  "v6.12.2": {
+    "version": "v6.12.2",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-12-08",
@@ -5199,8 +5199,8 @@
     ],
     "deprecations": []
   },
-  "6.12.1": {
-    "version": "6.12.1",
+  "v6.12.1": {
+    "version": "v6.12.1",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-12-05",
@@ -7847,8 +7847,8 @@
     ],
     "deprecations": []
   },
-  "6.12.0": {
-    "version": "6.12.0",
+  "v6.12.0": {
+    "version": "v6.12.0",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-11-07",
@@ -9131,8 +9131,8 @@
     ],
     "deprecations": []
   },
-  "6.11.5": {
-    "version": "6.11.5",
+  "v6.11.5": {
+    "version": "v6.11.5",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-10-24",
@@ -9153,8 +9153,8 @@
     ],
     "deprecations": []
   },
-  "6.11.4": {
-    "version": "6.11.4",
+  "v6.11.4": {
+    "version": "v6.11.4",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-10-03",
@@ -10079,8 +10079,8 @@
     ],
     "deprecations": []
   },
-  "6.11.3": {
-    "version": "6.11.3",
+  "v6.11.3": {
+    "version": "v6.11.3",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-09-05",
@@ -11620,8 +11620,8 @@
     ],
     "deprecations": []
   },
-  "6.11.2": {
-    "version": "6.11.2",
+  "v6.11.2": {
+    "version": "v6.11.2",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-08-01",
@@ -13854,8 +13854,8 @@
     ],
     "deprecations": []
   },
-  "6.11.1": {
-    "version": "6.11.1",
+  "v6.11.1": {
+    "version": "v6.11.1",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-07-11",
@@ -13906,8 +13906,8 @@
     ],
     "deprecations": []
   },
-  "6.11.0": {
-    "version": "6.11.0",
+  "v6.11.0": {
+    "version": "v6.11.0",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-06-06",
@@ -15176,8 +15176,8 @@
     ],
     "deprecations": []
   },
-  "6.10.3": {
-    "version": "6.10.3",
+  "v6.10.3": {
+    "version": "v6.10.3",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-05-02",
@@ -16692,8 +16692,8 @@
     ],
     "deprecations": []
   },
-  "6.10.2": {
-    "version": "6.10.2",
+  "v6.10.2": {
+    "version": "v6.10.2",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-04-04",
@@ -16774,8 +16774,8 @@
     ],
     "deprecations": []
   },
-  "6.10.1": {
-    "version": "6.10.1",
+  "v6.10.1": {
+    "version": "v6.10.1",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-03-21",
@@ -19765,8 +19765,8 @@
     ],
     "deprecations": []
   },
-  "6.10.0": {
-    "version": "6.10.0",
+  "v6.10.0": {
+    "version": "v6.10.0",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-02-21",
@@ -21461,8 +21461,8 @@
     ],
     "deprecations": []
   },
-  "6.9.5": {
-    "version": "6.9.5",
+  "v6.9.5": {
+    "version": "v6.9.5",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-01-31",
@@ -21543,8 +21543,8 @@
     ],
     "deprecations": []
   },
-  "6.9.4": {
-    "version": "6.9.4",
+  "v6.9.4": {
+    "version": "v6.9.4",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-01-05",
@@ -21554,8 +21554,8 @@
     "commits": [],
     "deprecations": []
   },
-  "6.9.3": {
-    "version": "6.9.3",
+  "v6.9.3": {
+    "version": "v6.9.3",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2017-01-03",
@@ -24691,8 +24691,8 @@
     ],
     "deprecations": []
   },
-  "6.9.2": {
-    "version": "6.9.2",
+  "v6.9.2": {
+    "version": "v6.9.2",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2016-12-06",
@@ -26145,8 +26145,8 @@
     ],
     "deprecations": []
   },
-  "6.9.1": {
-    "version": "6.9.1",
+  "v6.9.1": {
+    "version": "v6.9.1",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2016-10-19",
@@ -26217,8 +26217,8 @@
     ],
     "deprecations": []
   },
-  "6.9.0": {
-    "version": "6.9.0",
+  "v6.9.0": {
+    "version": "v6.9.0",
     "line": "LTS",
     "lts": "Boron",
     "date": "## 2016-10-18",
@@ -26300,8 +26300,8 @@
     ],
     "deprecations": []
   },
-  "6.8.1": {
-    "version": "6.8.1",
+  "v6.8.1": {
+    "version": "v6.8.1",
     "line": "Current",
     "date": "## 2016-10-14",
     "releasedBy": "@evanlucas",
@@ -26341,8 +26341,8 @@
     ],
     "deprecations": []
   },
-  "6.8.0": {
-    "version": "6.8.0",
+  "v6.8.0": {
+    "version": "v6.8.0",
     "line": "Current",
     "date": "## 2016-10-12",
     "releasedBy": "@Fishrock123",
@@ -28510,8 +28510,8 @@
     ],
     "deprecations": []
   },
-  "6.7.0": {
-    "version": "6.7.0",
+  "v6.7.0": {
+    "version": "v6.7.0",
     "line": "Current",
     "date": "## 2016-09-27",
     "releasedBy": "@evanlucas",
@@ -28721,8 +28721,8 @@
     ],
     "deprecations": []
   },
-  "6.6.0": {
-    "version": "6.6.0",
+  "v6.6.0": {
+    "version": "v6.6.0",
     "line": "Current",
     "date": "## 2016-09-14",
     "releasedBy": "@Fishrock123",
@@ -29867,8 +29867,8 @@
     ],
     "deprecations": []
   },
-  "6.5.0": {
-    "version": "6.5.0",
+  "v6.5.0": {
+    "version": "v6.5.0",
     "line": "Current",
     "date": "## 2016-08-26",
     "releasedBy": "@evanlucas",
@@ -30760,8 +30760,8 @@
     ],
     "deprecations": []
   },
-  "6.4.0": {
-    "version": "6.4.0",
+  "v6.4.0": {
+    "version": "v6.4.0",
     "line": "Current",
     "date": "## 2016-08-15",
     "releasedBy": "@cjihrig",
@@ -32351,8 +32351,8 @@
     ],
     "deprecations": []
   },
-  "6.3.1": {
-    "version": "6.3.1",
+  "v6.3.1": {
+    "version": "v6.3.1",
     "line": "Current",
     "date": "## 2016-07-21",
     "releasedBy": "@evanlucas",
@@ -33206,8 +33206,8 @@
     ],
     "deprecations": []
   },
-  "6.3.0": {
-    "version": "6.3.0",
+  "v6.3.0": {
+    "version": "v6.3.0",
     "line": "Current",
     "date": "## 2016-07-06",
     "releasedBy": "@Fishrock123",
@@ -34769,8 +34769,8 @@
     ],
     "deprecations": []
   },
-  "6.2.2": {
-    "version": "6.2.2",
+  "v6.2.2": {
+    "version": "v6.2.2",
     "line": "Current",
     "date": "## 2016-06-17",
     "releasedBy": "@evanlucas",
@@ -35411,8 +35411,8 @@
     ],
     "deprecations": []
   },
-  "6.2.1": {
-    "version": "6.2.1",
+  "v6.2.1": {
+    "version": "v6.2.1",
     "line": "Current",
     "date": "## 2016-06-02",
     "releasedBy": "@rvagg",
@@ -36768,8 +36768,8 @@
     ],
     "deprecations": []
   },
-  "6.2.0": {
-    "version": "6.2.0",
+  "v6.2.0": {
+    "version": "v6.2.0",
     "line": "Current",
     "date": "## 2016-05-17",
     "releasedBy": "@evanlucas",
@@ -37999,8 +37999,8 @@
     ],
     "deprecations": []
   },
-  "6.1.0": {
-    "version": "6.1.0",
+  "v6.1.0": {
+    "version": "v6.1.0",
     "line": "Current",
     "date": "## 2016-05-05",
     "releasedBy": "@Fishrock123",
@@ -38622,8 +38622,8 @@
     ],
     "deprecations": []
   },
-  "6.0.0": {
-    "version": "6.0.0",
+  "v6.0.0": {
+    "version": "v6.0.0",
     "line": "Current",
     "date": "## 2016-04-26",
     "releasedBy": "@jasnell",

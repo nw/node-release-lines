@@ -1,6 +1,6 @@
 {
-  "9.11.2": {
-    "version": "9.11.2",
+  "v9.11.2": {
+    "version": "v9.11.2",
     "line": "Current",
     "date": "## 2018-06-12",
     "releasedBy": "@evanlucas",
@@ -90,8 +90,8 @@
     ],
     "deprecations": []
   },
-  "9.11.1": {
-    "version": "9.11.1",
+  "v9.11.1": {
+    "version": "v9.11.1",
     "line": "Current",
     "date": "## 2018-04-05",
     "releasedBy": "@MylesBorins",
@@ -100,8 +100,8 @@
     "commits": [],
     "deprecations": []
   },
-  "9.11.0": {
-    "version": "9.11.0",
+  "v9.11.0": {
+    "version": "v9.11.0",
     "line": "Current",
     "date": "## 2018-04-04",
     "releasedBy": "@MylesBorins prepared by @targos",
@@ -912,8 +912,8 @@
     ],
     "deprecations": []
   },
-  "9.10.1": {
-    "version": "9.10.1",
+  "v9.10.1": {
+    "version": "v9.10.1",
     "line": "Current",
     "date": "## 2018-03-29",
     "releasedBy": "@MylesBorins",
@@ -922,8 +922,8 @@
     "commits": [],
     "deprecations": []
   },
-  "9.10.0": {
-    "version": "9.10.0",
+  "v9.10.0": {
+    "version": "v9.10.0",
     "line": "Current",
     "date": "## 2018-03-28",
     "releasedBy": "@MylesBorins prepared by @targos",
@@ -1784,8 +1784,8 @@
     ],
     "deprecations": []
   },
-  "9.9.0": {
-    "version": "9.9.0",
+  "v9.9.0": {
+    "version": "v9.9.0",
     "line": "Current",
     "date": "## 2018-03-21",
     "releasedBy": "@MylesBorins prepared by @targos",
@@ -3139,8 +3139,8 @@
     ],
     "deprecations": []
   },
-  "9.8.0": {
-    "version": "9.8.0",
+  "v9.8.0": {
+    "version": "v9.8.0",
     "line": "Current",
     "date": "## 2018-03-07",
     "releasedBy": "@MylesBorins",
@@ -3873,8 +3873,8 @@
     ],
     "deprecations": []
   },
-  "9.7.1": {
-    "version": "9.7.1",
+  "v9.7.1": {
+    "version": "v9.7.1",
     "line": "Current",
     "date": "## 2018-03-02",
     "releasedBy": "@rvagg",
@@ -3883,8 +3883,8 @@
     "commits": [],
     "deprecations": []
   },
-  "9.7.0": {
-    "version": "9.7.0",
+  "v9.7.0": {
+    "version": "v9.7.0",
     "line": "Current",
     "date": "## 2018-03-01",
     "releasedBy": "@rvagg prepared by @addaleax",
@@ -4568,8 +4568,8 @@
     ],
     "deprecations": []
   },
-  "9.6.1": {
-    "version": "9.6.1",
+  "v9.6.1": {
+    "version": "v9.6.1",
     "line": "Current",
     "date": "## 2018-02-22",
     "releasedBy": "@MylesBorins",
@@ -4589,8 +4589,8 @@
     ],
     "deprecations": []
   },
-  "9.6.0": {
-    "version": "9.6.0",
+  "v9.6.0": {
+    "version": "v9.6.0",
     "line": "Current",
     "date": "## 2018-02-22",
     "releasedBy": "@MylesBorins",
@@ -6657,8 +6657,8 @@
     ],
     "deprecations": []
   },
-  "9.5.0": {
-    "version": "9.5.0",
+  "v9.5.0": {
+    "version": "v9.5.0",
     "line": "Current",
     "date": "## 2018-01-31",
     "releasedBy": "@evanlucas",
@@ -8286,8 +8286,8 @@
     ],
     "deprecations": []
   },
-  "9.4.0": {
-    "version": "9.4.0",
+  "v9.4.0": {
+    "version": "v9.4.0",
     "line": "Current",
     "date": "## 2018-01-10",
     "releasedBy": "@MylesBorins",
@@ -10650,8 +10650,8 @@
     ],
     "deprecations": []
   },
-  "9.3.0": {
-    "version": "9.3.0",
+  "v9.3.0": {
+    "version": "v9.3.0",
     "line": "Current",
     "date": "## 2017-12-12",
     "releasedBy": "@MylesBorins",
@@ -14451,8 +14451,8 @@
     ],
     "deprecations": []
   },
-  "9.2.1": {
-    "version": "9.2.1",
+  "v9.2.1": {
+    "version": "v9.2.1",
     "line": "Current",
     "date": "## 2017-12-08",
     "releasedBy": "@evanlucas",
@@ -14592,8 +14592,8 @@
     ],
     "deprecations": []
   },
-  "9.2.0": {
-    "version": "9.2.0",
+  "v9.2.0": {
+    "version": "v9.2.0",
     "line": "Current",
     "date": "## 2017-11-14",
     "releasedBy": "@evanlucas",
@@ -15934,8 +15934,8 @@
     ],
     "deprecations": []
   },
-  "9.1.0": {
-    "version": "9.1.0",
+  "v9.1.0": {
+    "version": "v9.1.0",
     "line": "Current",
     "date": "## 2017-11-07",
     "releasedBy": "@cjihrig",
@@ -16919,8 +16919,8 @@
     ],
     "deprecations": []
   },
-  "9.0.0": {
-    "version": "9.0.0",
+  "v9.0.0": {
+    "version": "v9.0.0",
     "line": "Current",
     "date": "## 2017-10-31",
     "releasedBy": "@jasnell",

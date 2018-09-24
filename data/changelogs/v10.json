@@ -1,6 +1,6 @@
 {
-  "10.11.0": {
-    "version": "10.11.0",
+  "v10.11.0": {
+    "version": "v10.11.0",
     "line": "Current",
     "date": "## 2018-09-20",
     "releasedBy": "@targos",
@@ -1077,8 +1077,8 @@
     ],
     "deprecations": []
   },
-  "10.10.0": {
-    "version": "10.10.0",
+  "v10.10.0": {
+    "version": "v10.10.0",
     "line": "Current",
     "date": "## 2018-09-06",
     "releasedBy": "@targos",
@@ -3167,8 +3167,8 @@
     ],
     "deprecations": []
   },
-  "10.9.0": {
-    "version": "10.9.0",
+  "v10.9.0": {
+    "version": "v10.9.0",
     "line": "Current",
     "date": "## 2018-08-15",
     "releasedBy": "@rvagg",
@@ -4767,8 +4767,8 @@
     ],
     "deprecations": []
   },
-  "10.8.0": {
-    "version": "10.8.0",
+  "v10.8.0": {
+    "version": "v10.8.0",
     "line": "Current",
     "date": "## 2018-08-01",
     "releasedBy": "@targos",
@@ -5722,8 +5722,8 @@
     ],
     "deprecations": []
   },
-  "10.7.0": {
-    "version": "10.7.0",
+  "v10.7.0": {
+    "version": "v10.7.0",
     "line": "Current",
     "date": "## 2018-07-18",
     "releasedBy": "@targos",
@@ -6886,8 +6886,8 @@
     ],
     "deprecations": []
   },
-  "10.6.0": {
-    "version": "10.6.0",
+  "v10.6.0": {
+    "version": "v10.6.0",
     "line": "Current",
     "date": "## 2018-07-04",
     "releasedBy": "@targos",
@@ -7981,8 +7981,8 @@
     ],
     "deprecations": []
   },
-  "10.5.0": {
-    "version": "10.5.0",
+  "v10.5.0": {
+    "version": "v10.5.0",
     "line": "Current",
     "date": "## 2018-06-20",
     "releasedBy": "@targos",
@@ -9491,8 +9491,8 @@
     ],
     "deprecations": []
   },
-  "10.4.1": {
-    "version": "10.4.1",
+  "v10.4.1": {
+    "version": "v10.4.1",
     "line": "Current",
     "date": "## 2018-06-12",
     "releasedBy": "@evanlucas",
@@ -9654,8 +9654,8 @@
     ],
     "deprecations": []
   },
-  "10.4.0": {
-    "version": "10.4.0",
+  "v10.4.0": {
+    "version": "v10.4.0",
     "line": "Current",
     "date": "## 2018-06-06",
     "releasedBy": "@MylesBorins",
@@ -10585,8 +10585,8 @@
     ],
     "deprecations": []
   },
-  "10.3.0": {
-    "version": "10.3.0",
+  "v10.3.0": {
+    "version": "v10.3.0",
     "line": "Current",
     "date": "## 2018-05-29",
     "releasedBy": "@MylesBorins",
@@ -10998,8 +10998,8 @@
     ],
     "deprecations": []
   },
-  "10.2.1": {
-    "version": "10.2.1",
+  "v10.2.1": {
+    "version": "v10.2.1",
     "line": "Current",
     "date": "## 2018-05-24",
     "releasedBy": "@MylesBorins",
@@ -11039,8 +11039,8 @@
     ],
     "deprecations": []
   },
-  "10.2.0": {
-    "version": "10.2.0",
+  "v10.2.0": {
+    "version": "v10.2.0",
     "line": "Current",
     "date": "## 2018-05-23",
     "releasedBy": "@MylesBorins",
@@ -13129,8 +13129,8 @@
     ],
     "deprecations": []
   },
-  "10.1.0": {
-    "version": "10.1.0",
+  "v10.1.0": {
+    "version": "v10.1.0",
     "line": "Current",
     "date": "## 2018-05-08",
     "releasedBy": "@MylesBorins",
@@ -14864,8 +14864,8 @@
     ],
     "deprecations": []
   },
-  "10.0.0": {
-    "version": "10.0.0",
+  "v10.0.0": {
+    "version": "v10.0.0",
     "line": "Current",
     "date": "## 2018-04-24",
     "releasedBy": "@jasnell",
