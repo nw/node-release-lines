@@ -131,7 +131,7 @@ describe('Release', function () {
     let oldest = meta[meta.length - 1]
 
     assert.strictEqual(release.version, 'v8', 'version release line')
-    assert.strictEqual(meta.length, 26, 'number of published releases')
+    assert.strictEqual(meta.length, 27, 'number of published releases')
     // latest should be safe
     assert.strictEqual(latest.isSafe, true, 'vuln check')
     //
@@ -145,7 +145,7 @@ describe('Release', function () {
     assert.strictEqual(oldest.isSafe, false, 'vuln check')
     assert.strictEqual(oldest.vulns.length, 9, 'number of vulns')
 
-    assert.strictEqual(meta.filter(m => m.isSafe).length, 2, 'safe versions')
+    assert.strictEqual(meta.filter(m => m.isSafe).length, 3, 'safe versions')
   })
 
   it('should provide details of vulns', function () {
