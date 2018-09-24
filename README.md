@@ -113,12 +113,12 @@ if (releases.getLTS().length === 4 && // LTS release lines
 - **lts**: `Date` or `undefined`
 - **maintenance**: `Date` or `undefined`
 - **codename**: `String` or `undefined`
-- **releases**: `Releases` _see [Releases][] section_
 
 **Instance getters**:
 
 _[see terminology]_
 
+- **releases**: `Releases` _see [Releases][] section_ (lazy loaded)
 - **isEOL**: `Boolean`
 - **isSupported**: `Boolean`
 - **isLTS**: `Boolean`
