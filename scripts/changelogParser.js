@@ -149,10 +149,10 @@ function loader (changelogUrl, callback) {
     if (current) cleanup()
 
     context = null
-    current = title[1]
+    current = `v${title[1]}`
 
     data[current] = {
-      version: title[1],
+      version: current,
       line: title[4],
       lts: title[3],
       date: meta[0],
