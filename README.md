@@ -215,10 +215,11 @@ Hydrates a schedule. If a schedule is not defined then the internal cached copy 
 
 The url to the offical [release schedule][]. 
 
-### `get(version)`
+### `get(version, resetDate)`
 
 **Params**:
 - **version**: a release line name (example: `v10`)
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
 
 **Returns**: `ReleaseLine` or `undefined`
 
@@ -229,51 +230,75 @@ The url to the offical [release schedule][].
 
 **Returns**: `this`
 
-### `getSupported()`
+### `getSupported(resetDate)`
 
 Filters `ReleaseLine` items by **isSupported**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only supported release lines.
 
-### `getCurrent()`
+### `getCurrent(resetDate)`
 
 Filters `ReleaseLine` items by **isCurrent**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only current release lines.
 
-### `getMaintenance()`
+### `getMaintenance(resetDate)`
 
 Filters `ReleaseLine` items by **isMaintenance**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only release lines in maintenance mode.
 
-### `getFuture()`
+### `getFuture(resetDate)`
 
 Filters `ReleaseLine` items by **isFuture**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only release lines that have yet to start.
 
-### `getActive()`
+### `getActive(resetDate)`
 
 Filters `ReleaseLine` items by **isActive**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only release lines that are in LTS, excluding maintenance window.
 
-### `getEOL()`
+### `getEOL(resetDate)`
 
 Filters `ReleaseLine` items by **isEOL**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only release lines that have hit EOL
 
-### `getModern()`
+### `getModern(resetDate)`
 
 Filters `ReleaseLine` items by **isModern**
 
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
+
 **Returns**: `ReleaseLines` instance with only modern release lines.
 
-### `getLTS()`
+### `getLTS(resetDate)`
 
 Filters `ReleaseLine` items by **isLTS**
+
+**Params**:
+- **resetDate**: `Date`, `String` or `Boolean` - changes the date. (optional)
 
 **Returns**: `ReleaseLines` instance with only release lines that have an LTS active mode in their lifecycle. Note: It does not neccessarily mean it is an active LTS (see `getActive()`).
 

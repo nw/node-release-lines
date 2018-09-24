@@ -44,9 +44,22 @@ describe('ReleaseLines', function () {
     assert.strictEqual(releases.getSupported().length, 4, 'supported releases')
     assert.strictEqual(releases.getSupported().getLTS().length, 3, 'supported LTS releases')
     // redundant
+    // console.log(releases.getSupported().getLTS().getActive()) need to test resetDate
     assert.strictEqual(releases.getSupported().getLTS().getActive().length, 2, 'LTS releases')
 
     assert.strictEqual(releases.getEOL().length, 6, 'EOL releases')
     assert.strictEqual(releases.getModern().getEOL().length, 4, 'Modern EOL releases')
+  })
+
+  it('should return create new `Release` instances on filters', function () {
+    let releases = ReleaseLines.load(data, new Date('2017-01-01'))
+    let old = releases.filter(r => r.version === 'v4')[0]
+    let current = releases.get('v4').setDate()
+
+    let oldStats = old.getStats()
+    let newStats = current.getStats()
+
+    assert.strictEqual(oldStats.days.completed.total, 481, 'days completed')
+    assert.strictEqual(oldStats.days.completed.total < newStats.days.completed.total, true, 'completed days')
   })
 })
