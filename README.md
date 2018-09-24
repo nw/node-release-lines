@@ -321,6 +321,13 @@ Filters `ReleaseLine` items by **isLTS**
 - **isVulnerable**: `Boolean` - `true` if `Release` has one or more vulnerabilities.
 - **doc**: `String` url of docs for the specific release
 
+### `Release.load(version)` _static_
+
+**options**:
+- **version**: `String`
+
+**Returns**: `Release` or `null` if version does not exist
+
 ### `download(arch, type)`
 
 If `arch` is omitted returns directory to all download resources for release version.
