@@ -14,7 +14,7 @@ npm install node-release-lines
 ```
 
 ## Outline
-
+- [Command Line][]
 - [Terminology][]
 - [ReleaseLine][] _class_
 - [ReleaseLines][] extends `Array` _class_
@@ -90,6 +90,13 @@ if (releases.getLTS().length === 4 && // LTS release lines
      isMaintenance: false },
   releases: { total: 12, safe: 6, latest: 'v10.9.0' } }
 ```
+
+# Command Line
+<a name="cli"></a>
+
+## `amisafe`
+
+When the module is installed globally, running `amisafe` will tell you if you're using a version of Node.js with known vulnerabilities.
 
 # API
 
@@ -440,6 +447,7 @@ See the included [LICENSE.md][] file for more details.
 [release schedule]: https://raw.githubusercontent.com/nodejs/Release/master/schedule.json
 [nodejs/security-wg]: https://github.com/nodejs/security-wg
 [issue on GitHub]: https://github.com/nw/node-release-lines/issues
+[Command Line]: #cli
 [see terminology]: #terminology
 [Terminology]: #terminology
 [ReleaseLine]: #ReleaseLine
