@@ -10,6 +10,9 @@
   "bugs": {
     "url": "https://github.com/nw/node-release-lines/issues"
   },
+  "bin": {
+    "amisafe": "./bin/amisafe.js"
+  },
   "scripts": {
     "test": "mocha",
     "refresh": "node scripts/refreshData.js && node scripts/changelogParser.js"
