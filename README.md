@@ -94,9 +94,24 @@ if (releases.getLTS().length === 4 && // LTS release lines
 # Command Line
 <a name="cli"></a>
 
-## `amisafe`
+## Command Line Usage
 
-When the module is installed globally, running `amisafe` will tell you if you're using a version of Node.js with known vulnerabilities.
+The node-release-lines CLI options can be used globally or via npx.
+
+To use commands globally, with `amisafe` as an example:
+```
+npm install node-release-lines -g
+amisafe
+```
+
+To use via npx, with `amisafe` as an example:
+```
+npx node-release-lines amisafe
+```
+
+## Command: `amisafe`
+
+When the module is installed globally, running `amisafe` will tell you if you're using a version of Node.js with known vulnerabilities. If you _are_ running a version with vulnerabilities, `amisafe` will suggest the minimum safe version of Node.js.
 
 # API
 
