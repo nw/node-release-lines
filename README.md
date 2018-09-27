@@ -91,12 +91,51 @@ if (releases.getLTS().length === 4 && // LTS release lines
   releases: { total: 12, safe: 6, latest: 'v10.9.0' } }
 ```
 
-# Command Line
+## Command Line
 <a name="cli"></a>
+The node-release-lines CLI options can be used globally or via `npx.
 
-## `amisafe`
+Globally, where `<command>` is the command you'd like to use:
+```
+npm install node-release-lines -g
+<command>
+```
+
+Via `npx`, where `<command>` is the command you'd like to use:
+```
+npx node-release-lines <command>
+```
+
+### Command: `amisafe`
 
 When the module is installed globally, running `amisafe` will tell you if you're using a version of Node.js with known vulnerabilities.
+
+Usage when globally installed:
+```
+amisafe
+```
+
+Usage via `npx`:
+```
+npx node-release-lines amisafe
+```
+
+#### Command with flag: `amisafe --ci`
+You can run the `amisafe` command with the `--ci` flag to help ensure your CI builds are only running with secure versions of Node.js.
+
+* When the current version of **Node.js is safe**, the command will return a `0` exit code
+* When the current version of **Node.js is unsafe**, the command will return a `1` exit code
+
+Usage when globally installed:
+```
+amisafe --ci
+```
+
+Usage via `npx`:
+```
+npx node-release-lines amisafe --ci
+```
+
 
 # API
 
