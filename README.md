@@ -120,6 +120,13 @@ Usage via `npx`:
 npx node-release-lines amisafe
 ```
 
+#### Command with version: `amisafe v<Node.js release>`
+You can run the `amisafe` command with a Node.js release as an argument. For example, if you want to know if Node.js v10.1.0 is safe, you can run the following command:
+
+```
+amisafe v10.1.0
+```
+
 #### Command with flag: `amisafe --ci`
 You can run the `amisafe` command with the `--ci` flag to help ensure your CI builds are only running with secure versions of Node.js.
 
