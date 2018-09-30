@@ -93,49 +93,40 @@ if (releases.getLTS().length === 4 && // LTS release lines
 
 ## Command Line
 <a name="cli"></a>
-The node-release-lines CLI options can be used globally or via `npx.
+The node-release-lines CLI options can be used globally or via `npx`.
 
 Globally, where `<command>` is the command you'd like to use:
 ```
 npm install node-release-lines -g
-<command>
+<command> [options]
 ```
 
 Via `npx`, where `<command>` is the command you'd like to use:
 ```
-npx node-release-lines <command>
+npx node-release-lines <command> [options]
+```
+
+### Command: `isnodesafe [options]`
+
+`isnodesafe` is a CLI utility to check if Node.js is safe. The CLI defaults to checking system version, but can also check user-specified versions.
+
+#### `isnodesafe` Options
+
+* -v, --version            output the version number
+* -c, --ci                 Returns a non-zero exit code if the version of Node.js is not safe, and a zero exit code if it is safe.
+* -r, --release [release]  Checks to see if a specific release of Node.js is safe
+* -h, --help               output usage information
+
+#### `isnodesafe` Examples
+```
+$ isnodesafe
+$ isnodesafe --ci
+$ isnodesafe --release 10.2.0
+$ isnodesafe -rc 6.9.5
 ```
 
 ### Command: `amisafe`
-
-When the module is installed globally, running `amisafe` will tell you if you're using a version of Node.js with known vulnerabilities.
-
-Usage when globally installed:
-```
-amisafe
-```
-
-Usage via `npx`:
-```
-npx node-release-lines amisafe
-```
-
-#### Command with flag: `amisafe --ci`
-You can run the `amisafe` command with the `--ci` flag to help ensure your CI builds are only running with secure versions of Node.js.
-
-* When the current version of **Node.js is safe**, the command will return a `0` exit code
-* When the current version of **Node.js is unsafe**, the command will return a `1` exit code
-
-Usage when globally installed:
-```
-amisafe --ci
-```
-
-Usage via `npx`:
-```
-npx node-release-lines amisafe --ci
-```
-
+This command is deprecated in favor of [`isnodesafe`](#command-isnodesafe-options). It will work as an alias of `isnodesafe` until `node-release-lines@2.0.0`, at which point it will be removed.
 
 # API
 

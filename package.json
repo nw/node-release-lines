@@ -11,7 +11,8 @@
     "url": "https://github.com/nw/node-release-lines/issues"
   },
   "bin": {
-    "amisafe": "./bin/amisafe.js"
+    "amisafe": "./bin/isnodesafe.js",
+    "isnodesafe": "./bin/isnodesafe.js"
   },
   "scripts": {
     "test": "mocha",
