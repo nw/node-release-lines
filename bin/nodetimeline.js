@@ -62,8 +62,8 @@ releasesType.forEach(release => {
   }
   console.log('')
   console.log('   📊  Release Line Metadata')
-  console.log('      - There are a total of ' + release.releases.length + ' releases in the Node.js ' + release.version + 'release line.')
-  console.log('      - There are currently ' + release.releases.getSafe().length + ' releases in the Node.js ' + release.version + 'that have zero known vulnerabilities.')
+  console.log('      - There are a total of ' + release.releases.length + ' releases in the Node.js ' + release.version + ' release line.')
+  console.log('      - There are currently ' + release.releases.getSafe().length + ' releases in the Node.js ' + release.version + ' that have zero known vulnerabilities.')
   console.log('      - The latest release in the'  + release.version +  ' release line is ' + release.releases[0].version)
   console.log('')
 })
