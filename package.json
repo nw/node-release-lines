@@ -12,7 +12,8 @@
   },
   "bin": {
     "amisafe": "./bin/isnodesafe.js",
-    "isnodesafe": "./bin/isnodesafe.js"
+    "isnodesafe": "./bin/isnodesafe.js",
+    "nodetimeline": "./bin/nodetimeline.js"
   },
   "scripts": {
     "test": "mocha",
