@@ -52,13 +52,13 @@ releasesType.forEach(release => {
   console.log('')
   console.log('   ℹ️  Release Line Information')
   if(release.isCurrent) {
-    icon = 'Node.js '+ release.version + ' is under active development!'
+    console.log('      - Node.js '+ release.version + ' is under active development!')
   } else if (release.isActive && !release.isCurrent) {
-    icon = 'Node.js '+ release.version + ' is in the LTS phase of its lifecycle.' 
+    console.log('      - Node.js '+ release.version + ' is in the LTS phase of its lifecycle.')
   } else if (release.isMaintenance) {
-    icon = 'Node.js '+ release.version + ' is currently in Maintenance mode, and will only recieve security patches and bug fixes.'
+    console.log('      - Node.js '+ release.version + ' is currently in Maintenance mode, and will only recieve security patches and bug fixes.')
   } else if (release.isEOL) {
-    icon = 'Node.js '+ release.version + ' is in the End of Life (EOL) stage of its lifecycle, meaning it will recieve no further updates, fixes, or patches.'
+    console.log('      - Node.js '+ release.version + ' is in the End of Life (EOL) stage of its lifecycle, meaning it will recieve no further updates, fixes, or patches.')
   }
   console.log('')
   console.log('   📊  Release Line Metadata')
