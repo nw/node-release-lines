@@ -112,10 +112,10 @@ npx node-release-lines <command> [options]
 
 #### `isnodesafe` Options
 
-* -v, --version            output the version number
-* -c, --ci                 Returns a non-zero exit code if the version of Node.js is not safe, and a zero exit code if it is safe.
-* -r, --release [release]  Checks to see if a specific release of Node.js is safe
-* -h, --help               output usage information
+* `-v, --version`: output the version number
+* `-c, --ci`: Returns a non-zero exit code if the version of Node.js is not safe, and a zero exit code if it is safe.
+* `-r, --release [release]`  Checks to see if a specific release of Node.js is safe
+* `-h, --help` output usage information
 
 #### `isnodesafe` Examples
 ```
@@ -127,6 +127,27 @@ $ isnodesafe -rc 6.9.5
 
 ### Command: `amisafe`
 This command is deprecated in favor of [`isnodesafe`](#command-isnodesafe-options). It will work as an alias of `isnodesafe` until `node-release-lines@2.0.0`, at which point it will be removed.
+
+### Command: `nodetimeline [options]`
+
+`nodetimeline` is a CLI tool to understand Node.js release lines lifespans.
+
+#### `nodetimeline` Options
+
+* `-v, --version`: output the version number
+* `-c, --current`: Returns all "Current" versions of Node.js.
+* `-l, --lts`: Returns all presently supported "LTS" versions of Node.js – regardless of whether or not they are presently active "LTS".
+* `-a, --active`: Returns all active "LTS" Node.js release lines.
+* `-m, --maintenance`: Returns all presently supported "Maintenance" versions of Node.js.
+* `-s, --supported`: Returns all presently supported Node.js version
+* `-h, --help`: output usage information
+
+#### `nodetimeline` Examples
+```
+$ nodetimeline
+$ nodetimeline -c
+$ nodetimeline --lts
+```
 
 # API
 
