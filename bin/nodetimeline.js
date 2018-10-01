@@ -19,7 +19,7 @@ let v = process.version.split('.')
 
 var releasesType = [releases.get(v[0])]
 
-if(cli.current) {
+if (cli.current) {
   releasesType = releases.getCurrent()
 } else if (cli.lts) {
   releasesType = releases.getLTS()
@@ -34,7 +34,7 @@ if(cli.current) {
 }
 releasesType.forEach(release => {
   var icon
-  if(release.isCurrent) {
+  if (release.isCurrent) {
     icon = '✅'
   } else if (release.isActive) {
     icon = '🆗'
@@ -51,19 +51,19 @@ releasesType.forEach(release => {
   console.log('      - Node.js ' + release.version + ' is ' + stats.percent.total + '% through its total lifespan.')
   console.log('')
   console.log('   ℹ️  Release Line Information')
-  if(release.isCurrent) {
-    console.log('      - Node.js '+ release.version + ' is under active development!')
+  if (release.isCurrent) {
+    console.log('      - Node.js ' + release.version + ' is under active development!')
   } else if (release.isActive) {
-    console.log('      - Node.js '+ release.version + ' is in the LTS phase of its lifecycle.')
+    console.log('      - Node.js ' + release.version + ' is in the LTS phase of its lifecycle.')
   } else if (release.isMaintenance) {
-    console.log('      - Node.js '+ release.version + ' is currently in Maintenance mode, and will only recieve security patches and bug fixes.')
+    console.log('      - Node.js ' + release.version + ' is currently in Maintenance mode, and will only recieve security patches and bug fixes.')
   } else if (release.isEOL) {
-    console.log('      - Node.js '+ release.version + ' is in the End of Life (EOL) stage of its lifecycle, meaning it will recieve no further updates, fixes, or patches.')
+    console.log('      - Node.js ' + release.version + ' is in the End of Life (EOL) stage of its lifecycle, meaning it will recieve no further updates, fixes, or patches.')
   }
   console.log('')
   console.log('   📊  Release Line Metadata')
   console.log('      - There are a total of ' + release.releases.length + ' releases in the Node.js ' + release.version + ' release line.')
   console.log('      - There are currently ' + release.releases.getSafe().length + ' releases in the Node.js ' + release.version + ' that have zero known vulnerabilities.')
-  console.log('      - The latest release in the '  + release.version +  ' release line is ' + release.releases[0].version)
+  console.log('      - The latest release in the ' + release.version + ' release line is ' + release.releases[0].version)
   console.log('')
 })
