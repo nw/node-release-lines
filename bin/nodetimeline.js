@@ -36,7 +36,7 @@ releasesType.forEach(release => {
   var icon
   if(release.isCurrent) {
     icon = '✅'
-  } else if (release.isActive && !release.isCurrent) {
+  } else if (release.isActive) {
     icon = '🆗'
   } else if (release.isMaintenance) {
     icon = '⚠️'
@@ -53,7 +53,7 @@ releasesType.forEach(release => {
   console.log('   ℹ️  Release Line Information')
   if(release.isCurrent) {
     console.log('      - Node.js '+ release.version + ' is under active development!')
-  } else if (release.isActive && !release.isCurrent) {
+  } else if (release.isActive) {
     console.log('      - Node.js '+ release.version + ' is in the LTS phase of its lifecycle.')
   } else if (release.isMaintenance) {
     console.log('      - Node.js '+ release.version + ' is currently in Maintenance mode, and will only recieve security patches and bug fixes.')
@@ -64,6 +64,6 @@ releasesType.forEach(release => {
   console.log('   📊  Release Line Metadata')
   console.log('      - There are a total of ' + release.releases.length + ' releases in the Node.js ' + release.version + ' release line.')
   console.log('      - There are currently ' + release.releases.getSafe().length + ' releases in the Node.js ' + release.version + ' that have zero known vulnerabilities.')
-  console.log('      - The latest release in the'  + release.version +  ' release line is ' + release.releases[0].version)
+  console.log('      - The latest release in the '  + release.version +  ' release line is ' + release.releases[0].version)
   console.log('')
 })
