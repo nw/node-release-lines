@@ -1,4 +1,2561 @@
 {
+  "v10.12.0": {
+    "version": "v10.12.0",
+    "line": "Current",
+    "date": "2018-10-10",
+    "releasedBy": "@targos",
+    "text": "",
+    "raw": "## 2018-10-10, Version 10.12.0 (Current), @targos\n\n### Notable changes\n\n* **assert**\n  * The diff output is now a tiny bit improved by sorting object properties when\n    inspecting the values that are compared with each other. [#22788](https://github.com/nodejs/node/pull/22788)\n* **cli**\n  * The options parser now normalizes `_` to `-` in all multi-word command-line\n    flags, e.g. `--no_warnings` has the same effect as `--no-warnings`. [#23020](https://github.com/nodejs/node/pull/23020)\n  * Added bash completion for the `node` binary. To generate a bash completion\n    script, run `node --completion-bash`. The output can be saved to a file\n    which can be sourced to enable completion. [#20713](https://github.com/nodejs/node/pull/20713)\n* **crypto**\n  * Added support for PEM-level encryption. [#23151](https://github.com/nodejs/node/pull/23151)\n  * Added an API asymmetric key pair generation. The new methods\n    `crypto.generateKeyPair` and `crypto.generateKeyPairSync` can be used to\n    generate public and private key pairs. The API supports RSA, DSA and EC and\n    a variety of key encodings (both PEM and DER). [#22660](https://github.com/nodejs/node/pull/22660)\n* **fs**\n  * Added a `recursive` option to `fs.mkdir` and `fs.mkdirSync`. If this option\n    is set to true, non-existing parent folders will be automatically created. [#21875](https://github.com/nodejs/node/pull/21875)\n* **http2**\n  * Added a `'ping'` event to `Http2Session` that is emitted whenever a non-ack\n    `PING` is received. [#23009](https://github.com/nodejs/node/pull/23009)\n  * Added support for the `ORIGIN` frame. [#22956](https://github.com/nodejs/node/pull/22956)\n  * Updated nghttp2 to 1.34.0. This adds RFC 8441 extended connect protocol\n    support to allow use of WebSockets over HTTP/2. [#23284](https://github.com/nodejs/node/pull/23284)\n* **module**\n  * Added `module.createRequireFromPath(filename)`. This new method can be used\n    to create a custom require function that will resolve modules relative to\n    the filename path. [#19360](https://github.com/nodejs/node/pull/19360)\n* **process**\n  * Added a `'multipleResolves'` process event that is emitted whenever a\n    `Promise` is attempted to be resolved multiple times, e.g. if the `resolve`\n    and `reject` functions are both called in a `Promise` executor. [#22218](https://github.com/nodejs/node/pull/22218)\n* **url**\n  * Added `url.fileURLToPath(url)` and `url.pathToFileURL(path)`. These methods\n    can be used to correctly convert between file: URLs and absolute paths. [#22506](https://github.com/nodejs/node/pull/22506)\n* **util**\n  * Added the `sorted` option to `util.inspect()`. If set to `true`, all\n    properties of an object and Set and Map entries will be sorted in the\n    returned string. If set to a function, it is used as a compare function. [#22788](https://github.com/nodejs/node/pull/22788)\n  * The `util.instpect.custom` symbol is now defined in the global symbol\n    registry as `Symbol.for('nodejs.util.inspect.custom')`. [#20857](https://github.com/nodejs/node/pull/20857)\n  * Added support for `BigInt` numbers in `util.format()`. [#22097](https://github.com/nodejs/node/pull/22097)\n* **V8 API**\n  * A number of V8 C++ APIs have been marked as deprecated since they have been\n    removed in the upstream repository. Replacement APIs are added where\n    necessary. [#23159](https://github.com/nodejs/node/pull/23159)\n* **Windows**\n  * The Windows msi installer now provides an option to automatically install\n    the tools required to build native modules. [#22645](https://github.com/nodejs/node/pull/22645)\n* **Workers**\n  * Debugging support for Workers using the DevTools protocol has been\n    implemented. [#21364](https://github.com/nodejs/node/pull/21364)\n  * The public `inspector` module is now enabled in Workers. [#22769](https://github.com/nodejs/node/pull/22769)\n* **Added new collaborators**:\n  * [digitalinfinity](https://github.com/digitalinfinity) - Hitesh Kanwathirtha\n\n### Commits\n\n* [[`12ff395e35`](https://github.com/nodejs/node/commit/12ff395e35)] - **assert**: remove internal errorCache property (Rich Trott) [#23304](https://github.com/nodejs/node/pull/23304)\n* [[`efdb32603c`](https://github.com/nodejs/node/commit/efdb32603c)] - **(SEMVER-MINOR)** **assert**: improve diff output (Ruben Bridgewater) [#22788](https://github.com/nodejs/node/pull/22788)\n* [[`9749d48729`](https://github.com/nodejs/node/commit/9749d48729)] - **benchmark**: increase lint compliance (Rich Trott) [#23305](https://github.com/nodejs/node/pull/23305)\n* [[`90bbab6f71`](https://github.com/nodejs/node/commit/90bbab6f71)] - **benchmark**: refactor util benchmarks (Ruben Bridgewater) [#22503](https://github.com/nodejs/node/pull/22503)\n* [[`2d7e4e0116`](https://github.com/nodejs/node/commit/2d7e4e0116)] - **benchmark,doc,lib,src,test,tools**: fix typos (Brandon Smith) [#23302](https://github.com/nodejs/node/pull/23302)\n* [[`e6484c2c11`](https://github.com/nodejs/node/commit/e6484c2c11)] - **build**: restore js2c direct dependency on config.gypi (Refael Ackermann) [#23355](https://github.com/nodejs/node/pull/23355)\n* [[`c4aa0331c1`](https://github.com/nodejs/node/commit/c4aa0331c1)] - **build**: make configure script verbose by default (Michaël Zasso) [#23408](https://github.com/nodejs/node/pull/23408)\n* [[`cf17759113`](https://github.com/nodejs/node/commit/cf17759113)] - **build**: toggle lint-cpp using verbose (V) variable (Daniel Bevenius) [#23217](https://github.com/nodejs/node/pull/23217)\n* [[`b0dc0ca9a9`](https://github.com/nodejs/node/commit/b0dc0ca9a9)] - **build**: make lint-addon-docs quiet (Daniel Bevenius) [#23217](https://github.com/nodejs/node/pull/23217)\n* [[`0f236c8d42`](https://github.com/nodejs/node/commit/0f236c8d42)] - **build**: add pgo specific variables to common.gypi (Denys Otrishko) [#23102](https://github.com/nodejs/node/pull/23102)\n* [[`de4d688d1f`](https://github.com/nodejs/node/commit/de4d688d1f)] - **build**: cleanup in .gitignore (Refael Ackermann) [#23180](https://github.com/nodejs/node/pull/23180)\n* [[`49b0ec4fe7`](https://github.com/nodejs/node/commit/49b0ec4fe7)] - **build**: add loader path to rpath for cctest (Sam Ruby) [#23168](https://github.com/nodejs/node/pull/23168)\n* [[`7d21cc2177`](https://github.com/nodejs/node/commit/7d21cc2177)] - **build**: reduce chance of unneeded rebuild (Refael Ackermann) [#23156](https://github.com/nodejs/node/pull/23156)\n* [[`aae0eceea0`](https://github.com/nodejs/node/commit/aae0eceea0)] - **build**: encapsulate node/inspector gyp scafolding (Refael Ackermann) [#23156](https://github.com/nodejs/node/pull/23156)\n* [[`180099a5ac`](https://github.com/nodejs/node/commit/180099a5ac)] - **build**: enabling pgo at configure (Octavian Soldea) [#21596](https://github.com/nodejs/node/pull/21596)\n* [[`f4cffffc96`](https://github.com/nodejs/node/commit/f4cffffc96)] - **build**: add --quiet to lint-cpp (Daniel Bevenius) [#23075](https://github.com/nodejs/node/pull/23075)\n* [[`d572f6001a`](https://github.com/nodejs/node/commit/d572f6001a)] - **build**: remove unnecessary Makefile output (Rich Trott) [#23129](https://github.com/nodejs/node/pull/23129)\n* [[`fb03faa835`](https://github.com/nodejs/node/commit/fb03faa835)] - **build**: move addons message in Makefile (Rich Trott) [#23114](https://github.com/nodejs/node/pull/23114)\n* [[`948dc71664`](https://github.com/nodejs/node/commit/948dc71664)] - **build**: make config verbose on CI (Refael Ackermann) [#22935](https://github.com/nodejs/node/pull/22935)\n* [[`b69ed9c80c`](https://github.com/nodejs/node/commit/b69ed9c80c)] - **build**: stop printing execution of lint-md command (Ruben Bridgewater) [#22904](https://github.com/nodejs/node/pull/22904)\n* [[`2b8f569388`](https://github.com/nodejs/node/commit/2b8f569388)] - **build,deps**: refactor and fix v8.gyp (Refael Ackermann) [#23182](https://github.com/nodejs/node/pull/23182)\n* [[`4db9e36b57`](https://github.com/nodejs/node/commit/4db9e36b57)] - **build,doc**: remove outdated `lint-md-build` (Michaël Zasso) [#22991](https://github.com/nodejs/node/pull/22991)\n* [[`c29e5ac5be`](https://github.com/nodejs/node/commit/c29e5ac5be)] - **(SEMVER-MINOR)** **cli**: normalize `\\_` → `-` when parsing options (Anna Henningsen) [#23020](https://github.com/nodejs/node/pull/23020)\n* [[`54ca0e159f`](https://github.com/nodejs/node/commit/54ca0e159f)] - **cluster**: move handle tracking out of utils (cjihrig) [#23131](https://github.com/nodejs/node/pull/23131)\n* [[`cb0d8239b7`](https://github.com/nodejs/node/commit/cb0d8239b7)] - **cluster**: use Map to track handles in master (cjihrig) [#23125](https://github.com/nodejs/node/pull/23125)\n* [[`0f133eb5a3`](https://github.com/nodejs/node/commit/0f133eb5a3)] - **cluster**: use Map to track handles in cluster child (cjihrig) [#23125](https://github.com/nodejs/node/pull/23125)\n* [[`2dd157fbf3`](https://github.com/nodejs/node/commit/2dd157fbf3)] - **cluster**: use Map to track indexes (cjihrig) [#23125](https://github.com/nodejs/node/pull/23125)\n* [[`64f840a767`](https://github.com/nodejs/node/commit/64f840a767)] - **cluster**: use Map to track round robin workers (cjihrig) [#23125](https://github.com/nodejs/node/pull/23125)\n* [[`22f51a6a83`](https://github.com/nodejs/node/commit/22f51a6a83)] - **cluster**: use Map to track callbacks (cjihrig) [#23125](https://github.com/nodejs/node/pull/23125)\n* [[`26c36efa2f`](https://github.com/nodejs/node/commit/26c36efa2f)] - **crypto**: remove node::crypto::CheckResult (Tobias Nießen) [#23225](https://github.com/nodejs/node/pull/23225)\n* [[`5f450f3f92`](https://github.com/nodejs/node/commit/5f450f3f92)] - **crypto**: replace goto SSL\\_CTX\\_use\\_certificate\\_chain (Daniel Bevenius) [#23113](https://github.com/nodejs/node/pull/23113)\n* [[`db8d99dbc2`](https://github.com/nodejs/node/commit/db8d99dbc2)] - **crypto**: add virtual dtor to KeyPairGenerationConfig (Daniel Bevenius) [#23215](https://github.com/nodejs/node/pull/23215)\n* [[`f98d441461`](https://github.com/nodejs/node/commit/f98d441461)] - **crypto**: extract throwInvalidArgType function (Daniel Bevenius) [#22947](https://github.com/nodejs/node/pull/22947)\n* [[`1a21cf13cb`](https://github.com/nodejs/node/commit/1a21cf13cb)] - **crypto**: make PEM parsing RFC7468-compliant (Tobias Nießen) [#23164](https://github.com/nodejs/node/pull/23164)\n* [[`9c96573124`](https://github.com/nodejs/node/commit/9c96573124)] - **(SEMVER-MINOR)** **crypto**: add support for PEM-level encryption (Tobias Nießen) [#23151](https://github.com/nodejs/node/pull/23151)\n* [[`398c0e03e4`](https://github.com/nodejs/node/commit/398c0e03e4)] - **crypto**: replace gotos (Tobias Nießen) [#23132](https://github.com/nodejs/node/pull/23132)\n* [[`a51d839a31`](https://github.com/nodejs/node/commit/a51d839a31)] - **crypto**: remove unnecessary calls to TLS\\_method() (Daniel Bevenius) [#23077](https://github.com/nodejs/node/pull/23077)\n* [[`074b7af7ef`](https://github.com/nodejs/node/commit/074b7af7ef)] - **crypto**: enable auto cert chaining for BoringSSL (Jeremy Apthorp) [#22110](https://github.com/nodejs/node/pull/22110)\n* [[`2888f809e3`](https://github.com/nodejs/node/commit/2888f809e3)] - **crypto**: deduplicate cipher initialization code (Tobias Nießen) [#23011](https://github.com/nodejs/node/pull/23011)\n* [[`0bc4529a07`](https://github.com/nodejs/node/commit/0bc4529a07)] - **crypto**: remove unnecessary usage of goto (Tobias Nießen) [#23018](https://github.com/nodejs/node/pull/23018)\n* [[`cc8219433c`](https://github.com/nodejs/node/commit/cc8219433c)] - **(SEMVER-MINOR)** **crypto**: allow promisifying generateKeyPair (Tobias Nießen) [#22660](https://github.com/nodejs/node/pull/22660)\n* [[`421909394c`](https://github.com/nodejs/node/commit/421909394c)] - **(SEMVER-MINOR)** **crypto**: add API for key pair generation (Tobias Nießen) [#22660](https://github.com/nodejs/node/pull/22660)\n* [[`76cb52ca11`](https://github.com/nodejs/node/commit/76cb52ca11)] - **deps**: upgrade to libuv 1.23.2 (cjihrig) [#23336](https://github.com/nodejs/node/pull/23336)\n* [[`95bdf37265`](https://github.com/nodejs/node/commit/95bdf37265)] - **(SEMVER-MINOR)** **deps**: update nghttp2 to 1.34.0 (James M Snell) [#23284](https://github.com/nodejs/node/pull/23284)\n* [[`46c7d0d21f`](https://github.com/nodejs/node/commit/46c7d0d21f)] - **(SEMVER-MINOR)** **deps**: increase V8 deprecation levels (Anna Henningsen) [#23159](https://github.com/nodejs/node/pull/23159)\n* [[`e3550f2366`](https://github.com/nodejs/node/commit/e3550f2366)] - **deps**: backport 958b761 from upstream V8 (Matheus Marchini) [#22914](https://github.com/nodejs/node/pull/22914)\n* [[`f08373f18d`](https://github.com/nodejs/node/commit/f08373f18d)] - **deps**: cherry-pick 64-bit hash seed commits from V8 (Yang Guo) [#23260](https://github.com/nodejs/node/pull/23260)\n* [[`e93c94c327`](https://github.com/nodejs/node/commit/e93c94c327)] - **deps**: add no-strict-aliasing to ICU cflags (Daniel Bevenius) [#23112](https://github.com/nodejs/node/pull/23112)\n* [[`5d70652d86`](https://github.com/nodejs/node/commit/5d70652d86)] - **deps**: fix Array.prototype.forEach on v8 6.8 (Mike Stanton) [#22899](https://github.com/nodejs/node/pull/22899)\n* [[`e668815a24`](https://github.com/nodejs/node/commit/e668815a24)] - **deps**: cherry-pick dbfcc48 from upstream V8 (Alexey Kozyatinskiy) [#22251](https://github.com/nodejs/node/pull/22251)\n* [[`e5efdba75c`](https://github.com/nodejs/node/commit/e5efdba75c)] - **deps**: upgrade to libuv 1.23.1 (cjihrig) [#22997](https://github.com/nodejs/node/pull/22997)\n* [[`39d7699a87`](https://github.com/nodejs/node/commit/39d7699a87)] - **deps**: cherry-pick d48bd16 from upstream V8 (Junliang Yan) [#22909](https://github.com/nodejs/node/pull/22909)\n* [[`62a2c81214`](https://github.com/nodejs/node/commit/62a2c81214)] - **doc**: simplify and clarify README language (Rich Trott) [#23322](https://github.com/nodejs/node/pull/23322)\n* [[`7c0d6ac0bd`](https://github.com/nodejs/node/commit/7c0d6ac0bd)] - **doc**: simplify governance info in README intro (Rich Trott) [#23320](https://github.com/nodejs/node/pull/23320)\n* [[`5ff43006d1`](https://github.com/nodejs/node/commit/5ff43006d1)] - **doc**: add link to ABI guide (Gabriel Schulhof)\n* [[`9dd47bcf99`](https://github.com/nodejs/node/commit/9dd47bcf99)] - **doc**: fix minor typo in streams.md (Rich Trott) [#23306](https://github.com/nodejs/node/pull/23306)\n* [[`a0e8e7fea6`](https://github.com/nodejs/node/commit/a0e8e7fea6)] - **doc**: standardize versions in stream module doc (Rich Trott) [#23306](https://github.com/nodejs/node/pull/23306)\n* [[`eee71d6d16`](https://github.com/nodejs/node/commit/eee71d6d16)] - **doc**: add util.inspect() legacy signature (siddhant) [#23216](https://github.com/nodejs/node/pull/23216)\n* [[`fbbb25b901`](https://github.com/nodejs/node/commit/fbbb25b901)] - **doc**: edit building-node text (Rich Trott) [#23335](https://github.com/nodejs/node/pull/23335)\n* [[`037063c6ee`](https://github.com/nodejs/node/commit/037063c6ee)] - **doc**: remove 72-hour mentions in pull-requests.md (Rich Trott) [#23309](https://github.com/nodejs/node/pull/23309)\n* [[`4c54f897f8`](https://github.com/nodejs/node/commit/4c54f897f8)] - **doc**: fix minor typo in n-api.md (Aleksey Chemakin) [#23310](https://github.com/nodejs/node/pull/23310)\n* [[`f1cb8ab4bf`](https://github.com/nodejs/node/commit/f1cb8ab4bf)] - **doc**: remove ABI guide (Gabriel Schulhof) [#23303](https://github.com/nodejs/node/pull/23303)\n* [[`39e3ef7739`](https://github.com/nodejs/node/commit/39e3ef7739)] - **doc**: Replace vague 'may not' with definitive 'will not' (Mike MacCana) [#23143](https://github.com/nodejs/node/pull/23143)\n* [[`11c674549b`](https://github.com/nodejs/node/commit/11c674549b)] - **doc**: update author-ready label terms (Vse Mozhet Byt) [#23249](https://github.com/nodejs/node/pull/23249)\n* [[`33e3eb44f7`](https://github.com/nodejs/node/commit/33e3eb44f7)] - **doc**: update onboarding task (Rich Trott) [#23300](https://github.com/nodejs/node/pull/23300)\n* [[`df4ade7dc7`](https://github.com/nodejs/node/commit/df4ade7dc7)] - **doc**: use backticks around file names in README.md (Rich Trott) [#23299](https://github.com/nodejs/node/pull/23299)\n* [[`80964d36b7`](https://github.com/nodejs/node/commit/80964d36b7)] - **doc**: improve API Documentation text in README (Rich Trott) [#23268](https://github.com/nodejs/node/pull/23268)\n* [[`ef0f7e613a`](https://github.com/nodejs/node/commit/ef0f7e613a)] - **doc**: shorten pull request wait time to 48 hours (Rich Trott) [#23082](https://github.com/nodejs/node/pull/23082)\n* [[`5b76313059`](https://github.com/nodejs/node/commit/5b76313059)] - **doc**: improve instructions for verifying binaries (Rich Trott) [#23248](https://github.com/nodejs/node/pull/23248)\n* [[`6943fa9fc7`](https://github.com/nodejs/node/commit/6943fa9fc7)] - **doc**: shorten intro of README.md (Rich Trott) [#23073](https://github.com/nodejs/node/pull/23073)\n* [[`e5bfab0fb6`](https://github.com/nodejs/node/commit/e5bfab0fb6)] - **doc**: add guide about abi stability (Gabriel Schulhof) [#23229](https://github.com/nodejs/node/pull/23229)\n* [[`e283206047`](https://github.com/nodejs/node/commit/e283206047)] - **doc**: improve `stream.Writable` ctor encoding option docs (Anna Henningsen) [#23246](https://github.com/nodejs/node/pull/23246)\n* [[`bd59d4efbf`](https://github.com/nodejs/node/commit/bd59d4efbf)] - **doc**: fix code snippets in tls.md (Ouyang Yadong) [#23239](https://github.com/nodejs/node/pull/23239)\n* [[`27c5e96ffe`](https://github.com/nodejs/node/commit/27c5e96ffe)] - **doc**: leave pull requests open for 72 hours (Rich Trott) [#22275](https://github.com/nodejs/node/pull/22275)\n* [[`5836b9fcc8`](https://github.com/nodejs/node/commit/5836b9fcc8)] - **doc**: specify cluster worker.kill() caveat (cjihrig) [#23165](https://github.com/nodejs/node/pull/23165)\n* [[`ed01b38295`](https://github.com/nodejs/node/commit/ed01b38295)] - **doc**: use stronger language about security of vm (Gus Caplan) [#23198](https://github.com/nodejs/node/pull/23198)\n* [[`eb8721977f`](https://github.com/nodejs/node/commit/eb8721977f)] - **doc**: improve Download section of README (Rich Trott) [#23212](https://github.com/nodejs/node/pull/23212)\n* [[`003d85d2d9`](https://github.com/nodejs/node/commit/003d85d2d9)] - **doc**: remove GA tracking (Ben Noordhuis) [#23083](https://github.com/nodejs/node/pull/23083)\n* [[`6912376562`](https://github.com/nodejs/node/commit/6912376562)] - **doc**: move gibfahn to TSC Emeritus (Gibson Fahnestock) [#23238](https://github.com/nodejs/node/pull/23238)\n* [[`1553e21007`](https://github.com/nodejs/node/commit/1553e21007)] - **doc**: clarify assigning issues to the TSC (Franziska Hinkelmann) [#22759](https://github.com/nodejs/node/pull/22759)\n* [[`71901d6b30`](https://github.com/nodejs/node/commit/71901d6b30)] - **doc**: improve Release Types text in README (Rich Trott) [#23190](https://github.com/nodejs/node/pull/23190)\n* [[`8191bee313`](https://github.com/nodejs/node/commit/8191bee313)] - **doc**: simplify support section of README (Rich Trott) [#23170](https://github.com/nodejs/node/pull/23170)\n* [[`548934d412`](https://github.com/nodejs/node/commit/548934d412)] - **doc**: fix incorrect anchoring (#vcbuild.bat -\\> #vcbuildbat) (Justin Lee) [#23211](https://github.com/nodejs/node/pull/23211)\n* [[`ce006eb68d`](https://github.com/nodejs/node/commit/ce006eb68d)] - **doc**: fix minor typo (to early -\\> too early) (Justin Lee) [#23211](https://github.com/nodejs/node/pull/23211)\n* [[`21490c2a87`](https://github.com/nodejs/node/commit/21490c2a87)] - **doc**: remove recommendation to use node-eps (Richard Lau) [#23148](https://github.com/nodejs/node/pull/23148)\n* [[`e71a72fbf2`](https://github.com/nodejs/node/commit/e71a72fbf2)] - **doc**: add contents table to CONTRIBUTING.md (ZYSzys) [#23140](https://github.com/nodejs/node/pull/23140)\n* [[`818db4036b`](https://github.com/nodejs/node/commit/818db4036b)] - **doc**: move perf tools and APIs to Tier 3 (Matheus Marchini) [#22915](https://github.com/nodejs/node/pull/22915)\n* [[`e791abe5ef`](https://github.com/nodejs/node/commit/e791abe5ef)] - **doc**: formalize `auto` usage in C++ style guide (Anna Henningsen) [#23028](https://github.com/nodejs/node/pull/23028)\n* [[`310109691b`](https://github.com/nodejs/node/commit/310109691b)] - **doc**: fix casing in stream.md (Sintendo) [#23166](https://github.com/nodejs/node/pull/23166)\n* [[`bb5c6892ee`](https://github.com/nodejs/node/commit/bb5c6892ee)] - **doc**: add table of contents in BUILDING.md (ZYSzys) [#23147](https://github.com/nodejs/node/pull/23147)\n* [[`cbcf5f88cd`](https://github.com/nodejs/node/commit/cbcf5f88cd)] - **doc**: deeper link to downloads site (Refael Ackermann) [#23084](https://github.com/nodejs/node/pull/23084)\n* [[`9109187948`](https://github.com/nodejs/node/commit/9109187948)] - **doc**: update guide for assert team (Rich Trott) [#23085](https://github.com/nodejs/node/pull/23085)\n* [[`2731d08c33`](https://github.com/nodejs/node/commit/2731d08c33)] - **doc**: add links for fs.createWriteStream() (Rich Trott) [#23104](https://github.com/nodejs/node/pull/23104)\n* [[`9fa3813845`](https://github.com/nodejs/node/commit/9fa3813845)] - **doc**: edit fast-tracking section (cjihrig) [#23059](https://github.com/nodejs/node/pull/23059)\n* [[`14327aea7b`](https://github.com/nodejs/node/commit/14327aea7b)] - **doc**: improve instruction to purple merge (Refael Ackermann) [#23007](https://github.com/nodejs/node/pull/23007)\n* [[`87565c763a`](https://github.com/nodejs/node/commit/87565c763a)] - **doc**: require two approvals to land changes (Rich Trott) [#22255](https://github.com/nodejs/node/pull/22255)\n* [[`e7be1edc49`](https://github.com/nodejs/node/commit/e7be1edc49)] - **doc**: fix optional parameters in n-api.md (Lars-Magnus Skog) [#22998](https://github.com/nodejs/node/pull/22998)\n* [[`24073cef6b`](https://github.com/nodejs/node/commit/24073cef6b)] - **doc**: add callback parameters of worker.terminate() (Denis Fäcke) [#23002](https://github.com/nodejs/node/pull/23002)\n* [[`6b2e2ff036`](https://github.com/nodejs/node/commit/6b2e2ff036)] - **doc**: improve metadata for http.request (Tobias Nießen) [#22949](https://github.com/nodejs/node/pull/22949)\n* [[`91b410259e`](https://github.com/nodejs/node/commit/91b410259e)] - **doc**: add missing metadata for recursive mkdir (Tobias Nießen) [#22949](https://github.com/nodejs/node/pull/22949)\n* [[`15c7c57a78`](https://github.com/nodejs/node/commit/15c7c57a78)] - **doc**: add missing metadata for dns.lookup (Tobias Nießen) [#22949](https://github.com/nodejs/node/pull/22949)\n* [[`05196893b9`](https://github.com/nodejs/node/commit/05196893b9)] - **doc**: fix heading levels in C++ style guide (Anna Henningsen) [#23061](https://github.com/nodejs/node/pull/23061)\n* [[`29a9e8498a`](https://github.com/nodejs/node/commit/29a9e8498a)] - **doc**: remove outdated notes on stdio in workers (Anna Henningsen) [#23054](https://github.com/nodejs/node/pull/23054)\n* [[`d3bc862d88`](https://github.com/nodejs/node/commit/d3bc862d88)] - **doc**: match program and console output in synopsis.md (Mohammed Essehemy) [#23006](https://github.com/nodejs/node/pull/23006)\n* [[`15b91b9eb8`](https://github.com/nodejs/node/commit/15b91b9eb8)] - **doc**: add links for repl.ReplServer (Rich Trott) [#23005](https://github.com/nodejs/node/pull/23005)\n* [[`b0e86ea8d0`](https://github.com/nodejs/node/commit/b0e86ea8d0)] - **doc**: update maintaining V8 guide (Michaël Zasso) [#22913](https://github.com/nodejs/node/pull/22913)\n* [[`00dd9738ee`](https://github.com/nodejs/node/commit/00dd9738ee)] - **doc**: specify fast-tracking (Ruben Bridgewater) [#22929](https://github.com/nodejs/node/pull/22929)\n* [[`ef5d90dfdc`](https://github.com/nodejs/node/commit/ef5d90dfdc)] - **doc**: add digitalinfinity to collaborators (Hitesh Kanwathirtha) [#22984](https://github.com/nodejs/node/pull/22984)\n* [[`b48dc0b667`](https://github.com/nodejs/node/commit/b48dc0b667)] - **doc,test**: fix inspect's sorted compare function (Michaël Zasso) [#22992](https://github.com/nodejs/node/pull/22992)\n* [[`d9d9d23191`](https://github.com/nodejs/node/commit/d9d9d23191)] - **errors**: fix ERR\\_SOCKET\\_BAD\\_PORT message (Giovanny Andres Gongora Granada (Gioyik)) [#23015](https://github.com/nodejs/node/pull/23015)\n* [[`bb6530b31b`](https://github.com/nodejs/node/commit/bb6530b31b)] - **fs**: consistently return symlink type from readdir (Klaus Meinhardt) [#22808](https://github.com/nodejs/node/pull/22808)\n* [[`7e45daf494`](https://github.com/nodejs/node/commit/7e45daf494)] - **(SEMVER-MINOR)** **fs**: implement mkdir recursive (mkdirp) (Benjamin Coe) [#21875](https://github.com/nodejs/node/pull/21875)\n* [[`c29734c9d6`](https://github.com/nodejs/node/commit/c29734c9d6)] - **fs**: improve fs.watch ENOSPC error message (Anna Henningsen) [#21846](https://github.com/nodejs/node/pull/21846)\n* [[`7b327ea909`](https://github.com/nodejs/node/commit/7b327ea909)] - **(SEMVER-MINOR)** **http2**: add RFC 8441 extended connect protocol support (James M Snell) [#23284](https://github.com/nodejs/node/pull/23284)\n* [[`001881f33e`](https://github.com/nodejs/node/commit/001881f33e)] - **http2**: set nghttp2\\_option\\_set\\_no\\_closed\\_streams (David Halls) [#23134](https://github.com/nodejs/node/pull/23134)\n* [[`8fe62f8d38`](https://github.com/nodejs/node/commit/8fe62f8d38)] - **http2**: don't send trailers on a closed connection (André Cruz) [#23146](https://github.com/nodejs/node/pull/23146)\n* [[`d1826fed41`](https://github.com/nodejs/node/commit/d1826fed41)] - **http2**: close fd in doSendFileFD() (cjihrig) [#23047](https://github.com/nodejs/node/pull/23047)\n* [[`8bf004b96d`](https://github.com/nodejs/node/commit/8bf004b96d)] - **(SEMVER-MINOR)** **http2**: add ping event (James M Snell) [#23009](https://github.com/nodejs/node/pull/23009)\n* [[`badc38f305`](https://github.com/nodejs/node/commit/badc38f305)] - **http2**: do not falsely emit 'aborted' on push (Anatoli Papirovski) [#22878](https://github.com/nodejs/node/pull/22878)\n* [[`24675a4306`](https://github.com/nodejs/node/commit/24675a4306)] - **(SEMVER-MINOR)** **http2**: add origin frame support (James M Snell) [#22956](https://github.com/nodejs/node/pull/22956)\n* [[`89fe9edd08`](https://github.com/nodejs/node/commit/89fe9edd08)] - **http2**: check if stream is not destroyed before sending trailers (Matteo Collina) [#22896](https://github.com/nodejs/node/pull/22896)\n* [[`aa48192f9d`](https://github.com/nodejs/node/commit/aa48192f9d)] - **inspector**: add virtual destructor to WorkerDelegate (Daniel Bevenius) [#23215](https://github.com/nodejs/node/pull/23215)\n* [[`16f7f52b24`](https://github.com/nodejs/node/commit/16f7f52b24)] - **inspector**: workers debugging (Eugene Ostroukhov) [#21364](https://github.com/nodejs/node/pull/21364)\n* [[`f66e9abcb3`](https://github.com/nodejs/node/commit/f66e9abcb3)] - **inspector**: implemented V8InspectorClient::resourceNameToUrl (Alexey Kozyatinskiy) [#22251](https://github.com/nodejs/node/pull/22251)\n* [[`1c3a2ebfcf`](https://github.com/nodejs/node/commit/1c3a2ebfcf)] - **inspector**: enable Inspector JS API in workers (Eugene Ostroukhov) [#22769](https://github.com/nodejs/node/pull/22769)\n* [[`c40e2dd6c9`](https://github.com/nodejs/node/commit/c40e2dd6c9)] - **lib**: reword help text for clarity (Gireesh Punathil) [#23016](https://github.com/nodejs/node/pull/23016)\n* [[`f38eff29e7`](https://github.com/nodejs/node/commit/f38eff29e7)] - **lib**: change abstract equal to strict equal (ZYSzys) [#22974](https://github.com/nodejs/node/pull/22974)\n* [[`0140a98e05`](https://github.com/nodejs/node/commit/0140a98e05)] - **lib**: make DOMException attributes configurable and enumerable (Joyee Cheung) [#22550](https://github.com/nodejs/node/pull/22550)\n* [[`5e7b1082d9`](https://github.com/nodejs/node/commit/5e7b1082d9)] - **lib**: set Symbol.toStringTag of DOMException (Joyee Cheung) [#22933](https://github.com/nodejs/node/pull/22933)\n* [[`a7f4d5e134`](https://github.com/nodejs/node/commit/a7f4d5e134)] - **lib**: refactor variable declarations (ZYSzys) [#22643](https://github.com/nodejs/node/pull/22643)\n* [[`fb68ef2e74`](https://github.com/nodejs/node/commit/fb68ef2e74)] - **lib**: added common.restoreStderr(); to end of file (Mark Abel) [#22487](https://github.com/nodejs/node/pull/22487)\n* [[`600c225439`](https://github.com/nodejs/node/commit/600c225439)] - **(SEMVER-MINOR)** **module**: add createRequireFunction method (Gus Caplan) [#19360](https://github.com/nodejs/node/pull/19360)\n* [[`a65bb42551`](https://github.com/nodejs/node/commit/a65bb42551)] - **net**: use connect() instead of connect.call() (Jackson Tian) [#23289](https://github.com/nodejs/node/pull/23289)\n* [[`5a306748e9`](https://github.com/nodejs/node/commit/5a306748e9)] - **process**: allow reading from stdout/stderr sockets (Anna Henningsen) [#23053](https://github.com/nodejs/node/pull/23053)\n* [[`66484b82c4`](https://github.com/nodejs/node/commit/66484b82c4)] - **(SEMVER-MINOR)** **process**: add `multipleResolves` event (Ruben Bridgewater) [#22218](https://github.com/nodejs/node/pull/22218)\n* [[`e16dd6d165`](https://github.com/nodejs/node/commit/e16dd6d165)] - **repl**: refactor ERR\\_SCRIPT\\_EXECUTION\\_INTERRUPTED stack handling (Ruben Bridgewater) [#22436](https://github.com/nodejs/node/pull/22436)\n* [[`b1ffda6c17`](https://github.com/nodejs/node/commit/b1ffda6c17)] - **repl**: improve error output (Ruben Bridgewater) [#22436](https://github.com/nodejs/node/pull/22436)\n* [[`cd69e1b6c3`](https://github.com/nodejs/node/commit/cd69e1b6c3)] - **src**: fix ToObject() usage in node\\_http\\_parser.cc (cjihrig) [#23314](https://github.com/nodejs/node/pull/23314)\n* [[`5228ec4410`](https://github.com/nodejs/node/commit/5228ec4410)] - **src**: fix ToObject() usage in exceptions.cc (cjihrig) [#23314](https://github.com/nodejs/node/pull/23314)\n* [[`4d761d4224`](https://github.com/nodejs/node/commit/4d761d4224)] - **src**: reduce variable scope in stream\\_base.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`740741b279`](https://github.com/nodejs/node/commit/740741b279)] - **src**: reduce variable scope in node\\_worker.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`56c2f5702f`](https://github.com/nodejs/node/commit/56c2f5702f)] - **src**: reduce variable scope in node\\_trace\\_writer.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`046fd987e4`](https://github.com/nodejs/node/commit/046fd987e4)] - **src**: reduce variable scope in node\\_url.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`36c430796b`](https://github.com/nodejs/node/commit/36c430796b)] - **src**: remove unneeded variables in node\\_crypto.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`902ba0ecb4`](https://github.com/nodejs/node/commit/902ba0ecb4)] - **src**: reduce variable scope in module\\_wrap.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`402867c0a9`](https://github.com/nodejs/node/commit/402867c0a9)] - **src**: reduce variable scope in cares\\_wrap.cc (cjihrig) [#23297](https://github.com/nodejs/node/pull/23297)\n* [[`315bf257e5`](https://github.com/nodejs/node/commit/315bf257e5)] - **src**: fix ToObject() usage in node\\_crypto.cc (cjihrig) [#23298](https://github.com/nodejs/node/pull/23298)\n* [[`950ccee386`](https://github.com/nodejs/node/commit/950ccee386)] - **src**: name EmbededderGraph edges and use class names for nodes (Joyee Cheung) [#23072](https://github.com/nodejs/node/pull/23072)\n* [[`390fc85ff0`](https://github.com/nodejs/node/commit/390fc85ff0)] - **src**: implement the new EmbedderGraph::AddEdge() (Joyee Cheung) [#22106](https://github.com/nodejs/node/pull/22106)\n* [[`5a8396796d`](https://github.com/nodejs/node/commit/5a8396796d)] - **src**: use JS inheritance for `AsyncWrap` (Anna Henningsen) [#23094](https://github.com/nodejs/node/pull/23094)\n* [[`894210ec12`](https://github.com/nodejs/node/commit/894210ec12)] - **src**: add virtual desctructor to Options class (Daniel Bevenius) [#23215](https://github.com/nodejs/node/pull/23215)\n* [[`8f5fb6f90c`](https://github.com/nodejs/node/commit/8f5fb6f90c)] - **src**: clean up zlib write code (Anna Henningsen) [#23183](https://github.com/nodejs/node/pull/23183)\n* [[`2da6f622dc`](https://github.com/nodejs/node/commit/2da6f622dc)] - **(SEMVER-MINOR)** **src**: deprecate `UVException()` without `Isolate\\*` (Anna Henningsen) [#23175](https://github.com/nodejs/node/pull/23175)\n* [[`e9a0cffbd6`](https://github.com/nodejs/node/commit/e9a0cffbd6)] - **(SEMVER-MINOR)** **src**: deprecate V8 date conversion helpers (Anna Henningsen) [#23179](https://github.com/nodejs/node/pull/23179)\n* [[`a2c1ce24b5`](https://github.com/nodejs/node/commit/a2c1ce24b5)] - **src**: fix indentation for `AsyncResource` (Anna Henningsen) [#23177](https://github.com/nodejs/node/pull/23177)\n* [[`64689edf76`](https://github.com/nodejs/node/commit/64689edf76)] - **src**: remove unused using declarations (Daniel Bevenius) [#23120](https://github.com/nodejs/node/pull/23120)\n* [[`0202c6c808`](https://github.com/nodejs/node/commit/0202c6c808)] - **src**: remove unused locale.h (Daniel Bevenius) [#23120](https://github.com/nodejs/node/pull/23120)\n* [[`20a4f14c57`](https://github.com/nodejs/node/commit/20a4f14c57)] - **src**: make req\\_wrap a unique\\_ptr in AfterConnect (Daniel Bevenius) [#23115](https://github.com/nodejs/node/pull/23115)\n* [[`ce7fad5b79`](https://github.com/nodejs/node/commit/ce7fad5b79)] - **src**: use unique\\_ptr for obj in SetWeak lambda (Daniel Bevenius) [#23117](https://github.com/nodejs/node/pull/23117)\n* [[`7d7dc16240`](https://github.com/nodejs/node/commit/7d7dc16240)] - **src**: unique\\_ptrs in few lambdas (Gireesh Punathil) [#23124](https://github.com/nodejs/node/pull/23124)\n* [[`4bd3b6e332`](https://github.com/nodejs/node/commit/4bd3b6e332)] - **src**: refactor crypto code with RAII cleanup (Gireesh Punathil) [#23014](https://github.com/nodejs/node/pull/23014)\n* [[`f3d09b6e4f`](https://github.com/nodejs/node/commit/f3d09b6e4f)] - **src**: simplify `MessagePort` construction code a bit (Anna Henningsen) [#23036](https://github.com/nodejs/node/pull/23036)\n* [[`4d61c34b9e`](https://github.com/nodejs/node/commit/4d61c34b9e)] - **src**: fix a typo in the comment (Gireesh Punathil) [#23078](https://github.com/nodejs/node/pull/23078)\n* [[`fa833828b2`](https://github.com/nodejs/node/commit/fa833828b2)] - **src**: added URL::FromFilePath method (Alexey Kozyatinskiy) [#22251](https://github.com/nodejs/node/pull/22251)\n* [[`109aa63910`](https://github.com/nodejs/node/commit/109aa63910)] - **src**: cache and resue isolate and contex pointers (Gireesh Punathil) [#23024](https://github.com/nodejs/node/pull/23024)\n* [[`2f659a3d74`](https://github.com/nodejs/node/commit/2f659a3d74)] - **src**: use RAII cleanup in node\\_i18n.cc (Anna Henningsen) [#23021](https://github.com/nodejs/node/pull/23021)\n* [[`90f1200be9`](https://github.com/nodejs/node/commit/90f1200be9)] - **src**: define zlib constants in node\\_zlib.cc (Anna Henningsen) [#23019](https://github.com/nodejs/node/pull/23019)\n* [[`d72867ec0c`](https://github.com/nodejs/node/commit/d72867ec0c)] - **src**: make `ZCtx::Init()` non-static (Anna Henningsen) [#23019](https://github.com/nodejs/node/pull/23019)\n* [[`56b1a3cf6e`](https://github.com/nodejs/node/commit/56b1a3cf6e)] - **src**: refactor zlib dictionary to STL vector (Anna Henningsen) [#23019](https://github.com/nodejs/node/pull/23019)\n* [[`76453f1878`](https://github.com/nodejs/node/commit/76453f1878)] - **src**: replace deprecated uses of FunctionTemplate::GetFunction (Andreas Haas) [#22993](https://github.com/nodejs/node/pull/22993)\n* [[`cb3062aa42`](https://github.com/nodejs/node/commit/cb3062aa42)] - **src**: remove calls to SetWrapperClassId() (Joyee Cheung) [#22975](https://github.com/nodejs/node/pull/22975)\n* [[`ab032e4ff4`](https://github.com/nodejs/node/commit/ab032e4ff4)] - **src**: refactor win32 `DebugProcess()` to use RAII cleanup (Anna Henningsen) [#22981](https://github.com/nodejs/node/pull/22981)\n* [[`b6cd18517c`](https://github.com/nodejs/node/commit/b6cd18517c)] - **src**: add CheckOptions to Options classes (Daniel Bevenius) [#22943](https://github.com/nodejs/node/pull/22943)\n* [[`ace6e07f0e`](https://github.com/nodejs/node/commit/ace6e07f0e)] - **src**: initialize pid variable before goto (Jeremy Apthorp) [#22961](https://github.com/nodejs/node/pull/22961)\n* [[`25bf1f5e28`](https://github.com/nodejs/node/commit/25bf1f5e28)] - **stream**: improve buffer list inspection (Ruben Bridgewater) [#23109](https://github.com/nodejs/node/pull/23109)\n* [[`2b77b94c05`](https://github.com/nodejs/node/commit/2b77b94c05)] - **streams**: refactor ReadableStream asyncIterator creation and a few fixes (Gus Caplan) [#23042](https://github.com/nodejs/node/pull/23042)\n* [[`df54db667c`](https://github.com/nodejs/node/commit/df54db667c)] - **test**: remove internal errorCache property (Rich Trott) [#23304](https://github.com/nodejs/node/pull/23304)\n* [[`70abcf2d10`](https://github.com/nodejs/node/commit/70abcf2d10)] - **test**: remove eslint-disable from fixtures (Rich Trott) [#23345](https://github.com/nodejs/node/pull/23345)\n* [[`b2d3445644`](https://github.com/nodejs/node/commit/b2d3445644)] - **test**: read() on dir on AIX does not return EISDIR (Ben Noordhuis) [#23330](https://github.com/nodejs/node/pull/23330)\n* [[`b523f13fa2`](https://github.com/nodejs/node/commit/b523f13fa2)] - **test**: add module require tests for certain package.json errors (Tom White) [#23285](https://github.com/nodejs/node/pull/23285)\n* [[`45e0080cf1`](https://github.com/nodejs/node/commit/45e0080cf1)] - **test**: remove flaky designation for test (Rich Trott) [#22856](https://github.com/nodejs/node/pull/22856)\n* [[`085de6fe18`](https://github.com/nodejs/node/commit/085de6fe18)] - **test**: swap arguments in strictEqual() (Duarte David) [#23204](https://github.com/nodejs/node/pull/23204)\n* [[`a070842e97`](https://github.com/nodejs/node/commit/a070842e97)] - **test**: remove obsolete domain test (Julien Gilli)\n* [[`cb68188805`](https://github.com/nodejs/node/commit/cb68188805)] - **test**: add stdin writable regression test (Anna Henningsen) [#23053](https://github.com/nodejs/node/pull/23053)\n* [[`06b5ef3868`](https://github.com/nodejs/node/commit/06b5ef3868)] - **test**: terminate cluster worker in infinite loop (cjihrig) [#23165](https://github.com/nodejs/node/pull/23165)\n* [[`9352d9d596`](https://github.com/nodejs/node/commit/9352d9d596)] - **test**: harden test-gc-http-client-timeout (Denys Otrishko) [#23184](https://github.com/nodejs/node/pull/23184)\n* [[`748d9d22fa`](https://github.com/nodejs/node/commit/748d9d22fa)] - **test**: add process.stdin.end() TTY regression test (Matteo Collina) [#23051](https://github.com/nodejs/node/pull/23051)\n* [[`44db98a7b6`](https://github.com/nodejs/node/commit/44db98a7b6)] - **test**: add more descriptive err message to assert (Josh Broomfield) [#23118](https://github.com/nodejs/node/pull/23118)\n* [[`b2a1cf3793`](https://github.com/nodejs/node/commit/b2a1cf3793)] - **test**: mark some flakes (Refael Ackermann) [#23208](https://github.com/nodejs/node/pull/23208)\n* [[`9b30a635e0`](https://github.com/nodejs/node/commit/9b30a635e0)] - **test**: improve test-gc-http-client (Rich Trott) [#23145](https://github.com/nodejs/node/pull/23145)\n* [[`23525b0547`](https://github.com/nodejs/node/commit/23525b0547)] - **test**: replace localhost with os.hostname in fs-readfilesync (Denys Otrishko) [#23101](https://github.com/nodejs/node/pull/23101)\n* [[`bebd7b2cdc`](https://github.com/nodejs/node/commit/bebd7b2cdc)] - **test**: fix flaky test-gc-net-timeout (Rich Trott) [#23139](https://github.com/nodejs/node/pull/23139)\n* [[`efeb49d224`](https://github.com/nodejs/node/commit/efeb49d224)] - **test**: increase test coverage for fs.promises read (Jennifer Bland) [#22800](https://github.com/nodejs/node/pull/22800)\n* [[`39c2a3f1c1`](https://github.com/nodejs/node/commit/39c2a3f1c1)] - **test**: improve test-gc-http-client-connaborted (Rich Trott) [#23091](https://github.com/nodejs/node/pull/23091)\n* [[`48c1c428f9`](https://github.com/nodejs/node/commit/48c1c428f9)] - **test**: improve debugging information for http2 test (Rich Trott) [#23058](https://github.com/nodejs/node/pull/23058)\n* [[`f486186e25`](https://github.com/nodejs/node/commit/f486186e25)] - **test**: remove setImmediate from timeout test (Rich Trott) [#23058](https://github.com/nodejs/node/pull/23058)\n* [[`85c4ecb8a5`](https://github.com/nodejs/node/commit/85c4ecb8a5)] - **test**: test undefined in util (ZYSzys) [#22741](https://github.com/nodejs/node/pull/22741)\n* [[`3e4af49157`](https://github.com/nodejs/node/commit/3e4af49157)] - **test**: add dns.onlookupall() to increase coverage (Masashi Hirano) [#22985](https://github.com/nodejs/node/pull/22985)\n* [[`d68dfa9243`](https://github.com/nodejs/node/commit/d68dfa9243)] - **test**: console.table when `null` in data (ZYSzys) [#22974](https://github.com/nodejs/node/pull/22974)\n* [[`4cda83dae2`](https://github.com/nodejs/node/commit/4cda83dae2)] - **test**: improve test-gc-http-client-onerror (Rich Trott) [#23090](https://github.com/nodejs/node/pull/23090)\n* [[`52c6ee789b`](https://github.com/nodejs/node/commit/52c6ee789b)] - **test**: improve test-gc-http-client-timeout (Rich Trott) [#23088](https://github.com/nodejs/node/pull/23088)\n* [[`69d3c08be1`](https://github.com/nodejs/node/commit/69d3c08be1)] - **test**: improve reliability of test-gc-http-client (Rich Trott) [#23087](https://github.com/nodejs/node/pull/23087)\n* [[`a566f0f43e`](https://github.com/nodejs/node/commit/a566f0f43e)] - **test**: improve reliability of test-gc-net-timeout (Rich Trott) [#23086](https://github.com/nodejs/node/pull/23086)\n* [[`c54e42362c`](https://github.com/nodejs/node/commit/c54e42362c)] - **test**: remove unnecessary assertions (Anna Henningsen) [#23040](https://github.com/nodejs/node/pull/23040)\n* [[`adaf530cdb`](https://github.com/nodejs/node/commit/adaf530cdb)] - **test**: check parameter type of fs.mkdir() (Masashi Hirano) [#22616](https://github.com/nodejs/node/pull/22616)\n* [[`a3b3485b34`](https://github.com/nodejs/node/commit/a3b3485b34)] - **test**: add comment describing test-fs-mkdir (Jennifer Bland) [#22424](https://github.com/nodejs/node/pull/22424)\n* [[`5d4bec3e0f`](https://github.com/nodejs/node/commit/5d4bec3e0f)] - **test**: fix flaky sequential/test-fs-watch-system-limit (Anna Henningsen) [#23038](https://github.com/nodejs/node/pull/23038)\n* [[`9de6b26a0c`](https://github.com/nodejs/node/commit/9de6b26a0c)] - **test**: remove string literals for strictEquals/notStrictEquals (MaleDong) [#22891](https://github.com/nodejs/node/pull/22891)\n* [[`43e3cf93e8`](https://github.com/nodejs/node/commit/43e3cf93e8)] - **test**: do not export common.leakedGlobals() (Rich Trott) [#22965](https://github.com/nodejs/node/pull/22965)\n* [[`70ccec2d91`](https://github.com/nodejs/node/commit/70ccec2d91)] - **test**: increase coverage for worker\\_threads (Rich Trott) [#22942](https://github.com/nodejs/node/pull/22942)\n* [[`83278b23a7`](https://github.com/nodejs/node/commit/83278b23a7)] - **test**: fix flaky key pair generation test (Tobias Nießen) [#22980](https://github.com/nodejs/node/pull/22980)\n* [[`d38ce82756`](https://github.com/nodejs/node/commit/d38ce82756)] - **test**: remove common.hasSmallICU (Rich Trott) [#22937](https://github.com/nodejs/node/pull/22937)\n* [[`dcce2d67ae`](https://github.com/nodejs/node/commit/dcce2d67ae)] - **test**: add tests to check error in dns.lookupService. (Masashi Hirano) [#22908](https://github.com/nodejs/node/pull/22908)\n* [[`079760f28b`](https://github.com/nodejs/node/commit/079760f28b)] - **test**: mark some tests as flaky (João Reis) [#22941](https://github.com/nodejs/node/pull/22941)\n* [[`4436a3d660`](https://github.com/nodejs/node/commit/4436a3d660)] - **timers**: use custom inspection for linked lists (Ruben Bridgewater) [#23108](https://github.com/nodejs/node/pull/23108)\n* [[`4b976df9e2`](https://github.com/nodejs/node/commit/4b976df9e2)] - **tls**: fix DEP0083 after upgrading to OpenSSL 1.1.0 (Tobias Nießen) [#22953](https://github.com/nodejs/node/pull/22953)\n* [[`acc4a761b7`](https://github.com/nodejs/node/commit/acc4a761b7)] - **tools**: make Travis commit linting more robust (Rich Trott) [#23397](https://github.com/nodejs/node/pull/23397)\n* [[`e2a6e051b3`](https://github.com/nodejs/node/commit/e2a6e051b3)] - **tools**: apply linting to first commit in PRs (Rich Trott) [#22452](https://github.com/nodejs/node/pull/22452)\n* [[`42e67a4e68`](https://github.com/nodejs/node/commit/42e67a4e68)] - **tools**: remove useless assignment from configure.py (Gus Caplan) [#23200](https://github.com/nodejs/node/pull/23200)\n* [[`1010ef5df7`](https://github.com/nodejs/node/commit/1010ef5df7)] - **tools**: fix ICU shrinker and docs (Steven R. Loomis) [#23266](https://github.com/nodejs/node/pull/23266)\n* [[`d7031df415`](https://github.com/nodejs/node/commit/d7031df415)] - **tools**: allow input for TTY tests (Anna Henningsen) [#23053](https://github.com/nodejs/node/pull/23053)\n* [[`1a92335543`](https://github.com/nodejs/node/commit/1a92335543)] - **tools**: unify .editorconfig rules for 2-space (Roman Reiss) [#23163](https://github.com/nodejs/node/pull/23163)\n* [[`ef00e5c967`](https://github.com/nodejs/node/commit/ef00e5c967)] - **tools**: fix cpplint --quiet option (Daniel Bevenius) [#23075](https://github.com/nodejs/node/pull/23075)\n* [[`1cbc2ee034`](https://github.com/nodejs/node/commit/1cbc2ee034)] - **tools**: update ESLint to 5.6.1 (cjihrig) [#23149](https://github.com/nodejs/node/pull/23149)\n* [[`f6fc7e7aa5`](https://github.com/nodejs/node/commit/f6fc7e7aa5)] - **tools**: .eslintrc.js messages \"default\" typo style (Lovingly) [#22868](https://github.com/nodejs/node/pull/22868)\n* [[`a22485d8f1`](https://github.com/nodejs/node/commit/a22485d8f1)] - **(SEMVER-MINOR)** **tools**: add bash completion for node (Daniel Bevenius) [#20713](https://github.com/nodejs/node/pull/20713)\n* [[`a6562685c3`](https://github.com/nodejs/node/commit/a6562685c3)] - ***Revert*** \"**tools,gyp**: don't force build actions with multiple outputs\" (Sakthipriyan Vairamani (thefourtheye)) [#23257](https://github.com/nodejs/node/pull/23257)\n* [[`73917387f4`](https://github.com/nodejs/node/commit/73917387f4)] - **tools,gyp**: cosmetic change to GYP `make` generator outputs (Refael Ackermann) [#23156](https://github.com/nodejs/node/pull/23156)\n* [[`d8cedf545e`](https://github.com/nodejs/node/commit/d8cedf545e)] - **tools,gyp**: don't force build actions with multiple outputs (Refael Ackermann) [#23156](https://github.com/nodejs/node/pull/23156)\n* [[`bf17708aa2`](https://github.com/nodejs/node/commit/bf17708aa2)] - **tty**: document `WriteStream.cursorTo()` and others (Umang Raghuvanshi) [#22893](https://github.com/nodejs/node/pull/22893)\n* [[`9c36827e94`](https://github.com/nodejs/node/commit/9c36827e94)] - **(SEMVER-MINOR)** **tty**: make `readStream.setRawMode()` return `this` (Alexander Mills) [#22950](https://github.com/nodejs/node/pull/22950)\n* [[`36028caf8c`](https://github.com/nodejs/node/commit/36028caf8c)] - **tty**: handle setRawMode errors (Nikolai Vavilov) [#22886](https://github.com/nodejs/node/pull/22886)\n* [[`d22ee2c698`](https://github.com/nodejs/node/commit/d22ee2c698)] - **url**: use foreach-style C++ loop (Tobias Nießen) [#23138](https://github.com/nodejs/node/pull/23138)\n* [[`f1b1b73c2b`](https://github.com/nodejs/node/commit/f1b1b73c2b)] - **(SEMVER-MINOR)** **url**: provide pathToFileURL and fileURLToPath (guybedford) [#22506](https://github.com/nodejs/node/pull/22506)\n* [[`384221e75c`](https://github.com/nodejs/node/commit/384221e75c)] - **(SEMVER-MINOR)** **util**: support BigInt in util.format (Masashi Hirano) [#22097](https://github.com/nodejs/node/pull/22097)\n* [[`77de1beaf0`](https://github.com/nodejs/node/commit/77de1beaf0)] - **util**: move inspect in separate file (Ruben Bridgewater) [#22845](https://github.com/nodejs/node/pull/22845)\n* [[`f2dfebb7b4`](https://github.com/nodejs/node/commit/f2dfebb7b4)] - **util**: update definition of DISALLOW\\_COPY\\_AND\\_ASSIGN macro (Nitish Sakhawalkar) [#23092](https://github.com/nodejs/node/pull/23092)\n* [[`68eaa8789a`](https://github.com/nodejs/node/commit/68eaa8789a)] - **(SEMVER-MINOR)** **util**: add order option to `.inspect()` (Ruben Bridgewater) [#22788](https://github.com/nodejs/node/pull/22788)\n* [[`a2a1ebfecf`](https://github.com/nodejs/node/commit/a2a1ebfecf)] - **(SEMVER-MINOR)** **util**: use a shared symbol for util.inspect.custom (chocolateboy) [#20857](https://github.com/nodejs/node/pull/20857)\n* [[`077e7e0ce7`](https://github.com/nodejs/node/commit/077e7e0ce7)] - **util**: fix indentationLvl when exceeding max call stack size (Ruben Bridgewater) [#22787](https://github.com/nodejs/node/pull/22787)\n* [[`5a13e66088`](https://github.com/nodejs/node/commit/5a13e66088)] - **util**: improve inspect performance (Ruben Bridgewater) [#22503](https://github.com/nodejs/node/pull/22503)\n* [[`92e0f38a65`](https://github.com/nodejs/node/commit/92e0f38a65)] - **util**: remove outdated TODO (Ruben Bridgewater) [#22503](https://github.com/nodejs/node/pull/22503)\n* [[`3b895d1258`](https://github.com/nodejs/node/commit/3b895d1258)] - **win,msi**: display license notes before installing tools (João Reis) [#23044](https://github.com/nodejs/node/pull/23044)\n* [[`cf284c80a9`](https://github.com/nodejs/node/commit/cf284c80a9)] - **win,msi**: install Boxstarter from elevated shell (João Reis) [#22988](https://github.com/nodejs/node/pull/22988)\n* [[`2b7e18dec5`](https://github.com/nodejs/node/commit/2b7e18dec5)] - **win,msi**: highlight installation of 3rd-party tools (Tobias Nießen) [#23003](https://github.com/nodejs/node/pull/23003)\n* [[`ebf36cd180`](https://github.com/nodejs/node/commit/ebf36cd180)] - **(SEMVER-MINOR)** **win,msi**: install tools for native modules (João Reis) [#22645](https://github.com/nodejs/node/pull/22645)\n* [[`c34db7a9c2`](https://github.com/nodejs/node/commit/c34db7a9c2)] - **worker**: reduce `MessagePort` prototype to documented API (Anna Henningsen) [#23037](https://github.com/nodejs/node/pull/23037)\n* [[`2e30a6897d`](https://github.com/nodejs/node/commit/2e30a6897d)] - **worker**: hide MessagePort init function behind symbol (Anna Henningsen) [#23037](https://github.com/nodejs/node/pull/23037)\n* [[`b5889d0b84`](https://github.com/nodejs/node/commit/b5889d0b84)] - **worker**: only stop inspector if started (Anna Henningsen) [#22927](https://github.com/nodejs/node/pull/22927)\n* [[`7639390032`](https://github.com/nodejs/node/commit/7639390032)] - **worker,coverage**: support V8 coverage generation (Anna Henningsen) [#22928](https://github.com/nodejs/node/pull/22928)\n* [[`18cbde5ade`](https://github.com/nodejs/node/commit/18cbde5ade)] - **zlib**: simplify flushing mechanism (Anna Henningsen) [#23186](https://github.com/nodejs/node/pull/23186)\n* [[`e749a28c55`](https://github.com/nodejs/node/commit/e749a28c55)] - **zlib**: use common owner symbol to access JS wrapper (Anna Henningsen) [#23189](https://github.com/nodejs/node/pull/23189)\n* [[`a6b55c73b0`](https://github.com/nodejs/node/commit/a6b55c73b0)] - **zlib**: move, rename, document internal params() cb (Anna Henningsen) [#23187](https://github.com/nodejs/node/pull/23187)\n",
+    "commits": [
+      {
+        "sha": "12ff395e35",
+        "pr": "23304",
+        "author": "Rich Trott",
+        "topics": [
+          "assert"
+        ],
+        "reverts": false,
+        "desc": "remove internal errorCache property"
+      },
+      {
+        "sha": "efdb32603c",
+        "pr": "22788",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "assert"
+        ],
+        "reverts": false,
+        "desc": "improve diff output"
+      },
+      {
+        "sha": "9749d48729",
+        "pr": "23305",
+        "author": "Rich Trott",
+        "topics": [
+          "benchmark"
+        ],
+        "reverts": false,
+        "desc": "increase lint compliance"
+      },
+      {
+        "sha": "90bbab6f71",
+        "pr": "22503",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "benchmark"
+        ],
+        "reverts": false,
+        "desc": "refactor util benchmarks"
+      },
+      {
+        "sha": "2d7e4e0116",
+        "pr": "23302",
+        "author": "Brandon Smith",
+        "topics": [
+          "benchmark",
+          "doc",
+          "lib",
+          "src",
+          "test",
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "fix typos"
+      },
+      {
+        "sha": "e6484c2c11",
+        "pr": "23355",
+        "author": "Refael Ackermann",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "restore js2c direct dependency on config.gypi"
+      },
+      {
+        "sha": "c4aa0331c1",
+        "pr": "23408",
+        "author": "Michaël Zasso",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "make configure script verbose by default"
+      },
+      {
+        "sha": "cf17759113",
+        "pr": "23217",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "toggle lint-cpp using verbose (V) variable"
+      },
+      {
+        "sha": "b0dc0ca9a9",
+        "pr": "23217",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "make lint-addon-docs quiet"
+      },
+      {
+        "sha": "0f236c8d42",
+        "pr": "23102",
+        "author": "Denys Otrishko",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "add pgo specific variables to common.gypi"
+      },
+      {
+        "sha": "de4d688d1f",
+        "pr": "23180",
+        "author": "Refael Ackermann",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "cleanup in .gitignore"
+      },
+      {
+        "sha": "49b0ec4fe7",
+        "pr": "23168",
+        "author": "Sam Ruby",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "add loader path to rpath for cctest"
+      },
+      {
+        "sha": "7d21cc2177",
+        "pr": "23156",
+        "author": "Refael Ackermann",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "reduce chance of unneeded rebuild"
+      },
+      {
+        "sha": "aae0eceea0",
+        "pr": "23156",
+        "author": "Refael Ackermann",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "encapsulate node/inspector gyp scafolding"
+      },
+      {
+        "sha": "180099a5ac",
+        "pr": "21596",
+        "author": "Octavian Soldea",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "enabling pgo at configure"
+      },
+      {
+        "sha": "f4cffffc96",
+        "pr": "23075",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "add --quiet to lint-cpp"
+      },
+      {
+        "sha": "d572f6001a",
+        "pr": "23129",
+        "author": "Rich Trott",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "remove unnecessary Makefile output"
+      },
+      {
+        "sha": "fb03faa835",
+        "pr": "23114",
+        "author": "Rich Trott",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "move addons message in Makefile"
+      },
+      {
+        "sha": "948dc71664",
+        "pr": "22935",
+        "author": "Refael Ackermann",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "make config verbose on CI"
+      },
+      {
+        "sha": "b69ed9c80c",
+        "pr": "22904",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "stop printing execution of lint-md command"
+      },
+      {
+        "sha": "2b8f569388",
+        "pr": "23182",
+        "author": "Refael Ackermann",
+        "topics": [
+          "build",
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "refactor and fix v8.gyp"
+      },
+      {
+        "sha": "4db9e36b57",
+        "pr": "22991",
+        "author": "Michaël Zasso",
+        "topics": [
+          "build",
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "remove outdated `lint-md-build`"
+      },
+      {
+        "sha": "c29e5ac5be",
+        "pr": "23020",
+        "author": "Anna Henningsen",
+        "topics": [
+          "cli"
+        ],
+        "reverts": false,
+        "desc": "normalize `\\_` → `-` when parsing options"
+      },
+      {
+        "sha": "54ca0e159f",
+        "pr": "23131",
+        "author": "cjihrig",
+        "topics": [
+          "cluster"
+        ],
+        "reverts": false,
+        "desc": "move handle tracking out of utils"
+      },
+      {
+        "sha": "cb0d8239b7",
+        "pr": "23125",
+        "author": "cjihrig",
+        "topics": [
+          "cluster"
+        ],
+        "reverts": false,
+        "desc": "use Map to track handles in master"
+      },
+      {
+        "sha": "0f133eb5a3",
+        "pr": "23125",
+        "author": "cjihrig",
+        "topics": [
+          "cluster"
+        ],
+        "reverts": false,
+        "desc": "use Map to track handles in cluster child"
+      },
+      {
+        "sha": "2dd157fbf3",
+        "pr": "23125",
+        "author": "cjihrig",
+        "topics": [
+          "cluster"
+        ],
+        "reverts": false,
+        "desc": "use Map to track indexes"
+      },
+      {
+        "sha": "64f840a767",
+        "pr": "23125",
+        "author": "cjihrig",
+        "topics": [
+          "cluster"
+        ],
+        "reverts": false,
+        "desc": "use Map to track round robin workers"
+      },
+      {
+        "sha": "22f51a6a83",
+        "pr": "23125",
+        "author": "cjihrig",
+        "topics": [
+          "cluster"
+        ],
+        "reverts": false,
+        "desc": "use Map to track callbacks"
+      },
+      {
+        "sha": "26c36efa2f",
+        "pr": "23225",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "remove node::crypto::CheckResult"
+      },
+      {
+        "sha": "5f450f3f92",
+        "pr": "23113",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "replace goto SSL\\_CTX\\_use\\_certificate\\_chain"
+      },
+      {
+        "sha": "db8d99dbc2",
+        "pr": "23215",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "add virtual dtor to KeyPairGenerationConfig"
+      },
+      {
+        "sha": "f98d441461",
+        "pr": "22947",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "extract throwInvalidArgType function"
+      },
+      {
+        "sha": "1a21cf13cb",
+        "pr": "23164",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "make PEM parsing RFC7468-compliant"
+      },
+      {
+        "sha": "9c96573124",
+        "pr": "23151",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "add support for PEM-level encryption"
+      },
+      {
+        "sha": "398c0e03e4",
+        "pr": "23132",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "replace gotos"
+      },
+      {
+        "sha": "a51d839a31",
+        "pr": "23077",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "remove unnecessary calls to TLS\\_method()"
+      },
+      {
+        "sha": "074b7af7ef",
+        "pr": "22110",
+        "author": "Jeremy Apthorp",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "enable auto cert chaining for BoringSSL"
+      },
+      {
+        "sha": "2888f809e3",
+        "pr": "23011",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "deduplicate cipher initialization code"
+      },
+      {
+        "sha": "0bc4529a07",
+        "pr": "23018",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "remove unnecessary usage of goto"
+      },
+      {
+        "sha": "cc8219433c",
+        "pr": "22660",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "allow promisifying generateKeyPair"
+      },
+      {
+        "sha": "421909394c",
+        "pr": "22660",
+        "author": "Tobias Nießen",
+        "topics": [
+          "crypto"
+        ],
+        "reverts": false,
+        "desc": "add API for key pair generation"
+      },
+      {
+        "sha": "76cb52ca11",
+        "pr": "23336",
+        "author": "cjihrig",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "upgrade to libuv 1.23.2"
+      },
+      {
+        "sha": "95bdf37265",
+        "pr": "23284",
+        "author": "James M Snell",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "update nghttp2 to 1.34.0"
+      },
+      {
+        "sha": "46c7d0d21f",
+        "pr": "23159",
+        "author": "Anna Henningsen",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "increase V8 deprecation levels"
+      },
+      {
+        "sha": "e3550f2366",
+        "pr": "22914",
+        "author": "Matheus Marchini",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "backport 958b761 from upstream V8"
+      },
+      {
+        "sha": "f08373f18d",
+        "pr": "23260",
+        "author": "Yang Guo",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "cherry-pick 64-bit hash seed commits from V8"
+      },
+      {
+        "sha": "e93c94c327",
+        "pr": "23112",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "add no-strict-aliasing to ICU cflags"
+      },
+      {
+        "sha": "5d70652d86",
+        "pr": "22899",
+        "author": "Mike Stanton",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "fix Array.prototype.forEach on v8 6.8"
+      },
+      {
+        "sha": "e668815a24",
+        "pr": "22251",
+        "author": "Alexey Kozyatinskiy",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "cherry-pick dbfcc48 from upstream V8"
+      },
+      {
+        "sha": "e5efdba75c",
+        "pr": "22997",
+        "author": "cjihrig",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "upgrade to libuv 1.23.1"
+      },
+      {
+        "sha": "39d7699a87",
+        "pr": "22909",
+        "author": "Junliang Yan",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "cherry-pick d48bd16 from upstream V8"
+      },
+      {
+        "sha": "62a2c81214",
+        "pr": "23322",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "simplify and clarify README language"
+      },
+      {
+        "sha": "7c0d6ac0bd",
+        "pr": "23320",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "simplify governance info in README intro"
+      },
+      {
+        "sha": "5ff43006d1",
+        "pr": null,
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add link to ABI guide"
+      },
+      {
+        "sha": "9dd47bcf99",
+        "pr": "23306",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix minor typo in streams.md"
+      },
+      {
+        "sha": "a0e8e7fea6",
+        "pr": "23306",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "standardize versions in stream module doc"
+      },
+      {
+        "sha": "eee71d6d16",
+        "pr": "23216",
+        "author": "siddhant",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add util.inspect() legacy signature"
+      },
+      {
+        "sha": "fbbb25b901",
+        "pr": "23335",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "edit building-node text"
+      },
+      {
+        "sha": "037063c6ee",
+        "pr": "23309",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "remove 72-hour mentions in pull-requests.md"
+      },
+      {
+        "sha": "4c54f897f8",
+        "pr": "23310",
+        "author": "Aleksey Chemakin",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix minor typo in n-api.md"
+      },
+      {
+        "sha": "f1cb8ab4bf",
+        "pr": "23303",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "remove ABI guide"
+      },
+      {
+        "sha": "39e3ef7739",
+        "pr": "23143",
+        "author": "Mike MacCana",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "Replace vague 'may not' with definitive 'will not'"
+      },
+      {
+        "sha": "11c674549b",
+        "pr": "23249",
+        "author": "Vse Mozhet Byt",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "update author-ready label terms"
+      },
+      {
+        "sha": "33e3eb44f7",
+        "pr": "23300",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "update onboarding task"
+      },
+      {
+        "sha": "df4ade7dc7",
+        "pr": "23299",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "use backticks around file names in README.md"
+      },
+      {
+        "sha": "80964d36b7",
+        "pr": "23268",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve API Documentation text in README"
+      },
+      {
+        "sha": "ef0f7e613a",
+        "pr": "23082",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "shorten pull request wait time to 48 hours"
+      },
+      {
+        "sha": "5b76313059",
+        "pr": "23248",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve instructions for verifying binaries"
+      },
+      {
+        "sha": "6943fa9fc7",
+        "pr": "23073",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "shorten intro of README.md"
+      },
+      {
+        "sha": "e5bfab0fb6",
+        "pr": "23229",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add guide about abi stability"
+      },
+      {
+        "sha": "e283206047",
+        "pr": "23246",
+        "author": "Anna Henningsen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve `stream.Writable` ctor encoding option docs"
+      },
+      {
+        "sha": "bd59d4efbf",
+        "pr": "23239",
+        "author": "Ouyang Yadong",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix code snippets in tls.md"
+      },
+      {
+        "sha": "27c5e96ffe",
+        "pr": "22275",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "leave pull requests open for 72 hours"
+      },
+      {
+        "sha": "5836b9fcc8",
+        "pr": "23165",
+        "author": "cjihrig",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "specify cluster worker.kill() caveat"
+      },
+      {
+        "sha": "ed01b38295",
+        "pr": "23198",
+        "author": "Gus Caplan",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "use stronger language about security of vm"
+      },
+      {
+        "sha": "eb8721977f",
+        "pr": "23212",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve Download section of README"
+      },
+      {
+        "sha": "003d85d2d9",
+        "pr": "23083",
+        "author": "Ben Noordhuis",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "remove GA tracking"
+      },
+      {
+        "sha": "6912376562",
+        "pr": "23238",
+        "author": "Gibson Fahnestock",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "move gibfahn to TSC Emeritus"
+      },
+      {
+        "sha": "1553e21007",
+        "pr": "22759",
+        "author": "Franziska Hinkelmann",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "clarify assigning issues to the TSC"
+      },
+      {
+        "sha": "71901d6b30",
+        "pr": "23190",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve Release Types text in README"
+      },
+      {
+        "sha": "8191bee313",
+        "pr": "23170",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "simplify support section of README"
+      },
+      {
+        "sha": "548934d412",
+        "pr": "23211",
+        "author": "Justin Lee",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix incorrect anchoring (#vcbuild.bat -\\> #vcbuildbat)"
+      },
+      {
+        "sha": "ce006eb68d",
+        "pr": "23211",
+        "author": "Justin Lee",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix minor typo (to early -\\> too early)"
+      },
+      {
+        "sha": "21490c2a87",
+        "pr": "23148",
+        "author": "Richard Lau",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "remove recommendation to use node-eps"
+      },
+      {
+        "sha": "e71a72fbf2",
+        "pr": "23140",
+        "author": "ZYSzys",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add contents table to CONTRIBUTING.md"
+      },
+      {
+        "sha": "818db4036b",
+        "pr": "22915",
+        "author": "Matheus Marchini",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "move perf tools and APIs to Tier 3"
+      },
+      {
+        "sha": "e791abe5ef",
+        "pr": "23028",
+        "author": "Anna Henningsen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "formalize `auto` usage in C++ style guide"
+      },
+      {
+        "sha": "310109691b",
+        "pr": "23166",
+        "author": "Sintendo",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix casing in stream.md"
+      },
+      {
+        "sha": "bb5c6892ee",
+        "pr": "23147",
+        "author": "ZYSzys",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add table of contents in BUILDING.md"
+      },
+      {
+        "sha": "cbcf5f88cd",
+        "pr": "23084",
+        "author": "Refael Ackermann",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "deeper link to downloads site"
+      },
+      {
+        "sha": "9109187948",
+        "pr": "23085",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "update guide for assert team"
+      },
+      {
+        "sha": "2731d08c33",
+        "pr": "23104",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add links for fs.createWriteStream()"
+      },
+      {
+        "sha": "9fa3813845",
+        "pr": "23059",
+        "author": "cjihrig",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "edit fast-tracking section"
+      },
+      {
+        "sha": "14327aea7b",
+        "pr": "23007",
+        "author": "Refael Ackermann",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve instruction to purple merge"
+      },
+      {
+        "sha": "87565c763a",
+        "pr": "22255",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "require two approvals to land changes"
+      },
+      {
+        "sha": "e7be1edc49",
+        "pr": "22998",
+        "author": "Lars-Magnus Skog",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix optional parameters in n-api.md"
+      },
+      {
+        "sha": "24073cef6b",
+        "pr": "23002",
+        "author": "Denis Fäcke",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add callback parameters of worker.terminate()"
+      },
+      {
+        "sha": "6b2e2ff036",
+        "pr": "22949",
+        "author": "Tobias Nießen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "improve metadata for http.request"
+      },
+      {
+        "sha": "91b410259e",
+        "pr": "22949",
+        "author": "Tobias Nießen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add missing metadata for recursive mkdir"
+      },
+      {
+        "sha": "15c7c57a78",
+        "pr": "22949",
+        "author": "Tobias Nießen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add missing metadata for dns.lookup"
+      },
+      {
+        "sha": "05196893b9",
+        "pr": "23061",
+        "author": "Anna Henningsen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix heading levels in C++ style guide"
+      },
+      {
+        "sha": "29a9e8498a",
+        "pr": "23054",
+        "author": "Anna Henningsen",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "remove outdated notes on stdio in workers"
+      },
+      {
+        "sha": "d3bc862d88",
+        "pr": "23006",
+        "author": "Mohammed Essehemy",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "match program and console output in synopsis.md"
+      },
+      {
+        "sha": "15b91b9eb8",
+        "pr": "23005",
+        "author": "Rich Trott",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add links for repl.ReplServer"
+      },
+      {
+        "sha": "b0e86ea8d0",
+        "pr": "22913",
+        "author": "Michaël Zasso",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "update maintaining V8 guide"
+      },
+      {
+        "sha": "00dd9738ee",
+        "pr": "22929",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "specify fast-tracking"
+      },
+      {
+        "sha": "ef5d90dfdc",
+        "pr": "22984",
+        "author": "Hitesh Kanwathirtha",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "add digitalinfinity to collaborators"
+      },
+      {
+        "sha": "b48dc0b667",
+        "pr": "22992",
+        "author": "Michaël Zasso",
+        "topics": [
+          "doc",
+          "test"
+        ],
+        "reverts": false,
+        "desc": "fix inspect's sorted compare function"
+      },
+      {
+        "sha": "d9d9d23191",
+        "pr": "23015",
+        "author": null,
+        "topics": [
+          "errors"
+        ],
+        "reverts": false,
+        "desc": "fix ERR\\_SOCKET\\_BAD\\_PORT message (Giovanny Andres Gongora Granada (Gioyik))"
+      },
+      {
+        "sha": "bb6530b31b",
+        "pr": "22808",
+        "author": "Klaus Meinhardt",
+        "topics": [
+          "fs"
+        ],
+        "reverts": false,
+        "desc": "consistently return symlink type from readdir"
+      },
+      {
+        "sha": "7e45daf494",
+        "pr": "21875",
+        "author": "Benjamin Coe",
+        "topics": [
+          "fs"
+        ],
+        "reverts": false,
+        "desc": "implement mkdir recursive (mkdirp)"
+      },
+      {
+        "sha": "c29734c9d6",
+        "pr": "21846",
+        "author": "Anna Henningsen",
+        "topics": [
+          "fs"
+        ],
+        "reverts": false,
+        "desc": "improve fs.watch ENOSPC error message"
+      },
+      {
+        "sha": "7b327ea909",
+        "pr": "23284",
+        "author": "James M Snell",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "add RFC 8441 extended connect protocol support"
+      },
+      {
+        "sha": "001881f33e",
+        "pr": "23134",
+        "author": "David Halls",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "set nghttp2\\_option\\_set\\_no\\_closed\\_streams"
+      },
+      {
+        "sha": "8fe62f8d38",
+        "pr": "23146",
+        "author": "André Cruz",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "don't send trailers on a closed connection"
+      },
+      {
+        "sha": "d1826fed41",
+        "pr": "23047",
+        "author": "cjihrig",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "close fd in doSendFileFD()"
+      },
+      {
+        "sha": "8bf004b96d",
+        "pr": "23009",
+        "author": "James M Snell",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "add ping event"
+      },
+      {
+        "sha": "badc38f305",
+        "pr": "22878",
+        "author": "Anatoli Papirovski",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "do not falsely emit 'aborted' on push"
+      },
+      {
+        "sha": "24675a4306",
+        "pr": "22956",
+        "author": "James M Snell",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "add origin frame support"
+      },
+      {
+        "sha": "89fe9edd08",
+        "pr": "22896",
+        "author": "Matteo Collina",
+        "topics": [
+          "http2"
+        ],
+        "reverts": false,
+        "desc": "check if stream is not destroyed before sending trailers"
+      },
+      {
+        "sha": "aa48192f9d",
+        "pr": "23215",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "inspector"
+        ],
+        "reverts": false,
+        "desc": "add virtual destructor to WorkerDelegate"
+      },
+      {
+        "sha": "16f7f52b24",
+        "pr": "21364",
+        "author": "Eugene Ostroukhov",
+        "topics": [
+          "inspector"
+        ],
+        "reverts": false,
+        "desc": "workers debugging"
+      },
+      {
+        "sha": "f66e9abcb3",
+        "pr": "22251",
+        "author": "Alexey Kozyatinskiy",
+        "topics": [
+          "inspector"
+        ],
+        "reverts": false,
+        "desc": "implemented V8InspectorClient::resourceNameToUrl"
+      },
+      {
+        "sha": "1c3a2ebfcf",
+        "pr": "22769",
+        "author": "Eugene Ostroukhov",
+        "topics": [
+          "inspector"
+        ],
+        "reverts": false,
+        "desc": "enable Inspector JS API in workers"
+      },
+      {
+        "sha": "c40e2dd6c9",
+        "pr": "23016",
+        "author": "Gireesh Punathil",
+        "topics": [
+          "lib"
+        ],
+        "reverts": false,
+        "desc": "reword help text for clarity"
+      },
+      {
+        "sha": "f38eff29e7",
+        "pr": "22974",
+        "author": "ZYSzys",
+        "topics": [
+          "lib"
+        ],
+        "reverts": false,
+        "desc": "change abstract equal to strict equal"
+      },
+      {
+        "sha": "0140a98e05",
+        "pr": "22550",
+        "author": "Joyee Cheung",
+        "topics": [
+          "lib"
+        ],
+        "reverts": false,
+        "desc": "make DOMException attributes configurable and enumerable"
+      },
+      {
+        "sha": "5e7b1082d9",
+        "pr": "22933",
+        "author": "Joyee Cheung",
+        "topics": [
+          "lib"
+        ],
+        "reverts": false,
+        "desc": "set Symbol.toStringTag of DOMException"
+      },
+      {
+        "sha": "a7f4d5e134",
+        "pr": "22643",
+        "author": "ZYSzys",
+        "topics": [
+          "lib"
+        ],
+        "reverts": false,
+        "desc": "refactor variable declarations"
+      },
+      {
+        "sha": "fb68ef2e74",
+        "pr": "22487",
+        "author": "Mark Abel",
+        "topics": [
+          "lib"
+        ],
+        "reverts": false,
+        "desc": "added common.restoreStderr(); to end of file"
+      },
+      {
+        "sha": "600c225439",
+        "pr": "19360",
+        "author": "Gus Caplan",
+        "topics": [
+          "module"
+        ],
+        "reverts": false,
+        "desc": "add createRequireFunction method"
+      },
+      {
+        "sha": "a65bb42551",
+        "pr": "23289",
+        "author": "Jackson Tian",
+        "topics": [
+          "net"
+        ],
+        "reverts": false,
+        "desc": "use connect() instead of connect.call()"
+      },
+      {
+        "sha": "5a306748e9",
+        "pr": "23053",
+        "author": "Anna Henningsen",
+        "topics": [
+          "process"
+        ],
+        "reverts": false,
+        "desc": "allow reading from stdout/stderr sockets"
+      },
+      {
+        "sha": "66484b82c4",
+        "pr": "22218",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "process"
+        ],
+        "reverts": false,
+        "desc": "add `multipleResolves` event"
+      },
+      {
+        "sha": "e16dd6d165",
+        "pr": "22436",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "repl"
+        ],
+        "reverts": false,
+        "desc": "refactor ERR\\_SCRIPT\\_EXECUTION\\_INTERRUPTED stack handling"
+      },
+      {
+        "sha": "b1ffda6c17",
+        "pr": "22436",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "repl"
+        ],
+        "reverts": false,
+        "desc": "improve error output"
+      },
+      {
+        "sha": "cd69e1b6c3",
+        "pr": "23314",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "fix ToObject() usage in node\\_http\\_parser.cc"
+      },
+      {
+        "sha": "5228ec4410",
+        "pr": "23314",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "fix ToObject() usage in exceptions.cc"
+      },
+      {
+        "sha": "4d761d4224",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "reduce variable scope in stream\\_base.cc"
+      },
+      {
+        "sha": "740741b279",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "reduce variable scope in node\\_worker.cc"
+      },
+      {
+        "sha": "56c2f5702f",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "reduce variable scope in node\\_trace\\_writer.cc"
+      },
+      {
+        "sha": "046fd987e4",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "reduce variable scope in node\\_url.cc"
+      },
+      {
+        "sha": "36c430796b",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "remove unneeded variables in node\\_crypto.cc"
+      },
+      {
+        "sha": "902ba0ecb4",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "reduce variable scope in module\\_wrap.cc"
+      },
+      {
+        "sha": "402867c0a9",
+        "pr": "23297",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "reduce variable scope in cares\\_wrap.cc"
+      },
+      {
+        "sha": "315bf257e5",
+        "pr": "23298",
+        "author": "cjihrig",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "fix ToObject() usage in node\\_crypto.cc"
+      },
+      {
+        "sha": "950ccee386",
+        "pr": "23072",
+        "author": "Joyee Cheung",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "name EmbededderGraph edges and use class names for nodes"
+      },
+      {
+        "sha": "390fc85ff0",
+        "pr": "22106",
+        "author": "Joyee Cheung",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "implement the new EmbedderGraph::AddEdge()"
+      },
+      {
+        "sha": "5a8396796d",
+        "pr": "23094",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "use JS inheritance for `AsyncWrap`"
+      },
+      {
+        "sha": "894210ec12",
+        "pr": "23215",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "add virtual desctructor to Options class"
+      },
+      {
+        "sha": "8f5fb6f90c",
+        "pr": "23183",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "clean up zlib write code"
+      },
+      {
+        "sha": "2da6f622dc",
+        "pr": "23175",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "deprecate `UVException()` without `Isolate\\*`"
+      },
+      {
+        "sha": "e9a0cffbd6",
+        "pr": "23179",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "deprecate V8 date conversion helpers"
+      },
+      {
+        "sha": "a2c1ce24b5",
+        "pr": "23177",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "fix indentation for `AsyncResource`"
+      },
+      {
+        "sha": "64689edf76",
+        "pr": "23120",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "remove unused using declarations"
+      },
+      {
+        "sha": "0202c6c808",
+        "pr": "23120",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "remove unused locale.h"
+      },
+      {
+        "sha": "20a4f14c57",
+        "pr": "23115",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "make req\\_wrap a unique\\_ptr in AfterConnect"
+      },
+      {
+        "sha": "ce7fad5b79",
+        "pr": "23117",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "use unique\\_ptr for obj in SetWeak lambda"
+      },
+      {
+        "sha": "7d7dc16240",
+        "pr": "23124",
+        "author": "Gireesh Punathil",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "unique\\_ptrs in few lambdas"
+      },
+      {
+        "sha": "4bd3b6e332",
+        "pr": "23014",
+        "author": "Gireesh Punathil",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "refactor crypto code with RAII cleanup"
+      },
+      {
+        "sha": "f3d09b6e4f",
+        "pr": "23036",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "simplify `MessagePort` construction code a bit"
+      },
+      {
+        "sha": "4d61c34b9e",
+        "pr": "23078",
+        "author": "Gireesh Punathil",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "fix a typo in the comment"
+      },
+      {
+        "sha": "fa833828b2",
+        "pr": "22251",
+        "author": "Alexey Kozyatinskiy",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "added URL::FromFilePath method"
+      },
+      {
+        "sha": "109aa63910",
+        "pr": "23024",
+        "author": "Gireesh Punathil",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "cache and resue isolate and contex pointers"
+      },
+      {
+        "sha": "2f659a3d74",
+        "pr": "23021",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "use RAII cleanup in node\\_i18n.cc"
+      },
+      {
+        "sha": "90f1200be9",
+        "pr": "23019",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "define zlib constants in node\\_zlib.cc"
+      },
+      {
+        "sha": "d72867ec0c",
+        "pr": "23019",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "make `ZCtx::Init()` non-static"
+      },
+      {
+        "sha": "56b1a3cf6e",
+        "pr": "23019",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "refactor zlib dictionary to STL vector"
+      },
+      {
+        "sha": "76453f1878",
+        "pr": "22993",
+        "author": "Andreas Haas",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "replace deprecated uses of FunctionTemplate::GetFunction"
+      },
+      {
+        "sha": "cb3062aa42",
+        "pr": "22975",
+        "author": "Joyee Cheung",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "remove calls to SetWrapperClassId()"
+      },
+      {
+        "sha": "ab032e4ff4",
+        "pr": "22981",
+        "author": "Anna Henningsen",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "refactor win32 `DebugProcess()` to use RAII cleanup"
+      },
+      {
+        "sha": "b6cd18517c",
+        "pr": "22943",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "add CheckOptions to Options classes"
+      },
+      {
+        "sha": "ace6e07f0e",
+        "pr": "22961",
+        "author": "Jeremy Apthorp",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "initialize pid variable before goto"
+      },
+      {
+        "sha": "25bf1f5e28",
+        "pr": "23109",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "stream"
+        ],
+        "reverts": false,
+        "desc": "improve buffer list inspection"
+      },
+      {
+        "sha": "2b77b94c05",
+        "pr": "23042",
+        "author": "Gus Caplan",
+        "topics": [
+          "streams"
+        ],
+        "reverts": false,
+        "desc": "refactor ReadableStream asyncIterator creation and a few fixes"
+      },
+      {
+        "sha": "df54db667c",
+        "pr": "23304",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove internal errorCache property"
+      },
+      {
+        "sha": "70abcf2d10",
+        "pr": "23345",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove eslint-disable from fixtures"
+      },
+      {
+        "sha": "b2d3445644",
+        "pr": "23330",
+        "author": "Ben Noordhuis",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "read() on dir on AIX does not return EISDIR"
+      },
+      {
+        "sha": "b523f13fa2",
+        "pr": "23285",
+        "author": "Tom White",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add module require tests for certain package.json errors"
+      },
+      {
+        "sha": "45e0080cf1",
+        "pr": "22856",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove flaky designation for test"
+      },
+      {
+        "sha": "085de6fe18",
+        "pr": "23204",
+        "author": "Duarte David",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "swap arguments in strictEqual()"
+      },
+      {
+        "sha": "a070842e97",
+        "pr": null,
+        "author": "Julien Gilli",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove obsolete domain test"
+      },
+      {
+        "sha": "cb68188805",
+        "pr": "23053",
+        "author": "Anna Henningsen",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add stdin writable regression test"
+      },
+      {
+        "sha": "06b5ef3868",
+        "pr": "23165",
+        "author": "cjihrig",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "terminate cluster worker in infinite loop"
+      },
+      {
+        "sha": "9352d9d596",
+        "pr": "23184",
+        "author": "Denys Otrishko",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "harden test-gc-http-client-timeout"
+      },
+      {
+        "sha": "748d9d22fa",
+        "pr": "23051",
+        "author": "Matteo Collina",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add process.stdin.end() TTY regression test"
+      },
+      {
+        "sha": "44db98a7b6",
+        "pr": "23118",
+        "author": "Josh Broomfield",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add more descriptive err message to assert"
+      },
+      {
+        "sha": "b2a1cf3793",
+        "pr": "23208",
+        "author": "Refael Ackermann",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "mark some flakes"
+      },
+      {
+        "sha": "9b30a635e0",
+        "pr": "23145",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve test-gc-http-client"
+      },
+      {
+        "sha": "23525b0547",
+        "pr": "23101",
+        "author": "Denys Otrishko",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "replace localhost with os.hostname in fs-readfilesync"
+      },
+      {
+        "sha": "bebd7b2cdc",
+        "pr": "23139",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "fix flaky test-gc-net-timeout"
+      },
+      {
+        "sha": "efeb49d224",
+        "pr": "22800",
+        "author": "Jennifer Bland",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "increase test coverage for fs.promises read"
+      },
+      {
+        "sha": "39c2a3f1c1",
+        "pr": "23091",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve test-gc-http-client-connaborted"
+      },
+      {
+        "sha": "48c1c428f9",
+        "pr": "23058",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve debugging information for http2 test"
+      },
+      {
+        "sha": "f486186e25",
+        "pr": "23058",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove setImmediate from timeout test"
+      },
+      {
+        "sha": "85c4ecb8a5",
+        "pr": "22741",
+        "author": "ZYSzys",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "test undefined in util"
+      },
+      {
+        "sha": "3e4af49157",
+        "pr": "22985",
+        "author": "Masashi Hirano",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add dns.onlookupall() to increase coverage"
+      },
+      {
+        "sha": "d68dfa9243",
+        "pr": "22974",
+        "author": "ZYSzys",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "console.table when `null` in data"
+      },
+      {
+        "sha": "4cda83dae2",
+        "pr": "23090",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve test-gc-http-client-onerror"
+      },
+      {
+        "sha": "52c6ee789b",
+        "pr": "23088",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve test-gc-http-client-timeout"
+      },
+      {
+        "sha": "69d3c08be1",
+        "pr": "23087",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve reliability of test-gc-http-client"
+      },
+      {
+        "sha": "a566f0f43e",
+        "pr": "23086",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve reliability of test-gc-net-timeout"
+      },
+      {
+        "sha": "c54e42362c",
+        "pr": "23040",
+        "author": "Anna Henningsen",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove unnecessary assertions"
+      },
+      {
+        "sha": "adaf530cdb",
+        "pr": "22616",
+        "author": "Masashi Hirano",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "check parameter type of fs.mkdir()"
+      },
+      {
+        "sha": "a3b3485b34",
+        "pr": "22424",
+        "author": "Jennifer Bland",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add comment describing test-fs-mkdir"
+      },
+      {
+        "sha": "5d4bec3e0f",
+        "pr": "23038",
+        "author": "Anna Henningsen",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "fix flaky sequential/test-fs-watch-system-limit"
+      },
+      {
+        "sha": "9de6b26a0c",
+        "pr": "22891",
+        "author": "MaleDong",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove string literals for strictEquals/notStrictEquals"
+      },
+      {
+        "sha": "43e3cf93e8",
+        "pr": "22965",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "do not export common.leakedGlobals()"
+      },
+      {
+        "sha": "70ccec2d91",
+        "pr": "22942",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "increase coverage for worker\\_threads"
+      },
+      {
+        "sha": "83278b23a7",
+        "pr": "22980",
+        "author": "Tobias Nießen",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "fix flaky key pair generation test"
+      },
+      {
+        "sha": "d38ce82756",
+        "pr": "22937",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "remove common.hasSmallICU"
+      },
+      {
+        "sha": "dcce2d67ae",
+        "pr": "22908",
+        "author": "Masashi Hirano",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add tests to check error in dns.lookupService."
+      },
+      {
+        "sha": "079760f28b",
+        "pr": "22941",
+        "author": "João Reis",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "mark some tests as flaky"
+      },
+      {
+        "sha": "4436a3d660",
+        "pr": "23108",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "timers"
+        ],
+        "reverts": false,
+        "desc": "use custom inspection for linked lists"
+      },
+      {
+        "sha": "4b976df9e2",
+        "pr": "22953",
+        "author": "Tobias Nießen",
+        "topics": [
+          "tls"
+        ],
+        "reverts": false,
+        "desc": "fix DEP0083 after upgrading to OpenSSL 1.1.0"
+      },
+      {
+        "sha": "acc4a761b7",
+        "pr": "23397",
+        "author": "Rich Trott",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "make Travis commit linting more robust"
+      },
+      {
+        "sha": "e2a6e051b3",
+        "pr": "22452",
+        "author": "Rich Trott",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "apply linting to first commit in PRs"
+      },
+      {
+        "sha": "42e67a4e68",
+        "pr": "23200",
+        "author": "Gus Caplan",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "remove useless assignment from configure.py"
+      },
+      {
+        "sha": "1010ef5df7",
+        "pr": "23266",
+        "author": "Steven R. Loomis",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "fix ICU shrinker and docs"
+      },
+      {
+        "sha": "d7031df415",
+        "pr": "23053",
+        "author": "Anna Henningsen",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "allow input for TTY tests"
+      },
+      {
+        "sha": "1a92335543",
+        "pr": "23163",
+        "author": "Roman Reiss",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "unify .editorconfig rules for 2-space"
+      },
+      {
+        "sha": "ef00e5c967",
+        "pr": "23075",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "fix cpplint --quiet option"
+      },
+      {
+        "sha": "1cbc2ee034",
+        "pr": "23149",
+        "author": "cjihrig",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "update ESLint to 5.6.1"
+      },
+      {
+        "sha": "f6fc7e7aa5",
+        "pr": "22868",
+        "author": "Lovingly",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": ".eslintrc.js messages \"default\" typo style"
+      },
+      {
+        "sha": "a22485d8f1",
+        "pr": "20713",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "add bash completion for node"
+      },
+      {
+        "sha": "a6562685c3",
+        "pr": "23257",
+        "author": null,
+        "topics": [
+          "tools",
+          "gyp"
+        ],
+        "reverts": true,
+        "desc": "don't force build actions with multiple outputs\" (Sakthipriyan Vairamani (thefourtheye))"
+      },
+      {
+        "sha": "73917387f4",
+        "pr": "23156",
+        "author": "Refael Ackermann",
+        "topics": [
+          "tools",
+          "gyp"
+        ],
+        "reverts": false,
+        "desc": "cosmetic change to GYP `make` generator outputs"
+      },
+      {
+        "sha": "d8cedf545e",
+        "pr": "23156",
+        "author": "Refael Ackermann",
+        "topics": [
+          "tools",
+          "gyp"
+        ],
+        "reverts": false,
+        "desc": "don't force build actions with multiple outputs"
+      },
+      {
+        "sha": "bf17708aa2",
+        "pr": "22893",
+        "author": "Umang Raghuvanshi",
+        "topics": [
+          "tty"
+        ],
+        "reverts": false,
+        "desc": "document `WriteStream.cursorTo()` and others"
+      },
+      {
+        "sha": "9c36827e94",
+        "pr": "22950",
+        "author": "Alexander Mills",
+        "topics": [
+          "tty"
+        ],
+        "reverts": false,
+        "desc": "make `readStream.setRawMode()` return `this`"
+      },
+      {
+        "sha": "36028caf8c",
+        "pr": "22886",
+        "author": "Nikolai Vavilov",
+        "topics": [
+          "tty"
+        ],
+        "reverts": false,
+        "desc": "handle setRawMode errors"
+      },
+      {
+        "sha": "d22ee2c698",
+        "pr": "23138",
+        "author": "Tobias Nießen",
+        "topics": [
+          "url"
+        ],
+        "reverts": false,
+        "desc": "use foreach-style C++ loop"
+      },
+      {
+        "sha": "f1b1b73c2b",
+        "pr": "22506",
+        "author": "guybedford",
+        "topics": [
+          "url"
+        ],
+        "reverts": false,
+        "desc": "provide pathToFileURL and fileURLToPath"
+      },
+      {
+        "sha": "384221e75c",
+        "pr": "22097",
+        "author": "Masashi Hirano",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "support BigInt in util.format"
+      },
+      {
+        "sha": "77de1beaf0",
+        "pr": "22845",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "move inspect in separate file"
+      },
+      {
+        "sha": "f2dfebb7b4",
+        "pr": "23092",
+        "author": "Nitish Sakhawalkar",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "update definition of DISALLOW\\_COPY\\_AND\\_ASSIGN macro"
+      },
+      {
+        "sha": "68eaa8789a",
+        "pr": "22788",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "add order option to `.inspect()`"
+      },
+      {
+        "sha": "a2a1ebfecf",
+        "pr": "20857",
+        "author": "chocolateboy",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "use a shared symbol for util.inspect.custom"
+      },
+      {
+        "sha": "077e7e0ce7",
+        "pr": "22787",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "fix indentationLvl when exceeding max call stack size"
+      },
+      {
+        "sha": "5a13e66088",
+        "pr": "22503",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "improve inspect performance"
+      },
+      {
+        "sha": "92e0f38a65",
+        "pr": "22503",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "util"
+        ],
+        "reverts": false,
+        "desc": "remove outdated TODO"
+      },
+      {
+        "sha": "3b895d1258",
+        "pr": "23044",
+        "author": "João Reis",
+        "topics": [
+          "win",
+          "msi"
+        ],
+        "reverts": false,
+        "desc": "display license notes before installing tools"
+      },
+      {
+        "sha": "cf284c80a9",
+        "pr": "22988",
+        "author": "João Reis",
+        "topics": [
+          "win",
+          "msi"
+        ],
+        "reverts": false,
+        "desc": "install Boxstarter from elevated shell"
+      },
+      {
+        "sha": "2b7e18dec5",
+        "pr": "23003",
+        "author": "Tobias Nießen",
+        "topics": [
+          "win",
+          "msi"
+        ],
+        "reverts": false,
+        "desc": "highlight installation of 3rd-party tools"
+      },
+      {
+        "sha": "ebf36cd180",
+        "pr": "22645",
+        "author": "João Reis",
+        "topics": [
+          "win",
+          "msi"
+        ],
+        "reverts": false,
+        "desc": "install tools for native modules"
+      },
+      {
+        "sha": "c34db7a9c2",
+        "pr": "23037",
+        "author": "Anna Henningsen",
+        "topics": [
+          "worker"
+        ],
+        "reverts": false,
+        "desc": "reduce `MessagePort` prototype to documented API"
+      },
+      {
+        "sha": "2e30a6897d",
+        "pr": "23037",
+        "author": "Anna Henningsen",
+        "topics": [
+          "worker"
+        ],
+        "reverts": false,
+        "desc": "hide MessagePort init function behind symbol"
+      },
+      {
+        "sha": "b5889d0b84",
+        "pr": "22927",
+        "author": "Anna Henningsen",
+        "topics": [
+          "worker"
+        ],
+        "reverts": false,
+        "desc": "only stop inspector if started"
+      },
+      {
+        "sha": "7639390032",
+        "pr": "22928",
+        "author": "Anna Henningsen",
+        "topics": [
+          "worker",
+          "coverage"
+        ],
+        "reverts": false,
+        "desc": "support V8 coverage generation"
+      },
+      {
+        "sha": "18cbde5ade",
+        "pr": "23186",
+        "author": "Anna Henningsen",
+        "topics": [
+          "zlib"
+        ],
+        "reverts": false,
+        "desc": "simplify flushing mechanism"
+      },
+      {
+        "sha": "e749a28c55",
+        "pr": "23189",
+        "author": "Anna Henningsen",
+        "topics": [
+          "zlib"
+        ],
+        "reverts": false,
+        "desc": "use common owner symbol to access JS wrapper"
+      },
+      {
+        "sha": "a6b55c73b0",
+        "pr": "23187",
+        "author": "Anna Henningsen",
+        "topics": [
+          "zlib"
+        ],
+        "reverts": false,
+        "desc": "move, rename, document internal params() cb"
+      }
+    ],
+    "deprecations": []
+  },
   "v10.11.0": {
     "version": "v10.11.0",
     "line": "Current",
