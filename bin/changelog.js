@@ -96,7 +96,7 @@ function handleInvalid (changelog) { // Handles invalid versions passed to the C
 function handleEOLVersions () { // Handles unsupported versions of Node.js used to run the CLI
   var releaseLine = parseInt(version.split('.')[0].replace('v', ''), 10)
   if (isNaN(releaseLine) || releaseLine < 6) {
-    console.error('Node.js release line is EOL (End of Life) - please install a supported release line.')
+    console.error('The checked release of Node.js is EOL (End of Life) - please install or check a supported release line.')
     process.exit(1)
   }
 }
