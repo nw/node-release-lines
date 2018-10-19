@@ -149,6 +149,27 @@ $ nodetimeline -c
 $ nodetimeline --lts
 ```
 
+### Command: `changelog [options]`
+
+`changelog` is CLI tool to surface the Node.js changelog for either the locally running version of Node.js or a specific version.
+
+#### `changelog` Options
+
+* `-v, --version`: output the version number
+* `-r, --release <release>`:  will show the chnagelog for the sepcified release. Requires a valid semver version, including a "v".
+* `-c, --commits`: will include commits shipped in a release in addition to the normal output.
+* `-C, --commits-verbose`: will include commits shipped in a release in addition to the normal output.
+* `-h, --help`: output usage information
+
+#### `changelog` Examples
+```
+$ changelog
+$ changelog -c
+$ changelog -commits-verbose
+$ changelog -r v6.4.0
+$ changelog -Cr v10.0.0
+```
+
 # API
 
 <a name="terminology"></a>
