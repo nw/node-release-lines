@@ -13,7 +13,8 @@
   "bin": {
     "amisafe": "./bin/isnodesafe.js",
     "isnodesafe": "./bin/isnodesafe.js",
-    "nodetimeline": "./bin/nodetimeline.js"
+    "nodetimeline": "./bin/nodetimeline.js",
+    "nodechangelog": "./bin/changelog.js"
   },
   "scripts": {
     "test": "mocha",
