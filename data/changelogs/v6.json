@@ -1,4 +1,344 @@
 {
+  "v6.17.0": {
+    "version": "v6.17.0",
+    "line": "LTS",
+    "lts": "Boron",
+    "date": "2019-02-28",
+    "releasedBy": "@rvagg",
+    "text": "This is a security release. All Node.js users should consult the security release summary at:\n\n  https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/\n\nfor details on patched vulnerabilities.\n\nFixes for the following CVEs are included in this release:",
+    "raw": "## 2019-02-28, Version 6.17.0 'Boron' (LTS), @rvagg\n\nThis is a security release. All Node.js users should consult the security release summary at:\n\n  https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/\n\nfor details on patched vulnerabilities.\n\nFixes for the following CVEs are included in this release:\n\n\n### Notable Changes\n\n* **deps**: OpenSSL has been upgraded to 1.0.2r which contains a fix for [CVE-2019-1559](https://www.openssl.org/news/secadv/20190226.txt). Under certain circumstances, a TLS server can be forced to respond differently to a client if a zero-byte record is received with an invalid _padding_ compared to a zero-byte record with an invalid _MAC_. This can be used as the basis of a padding oracle attack to decrypt data.\n* **http**:\n  - Backport `server.keepAliveTimeout` to prevent keep-alive HTTP and HTTPS connections remaining open and inactive for an extended period of time, leading to a potential Denial of Service (DoS). (CVE-2019-5739 / [Timur Shemsedinov](https://github.com/tshemsedinov), [Matteo Collina](https://twitter.com/matteocollina))\n  - Further prevention of \"Slowloris\" attacks on HTTP and HTTPS connections by consistently applying the receive timeout set by `server.headersTimeout` to connections in keep-alive mode. Reported by Marco Pracucci ([Voxnest](https://voxnest.com)). (CVE-2019-5737 / Matteo Collina)\n\n### Commits\n\n* [[`b282c68ce8`](https://github.com/nodejs/node/commit/b282c68ce8)] - **deps**: add -no\\_rand\\_screen to openssl s\\_client (Shigeki Ohtsu) [nodejs/io.js#1836](https://github.com/nodejs/io.js/pull/1836)\n* [[`a80ef49dcf`](https://github.com/nodejs/node/commit/a80ef49dcf)] - **deps**: fix asm build error of openssl in x86\\_win32 (Shigeki Ohtsu) [iojs/io.js#1389](https://github.com/iojs/io.js/pull/1389)\n* [[`1d3c412101`](https://github.com/nodejs/node/commit/1d3c412101)] - **deps**: fix openssl assembly error on ia32 win32 (Fedor Indutny) [iojs/io.js#1389](https://github.com/iojs/io.js/pull/1389)\n* [[`661fd61c3a`](https://github.com/nodejs/node/commit/661fd61c3a)] - **deps**: copy all openssl header files to include dir (Shigeki Ohtsu)\n* [[`da12284235`](https://github.com/nodejs/node/commit/da12284235)] - **deps**: upgrade openssl sources to 1.0.2r (Shigeki Ohtsu)\n* [[`b13b4a9ffb`](https://github.com/nodejs/node/commit/b13b4a9ffb)] - **http**: prevent slowloris with keepalive connections (Matteo Collina) [nodejs-private/node-private#162](https://github.com/nodejs-private/node-private/pull/162)\n* [[`e9ae4aaaad`](https://github.com/nodejs/node/commit/e9ae4aaaad)] - **http**: fix timeout reset after keep-alive timeout (Alexey Orlenko) [#13549](https://github.com/nodejs/node/pull/13549)\n* [[`f23b3b6bad`](https://github.com/nodejs/node/commit/f23b3b6bad)] - **(SEMVER-MINOR)** **http**: destroy sockets after keepAliveTimeout (Timur Shemsedinov) [#2534](https://github.com/nodejs/node/pull/2534)\n* [[`190894448b`](https://github.com/nodejs/node/commit/190894448b)] - **openssl**: fix keypress requirement in apps on win32 (Shigeki Ohtsu) [iojs/io.js#1389](https://github.com/iojs/io.js/pull/1389)\n* [[`06a208d316`](https://github.com/nodejs/node/commit/06a208d316)] - **test**: refactor test-http-server-keep-alive-timeout (realwakka) [#13448](https://github.com/nodejs/node/pull/13448)\n* [[`1c7fbdc53b`](https://github.com/nodejs/node/commit/1c7fbdc53b)] - **test**: improve test-https-server-keep-alive-timeout (Rich Trott) [#13312](https://github.com/nodejs/node/pull/13312)\n",
+    "commits": [
+      {
+        "sha": "b282c68ce8",
+        "pr": "nodejs/io.js1836",
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "add -no\\_rand\\_screen to openssl s\\_client"
+      },
+      {
+        "sha": "a80ef49dcf",
+        "pr": "iojs/io.js1389",
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "fix asm build error of openssl in x86\\_win32"
+      },
+      {
+        "sha": "1d3c412101",
+        "pr": "iojs/io.js1389",
+        "author": "Fedor Indutny",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "fix openssl assembly error on ia32 win32"
+      },
+      {
+        "sha": "661fd61c3a",
+        "pr": null,
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "copy all openssl header files to include dir"
+      },
+      {
+        "sha": "da12284235",
+        "pr": null,
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "upgrade openssl sources to 1.0.2r"
+      },
+      {
+        "sha": "b13b4a9ffb",
+        "pr": "nodejs-private/node-private162",
+        "author": "Matteo Collina",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "prevent slowloris with keepalive connections"
+      },
+      {
+        "sha": "e9ae4aaaad",
+        "pr": "13549",
+        "author": "Alexey Orlenko",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "fix timeout reset after keep-alive timeout"
+      },
+      {
+        "sha": "f23b3b6bad",
+        "pr": "2534",
+        "author": "Timur Shemsedinov",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "destroy sockets after keepAliveTimeout"
+      },
+      {
+        "sha": "190894448b",
+        "pr": "iojs/io.js1389",
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "openssl"
+        ],
+        "reverts": false,
+        "desc": "fix keypress requirement in apps on win32"
+      },
+      {
+        "sha": "06a208d316",
+        "pr": "13448",
+        "author": "realwakka",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "refactor test-http-server-keep-alive-timeout"
+      },
+      {
+        "sha": "1c7fbdc53b",
+        "pr": "13312",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "improve test-https-server-keep-alive-timeout"
+      }
+    ],
+    "deprecations": []
+  },
+  "v6.16.0": {
+    "version": "v6.16.0",
+    "line": "LTS",
+    "lts": "Boron",
+    "date": "2018-12-26",
+    "releasedBy": "@MylesBorins",
+    "text": "The 6.15.0 security release introduced some unexpected breakages on the 6.x release line.\nThis is a special release to fix a regression in the HTTP binary upgrade response body and add\na missing CLI flag to adjust the max header size of the http parser.",
+    "raw": "## 2018-12-26, Version 6.16.0 'Boron' (LTS), @MylesBorins\n\nThe 6.15.0 security release introduced some unexpected breakages on the 6.x release line.\nThis is a special release to fix a regression in the HTTP binary upgrade response body and add\na missing CLI flag to adjust the max header size of the http parser.\n\n### Notable Changes\n\n* **cli**:\n  - add --max-http-header-size flag (cjihrig) [#24811](https://github.com/nodejs/node/pull/24811)\n* **http**:\n  - add maxHeaderSize property (cjihrig) [#24860](https://github.com/nodejs/node/pull/24860)\n\n### Commits\n\n* [[`f233b160c9`](https://github.com/nodejs/node/commit/f233b160c9)] - **(SEMVER-MINOR)** **cli**: add --max-http-header-size flag (cjihrig) [#24811](https://github.com/nodejs/node/pull/24811)\n* [[`59f83d6896`](https://github.com/nodejs/node/commit/59f83d6896)] - **(SEMVER-MINOR)** **deps**: cherry-pick http\\_parser\\_set\\_max\\_header\\_size (cjihrig) [#24811](https://github.com/nodejs/node/pull/24811)\n* [[`c0c4de71f0`](https://github.com/nodejs/node/commit/c0c4de71f0)] - **(SEMVER-MINOR)** **http**: add maxHeaderSize property (cjihrig) [#24860](https://github.com/nodejs/node/pull/24860)\n* [[`8a3e0c0697`](https://github.com/nodejs/node/commit/8a3e0c0697)] - **http**: fix regression of binary upgrade response body (Matteo Collina) [#25036](https://github.com/nodejs/node/pull/25036)\n",
+    "commits": [
+      {
+        "sha": "f233b160c9",
+        "pr": "24811",
+        "author": "cjihrig",
+        "topics": [
+          "cli"
+        ],
+        "reverts": false,
+        "desc": "add --max-http-header-size flag"
+      },
+      {
+        "sha": "59f83d6896",
+        "pr": "24811",
+        "author": "cjihrig",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "cherry-pick http\\_parser\\_set\\_max\\_header\\_size"
+      },
+      {
+        "sha": "c0c4de71f0",
+        "pr": "24860",
+        "author": "cjihrig",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "add maxHeaderSize property"
+      },
+      {
+        "sha": "8a3e0c0697",
+        "pr": "25036",
+        "author": "Matteo Collina",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "fix regression of binary upgrade response body"
+      }
+    ],
+    "deprecations": []
+  },
+  "v6.15.1": {
+    "version": "v6.15.1",
+    "line": "LTS",
+    "lts": "Boron",
+    "date": "2018-12-03",
+    "releasedBy": "@rvagg",
+    "text": "",
+    "raw": "## 2018-12-03, Version 6.15.1 'Boron' (LTS), @rvagg\n\n### Notable Changes\n\nThis is a patch release to address a bad backport of the fix for \"Slowloris HTTP Denial of Service\" (CVE-2018-12122). Node.js 6.15.0 misapplies the headers timeout to an entire keep-alive HTTP session, resulting in prematurely disconnected sockets.\n\n### Commits\n\n* [[`5d9005c359`](https://github.com/nodejs/node/commit/5d9005c359)] - **http**: fix backport of Slowloris headers (Matteo Collina) [#24796](https://github.com/nodejs/node/pull/24796)\n",
+    "commits": [
+      {
+        "sha": "5d9005c359",
+        "pr": "24796",
+        "author": "Matteo Collina",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "fix backport of Slowloris headers"
+      }
+    ],
+    "deprecations": []
+  },
+  "v6.15.0": {
+    "version": "v6.15.0",
+    "line": "LTS",
+    "lts": "Boron",
+    "date": "2018-11-27",
+    "releasedBy": "@rvagg",
+    "text": "This is a security release. All Node.js users should consult the security release summary at:\n\n  https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/\n\nfor details on patched vulnerabilities.\n\nFixes for the following CVEs are included in this release:",
+    "raw": "## 2018-11-27, Version 6.15.0 'Boron' (LTS), @rvagg\n\nThis is a security release. All Node.js users should consult the security release summary at:\n\n  https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/\n\nfor details on patched vulnerabilities.\n\nFixes for the following CVEs are included in this release:\n\n\n### Notable Changes\n\n* **debugger**: Backport of [nodejs/node#8106](https://github.com/nodejs/node/pull/8106) to prevent the debugger from listening on `0.0.0.0`. It now defaults to `127.0.0.1`. Reported by Ben Noordhuis. (CVE-2018-12120 / Ben Noordhuis).\n* **deps**: Upgrade to OpenSSL 1.0.2q, fixing CVE-2018-0734 and CVE-2018-5407\n* **http**:\n    * Headers received by HTTP servers must not exceed 8192 bytes in total to prevent possible Denial of Service attacks. Reported by Trevor Norris. (CVE-2018-12121 / Matteo Collina)\n    * A timeout of 40 seconds now applies to servers receiving HTTP headers. This value can be adjusted with `server.headersTimeout`. Where headers are not completely received within this period, the socket is destroyed on the next received chunk. In conjunction with `server.setTimeout()`, this aids in protecting against excessive resource retention and possible Denial of Service. Reported by Jan Maybach ([liebdich.com](https://liebdich.com)). (CVE-2018-12122 / Matteo Collina)\n    * Two-byte characters are now strictly disallowed for the `path` option in HTTP client requests. Paths containing characters outside of the range `\\u0021` - `\\u00ff` will now be rejected with a `TypeError`. This behavior can be reverted if necessary by supplying the `--security-revert=CVE-2018-12116` command line argument (this is not recommended). Reported as security concern for Node.js 6 and 8 by [Arkadiy Tetelman](https://twitter.com/arkadiyt) ([Lob](https://lob.com)), fixed by backporting a change by Benno Fünfstück applied to Node.js 10 and later. (CVE-2018-12116 / Matteo Collina)\n* **url**: Fix a bug that would allow a hostname being spoofed when parsing URLs with `url.parse()` with the `'javascript:'` protocol. Reported by [Martin Bajanik](https://twitter.com/_bayotop) ([Kentico](https://kenticocloud.com/)). (CVE-2018-12123 / Matteo Collina)\n\n### Commits\n\n* [[`4beba664e1`](https://github.com/nodejs/node/commit/4beba664e1)] - **deps**: add -no\\_rand\\_screen to openssl s\\_client (Shigeki Ohtsu) [nodejs/node#1836](https://github.com/nodejs/node/pull/1836)\n* [[`049fe7978f`](https://github.com/nodejs/node/commit/049fe7978f)] - **deps**: fix asm build error of openssl in x86\\_win32 (Shigeki Ohtsu) [nodejs/node#1389](https://github.com/nodejs/node/pull/1389)\n* [[`e9becec84d`](https://github.com/nodejs/node/commit/e9becec84d)] - **deps**: fix openssl assembly error on ia32 win32 (Fedor Indutny) [nodejs/node#1389](https://github.com/nodejs/node/pull/1389)\n* [[`78b3a5b2f7`](https://github.com/nodejs/node/commit/78b3a5b2f7)] - **deps**: copy all openssl header files to include dir (Sam Roberts) [#24530](https://github.com/nodejs/node/pull/24530)\n* [[`6120f2429e`](https://github.com/nodejs/node/commit/6120f2429e)] - **deps**: upgrade openssl sources to 1.0.2q (Sam Roberts) [#24530](https://github.com/nodejs/node/pull/24530)\n* [[`92231a56d9`](https://github.com/nodejs/node/commit/92231a56d9)] - **deps,http**: http\\_parser set max header size to 8KB (Matteo Collina) [nodejs-private/node-private#143](https://github.com/nodejs-private/node-private/pull/143)\n* [[`dd20c0186f`](https://github.com/nodejs/node/commit/dd20c0186f)] - **(SEMVER-MINOR)** **http**: add --security-revert for CVE-2018-12116 (Matteo Collina) [nodejs-private/node-private#146](https://github.com/nodejs-private/node-private/pull/146)\n* [[`811b63c794`](https://github.com/nodejs/node/commit/811b63c794)] - **(SEMVER-MINOR)** **http**: disallow two-byte characters in URL path (Benno Fünfstück) [nodejs-private/node-private#146](https://github.com/nodejs-private/node-private/pull/146)\n* [[`618eebdd17`](https://github.com/nodejs/node/commit/618eebdd17)] - **(SEMVER-MINOR)** **http,https**: protect against slow headers attack (Matteo Collina) [nodejs-private/node-private#152](https://github.com/nodejs-private/node-private/pull/152)\n* [[`b78d403da3`](https://github.com/nodejs/node/commit/b78d403da3)] - **openssl**: fix keypress requirement in apps on win32 (Shigeki Ohtsu) [nodejs/node#1389](https://github.com/nodejs/node/pull/1389)\n* [[`35344e87bf`](https://github.com/nodejs/node/commit/35344e87bf)] - **src**: minor cleanup for node\\_revert (James M Snell) [#14864](https://github.com/nodejs/node/pull/14864)\n* [[`a9791c9090`](https://github.com/nodejs/node/commit/a9791c9090)] - **src**: make debugger listen on 127.0.0.1 by default (Ben Noordhuis) [nodejs-private/node-private#148](https://github.com/nodejs-private/node-private/pull/148)\n* [[`9c268d0492`](https://github.com/nodejs/node/commit/9c268d0492)] - **url**: avoid hostname spoofing w/ javascript protocol (Matteo Collina) [nodejs-private/node-private#145](https://github.com/nodejs-private/node-private/pull/145)\n",
+    "commits": [
+      {
+        "sha": "4beba664e1",
+        "pr": "nodejs/node1836",
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "add -no\\_rand\\_screen to openssl s\\_client"
+      },
+      {
+        "sha": "049fe7978f",
+        "pr": "nodejs/node1389",
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "fix asm build error of openssl in x86\\_win32"
+      },
+      {
+        "sha": "e9becec84d",
+        "pr": "nodejs/node1389",
+        "author": "Fedor Indutny",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "fix openssl assembly error on ia32 win32"
+      },
+      {
+        "sha": "78b3a5b2f7",
+        "pr": "24530",
+        "author": "Sam Roberts",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "copy all openssl header files to include dir"
+      },
+      {
+        "sha": "6120f2429e",
+        "pr": "24530",
+        "author": "Sam Roberts",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "upgrade openssl sources to 1.0.2q"
+      },
+      {
+        "sha": "92231a56d9",
+        "pr": "nodejs-private/node-private143",
+        "author": "Matteo Collina",
+        "topics": [
+          "deps",
+          "http"
+        ],
+        "reverts": false,
+        "desc": "http\\_parser set max header size to 8KB"
+      },
+      {
+        "sha": "dd20c0186f",
+        "pr": "nodejs-private/node-private146",
+        "author": "Matteo Collina",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "add --security-revert for CVE-2018-12116"
+      },
+      {
+        "sha": "811b63c794",
+        "pr": "nodejs-private/node-private146",
+        "author": "Benno Fünfstück",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "disallow two-byte characters in URL path"
+      },
+      {
+        "sha": "618eebdd17",
+        "pr": "nodejs-private/node-private152",
+        "author": "Matteo Collina",
+        "topics": [
+          "http",
+          "https"
+        ],
+        "reverts": false,
+        "desc": "protect against slow headers attack"
+      },
+      {
+        "sha": "b78d403da3",
+        "pr": "nodejs/node1389",
+        "author": "Shigeki Ohtsu",
+        "topics": [
+          "openssl"
+        ],
+        "reverts": false,
+        "desc": "fix keypress requirement in apps on win32"
+      },
+      {
+        "sha": "35344e87bf",
+        "pr": "14864",
+        "author": "James M Snell",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "minor cleanup for node\\_revert"
+      },
+      {
+        "sha": "a9791c9090",
+        "pr": "nodejs-private/node-private148",
+        "author": "Ben Noordhuis",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "make debugger listen on 127.0.0.1 by default"
+      },
+      {
+        "sha": "9c268d0492",
+        "pr": "nodejs-private/node-private145",
+        "author": "Matteo Collina",
+        "topics": [
+          "url"
+        ],
+        "reverts": false,
+        "desc": "avoid hostname spoofing w/ javascript protocol"
+      }
+    ],
+    "deprecations": []
+  },
   "v6.14.4": {
     "version": "v6.14.4",
     "line": "LTS",
