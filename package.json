@@ -1,6 +1,6 @@
 {
   "name": "node-release-lines",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Data api for node.js releases",
   "main": "index.js",
   "repository": {

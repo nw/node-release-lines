@@ -547,5 +547,103 @@
     "type": "CWE-787: Out-of-bounds Write",
     "overview": "When used with UCS-2 encoding (recognized by Node.js under the names `'ucs2'`, `'ucs-2'`, `'utf16le'` and `'utf-16le'`), `Buffer#write()` can be abused to write outside of the bounds of a single `Buffer`. Writes that start from the second-to-last position of a buffer cause a miscalculation of the maximum length of the input bytes to be written.",
     "id": "54"
+  },
+  "55": {
+    "cve": [
+      "CVE-2018-12116"
+    ],
+    "vulnerable": "6 || 8",
+    "patched": "^6.15.0 || ^8.14.0",
+    "publish_date": "2018-11-27",
+    "author": "Matteo Collina",
+    "reported_by": "Arkadiy Tetelman",
+    "ref": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+    "type": "CWE-115: Misinterpretation of Input",
+    "overview": "HTTP request splitting: If Node.js can be convinced to use unsanitized user-provided Unicode data for the `path` option of an HTTP request, then data can be provided which will trigger a second, unexpected, and user-defined HTTP request to made to the same server.",
+    "id": "55"
+  },
+  "56": {
+    "cve": [
+      "CVE-2018-12120"
+    ],
+    "vulnerable": "6",
+    "patched": "^6.15.0 || ^8.14.0",
+    "publish_date": "2018-11-27",
+    "author": "Ben Noordhuis",
+    "reported_by": "Ben Noordhuis",
+    "ref": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+    "type": "CWE-419: Unprotected Primary Channel",
+    "overview": "Debugger port 5858 listens on any interface by default: When the debugger is enabled with `node --debug` or `node debug`, it listens to port 5858 on all interfaces by default. This may allow remote computers to attach to the debug port and evaluate arbitrary JavaScript. The default interface is now localhost. It has always been possible to start the debugger on a specific interface, such as `node --debug=localhost`. The debugger was removed in Node.js 8 and replaced with the inspector, so no versions from 8 and later are vulnerable.",
+    "id": "56"
+  },
+  "57": {
+    "cve": [
+      "CVE-2018-12121"
+    ],
+    "vulnerable": "6 || 8 || 10 || 11",
+    "patched": "^6.15.0 || ^8.14.0 || ^10.14.0 || ^11.3.0",
+    "publish_date": "2018-11-27",
+    "author": "Matteo Collina",
+    "reported_by": "Trevor Norris",
+    "ref": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+    "type": "CWE-400: Uncontrolled Resource Consumption / Denial of Service",
+    "overview": "Denial of Service with large HTTP headers: By using a combination of many requests with maximum sized headers (almost 80 KB per connection), and carefully timed completion of the headers, it is possible to cause the HTTP server to abort from heap allocation failure. Attack potential is mitigated by the use of a load balancer or other proxy layer.",
+    "id": "57"
+  },
+  "58": {
+    "cve": [
+      "CVE-2018-12122"
+    ],
+    "vulnerable": "6 || 8 || 10 || 11",
+    "patched": "^6.15.0 || ^8.14.0 || ^10.14.0 || ^11.3.0",
+    "publish_date": "2018-11-27",
+    "author": "Matteo Collina",
+    "reported_by": "Jan Maybach",
+    "ref": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+    "type": "CWE-400: Uncontrolled Resource Consumption / Denial of Service",
+    "overview": "Slowloris HTTP Denial of Service: An attacker can cause a Denial of Service (DoS) by sending headers very slowly keeping HTTP or HTTPS connections and associated resources alive for a long period of time.",
+    "id": "58"
+  },
+  "59": {
+    "cve": [
+      "CVE-2018-12123"
+    ],
+    "vulnerable": "6 || 8 || 10 || 11",
+    "patched": "^6.15.0 || ^8.14.0 || ^10.14.0 || ^11.3.0",
+    "publish_date": "2018-11-27",
+    "author": "Matteo Collina",
+    "reported_by": "Martin Bajanik",
+    "ref": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+    "type": "CWE-115: Misinterpretation of Input",
+    "overview": "Hostname spoofing in URL parser for javascript protocol: If a Node.js application is using url.parse() to determine the URL hostname, that hostname can be spoofed by using a mixed case \"javascript:\" (e.g. \"javAscript:\") protocol (other protocols are not affected). If security decisions are made about the URL based on the hostname, they may be incorrect.",
+    "id": "59"
+  },
+  "60": {
+    "cve": [
+      "CVE-2019-5737"
+    ],
+    "vulnerable": "6 || 8 || 10 || 11",
+    "patched": "^6.17.0 || ^8.15.1 || ^10.15.2 || ^11.10.1",
+    "publish_date": "2019-02-28",
+    "author": "Matteo Collina",
+    "reported_by": "Marco Pracucci",
+    "ref": "https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/",
+    "type": "CWE-400: Uncontrolled Resource Consumption / Denial of Service",
+    "overview": "An attacker can cause a Denial of Service (DoS) by establishing an HTTP or HTTPS connection in keep-alive mode and by sending headers very slowly thereby keeping the connection and associated resources alive for a long period of time. Attack potential is mitigated by the use of a load balancer or other proxy layer. This vulnerability is an extension of CVE-2018-12121, addressed in November and impacts all active release lines including 6, 8, 10 and 11.",
+    "id": "60"
+  },
+  "61": {
+    "cve": [
+      "CVE-2019-5739"
+    ],
+    "vulnerable": "6",
+    "patched": "^6.17.0",
+    "publish_date": "2019-02-28",
+    "author": "Matteo Collina",
+    "reported_by": "Timur Shemsedinov",
+    "ref": "https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/",
+    "type": "CWE-400: Uncontrolled Resource Consumption / Denial of Service",
+    "overview": "Keep-alive HTTP and HTTPS connections can remain open and inactive for up to 2 minutes in Node.js 6.16.0 and earlier. Node.js 8.0.0 introduced a dedicated server.keepAliveTimeout which defaults to 5 seconds. The behavior in Node.js 6.16.0 and earlier is a potential Denial of Service (DoS) attack vector. Node.js 6.17.0 introduces server.keepAliveTimeout and the 5-second default.",
+    "id": "61"
   }
 }
