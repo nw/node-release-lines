@@ -1,4 +1,346 @@
 {
+  "v8.16.0": {
+    "version": "v8.16.0",
+    "line": "LTS",
+    "lts": "Carbon",
+    "date": "2019-04-16",
+    "releasedBy": "@MylesBorins",
+    "text": "",
+    "raw": "## 2019-04-16, Version 8.16.0 'Carbon' (LTS), @MylesBorins\n\n### Notable Changes\n\n* **n-api**:\n  - add API for asynchronous functions (Gabriel Schulhof) [#17887](https://github.com/nodejs/node/pull/17887)\n  - mark thread-safe function as stable (Gabriel Schulhof) [#25556](https://github.com/nodejs/node/pull/25556)\n\n### Commits\n\n* [[`705935d620`](https://github.com/nodejs/node/commit/705935d620)] - **assert**: fix backport regression (Ruben Bridgewater) [#27202](https://github.com/nodejs/node/pull/27202)\n* [[`c07ba9681f`](https://github.com/nodejs/node/commit/c07ba9681f)] - **build**: skip cctest on Windows shared lib build (Yihong Wang) [#21228](https://github.com/nodejs/node/pull/21228)\n* [[`63522886ea`](https://github.com/nodejs/node/commit/63522886ea)] - **build**: add loader path to rpath for cctest (Sam Ruby) [#23168](https://github.com/nodejs/node/pull/23168)\n* [[`e9369073d9`](https://github.com/nodejs/node/commit/e9369073d9)] - **build**: set `-blibpath:` for AIX (Richard Lau) [#25447](https://github.com/nodejs/node/pull/25447)\n* [[`97cc0fc51d`](https://github.com/nodejs/node/commit/97cc0fc51d)] - **deps**: V8: cherry-pick 3cc6919 (Farazmand) [#25874](https://github.com/nodejs/node/pull/25874)\n* [[`a1aff28fba`](https://github.com/nodejs/node/commit/a1aff28fba)] - **deps**: cherry-pick 525b396 from V8 upstream (Peter Marshall) [#25041](https://github.com/nodejs/node/pull/25041)\n* [[`6b7cccc88a`](https://github.com/nodejs/node/commit/6b7cccc88a)] - **doc**: fix optional parameters in n-api.md (Lars-Magnus Skog) [#22998](https://github.com/nodejs/node/pull/22998)\n* [[`b17819db3d`](https://github.com/nodejs/node/commit/b17819db3d)] - **doc**: update the http.request.setTimeout docs to be accurate (James Bunton) [#25123](https://github.com/nodejs/node/pull/25123)\n* [[`ac9b8f7645`](https://github.com/nodejs/node/commit/ac9b8f7645)] - **http**: fix error check in `Execute()` (Brian White) [#24738](https://github.com/nodejs/node/pull/24738)\n* [[`1d862610f8`](https://github.com/nodejs/node/commit/1d862610f8)] - **http**: attach reused parser to correct domain (Julien Gilli) [#25459](https://github.com/nodejs/node/pull/25459)\n* [[`d3de1ed653`](https://github.com/nodejs/node/commit/d3de1ed653)] - **n-api**: improve performance creating strings (Anthony Tuininga) [#26439](https://github.com/nodejs/node/pull/26439)\n* [[`2b2ad96ef2`](https://github.com/nodejs/node/commit/2b2ad96ef2)] - **n-api**: finalize during second-pass callback (Gabriel Schulhof) [#25992](https://github.com/nodejs/node/pull/25992)\n* [[`d6ffabc37f`](https://github.com/nodejs/node/commit/d6ffabc37f)] - **(SEMVER-MINOR)** **n-api**: mark thread-safe function as stable (Gabriel Schulhof) [#25556](https://github.com/nodejs/node/pull/25556)\n* [[`44609d1274`](https://github.com/nodejs/node/commit/44609d1274)] - **n-api**: restrict exports by version (Kyle Farnung) [#19962](https://github.com/nodejs/node/pull/19962)\n* [[`fe4328252a`](https://github.com/nodejs/node/commit/fe4328252a)] - **n-api**: add missing handle scopes (Daniel Bevenius) [#24011](https://github.com/nodejs/node/pull/24011)\n* [[`902b07959f`](https://github.com/nodejs/node/commit/902b07959f)] - **n-api**: clean up thread-safe function (Gabriel Schulhof) [#22259](https://github.com/nodejs/node/pull/22259)\n* [[`09b88aabb3`](https://github.com/nodejs/node/commit/09b88aabb3)] - **n-api**: remove idle\\_running from TsFn (Lars-Magnus Skog) [#22520](https://github.com/nodejs/node/pull/22520)\n* [[`367505940a`](https://github.com/nodejs/node/commit/367505940a)] - **n-api**: guard against cond null dereference (Gabriel Schulhof) [#21871](https://github.com/nodejs/node/pull/21871)\n* [[`c5a11dc58e`](https://github.com/nodejs/node/commit/c5a11dc58e)] - **n-api**: fix compiler warning (cjihrig) [#21597](https://github.com/nodejs/node/pull/21597)\n* [[`759a0180b5`](https://github.com/nodejs/node/commit/759a0180b5)] - **(SEMVER-MINOR)** **n-api**: add API for asynchronous functions (Gabriel Schulhof) [#17887](https://github.com/nodejs/node/pull/17887)\n* [[`ea5628e77a`](https://github.com/nodejs/node/commit/ea5628e77a)] - **process**: allow reading from stdout/stderr sockets (Anna Henningsen) [#23053](https://github.com/nodejs/node/pull/23053)\n* [[`67b6e0d19c`](https://github.com/nodejs/node/commit/67b6e0d19c)] - **src**: fix may be uninitialized warning in n-api (Michael Dawson) [#21898](https://github.com/nodejs/node/pull/21898)\n* [[`eaf474cc5d`](https://github.com/nodejs/node/commit/eaf474cc5d)] - **test**: shared lib build doesn't handle SIGPIPE (Yihong Wang) [#19211](https://github.com/nodejs/node/pull/19211)\n* [[`3128cb7da6`](https://github.com/nodejs/node/commit/3128cb7da6)] - **test**: avoid running fsync on directory on AIX (John Barboza) [#21298](https://github.com/nodejs/node/pull/21298)\n* [[`b4c5435a46`](https://github.com/nodejs/node/commit/b4c5435a46)] - **test**: add process.stdin.end() TTY regression test (Matteo Collina) [#23051](https://github.com/nodejs/node/pull/23051)\n* [[`c56f3edb10`](https://github.com/nodejs/node/commit/c56f3edb10)] - **test**: add stdin writable regression test (Anna Henningsen) [#23053](https://github.com/nodejs/node/pull/23053)\n* [[`f6ff8c51bc`](https://github.com/nodejs/node/commit/f6ff8c51bc)] - **test**: fix module loading error for AIX 7.1 (Richard Lau) [#25418](https://github.com/nodejs/node/pull/25418)\n* [[`d4b6643ac3`](https://github.com/nodejs/node/commit/d4b6643ac3)] - **test**: mark test-cli-node-options flaky on arm (Rich Trott) [#25032](https://github.com/nodejs/node/pull/25032)\n* [[`60db455961`](https://github.com/nodejs/node/commit/60db455961)] - **test**: mark test\\_threadsafe\\_function/test as flaky (Gireesh Punathil) [#24714](https://github.com/nodejs/node/pull/24714)\n* [[`fbafe8d311`](https://github.com/nodejs/node/commit/fbafe8d311)] - **test**: fix test-repl-envvars (Anna Henningsen) [#25226](https://github.com/nodejs/node/pull/25226)\n* [[`7573b55a15`](https://github.com/nodejs/node/commit/7573b55a15)] - **tls**: fix legacy SecurePair clienthello race window (Ben Noordhuis) [#26452](https://github.com/nodejs/node/pull/26452)\n* [[`91620b8bd6`](https://github.com/nodejs/node/commit/91620b8bd6)] - **tls**: fix legacy SecurePair session resumption (Ben Noordhuis) [#26452](https://github.com/nodejs/node/pull/26452)\n* [[`1a9582b7a6`](https://github.com/nodejs/node/commit/1a9582b7a6)] - **tools**: allow input for TTY tests (Anna Henningsen) [#23053](https://github.com/nodejs/node/pull/23053)\n",
+    "commits": [
+      {
+        "sha": "705935d620",
+        "pr": "27202",
+        "author": "Ruben Bridgewater",
+        "topics": [
+          "assert"
+        ],
+        "reverts": false,
+        "desc": "fix backport regression"
+      },
+      {
+        "sha": "c07ba9681f",
+        "pr": "21228",
+        "author": "Yihong Wang",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "skip cctest on Windows shared lib build"
+      },
+      {
+        "sha": "63522886ea",
+        "pr": "23168",
+        "author": "Sam Ruby",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "add loader path to rpath for cctest"
+      },
+      {
+        "sha": "e9369073d9",
+        "pr": "25447",
+        "author": "Richard Lau",
+        "topics": [
+          "build"
+        ],
+        "reverts": false,
+        "desc": "set `-blibpath:` for AIX"
+      },
+      {
+        "sha": "97cc0fc51d",
+        "pr": "25874",
+        "author": "Farazmand",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "V8: cherry-pick 3cc6919"
+      },
+      {
+        "sha": "a1aff28fba",
+        "pr": "25041",
+        "author": "Peter Marshall",
+        "topics": [
+          "deps"
+        ],
+        "reverts": false,
+        "desc": "cherry-pick 525b396 from V8 upstream"
+      },
+      {
+        "sha": "6b7cccc88a",
+        "pr": "22998",
+        "author": "Lars-Magnus Skog",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "fix optional parameters in n-api.md"
+      },
+      {
+        "sha": "b17819db3d",
+        "pr": "25123",
+        "author": "James Bunton",
+        "topics": [
+          "doc"
+        ],
+        "reverts": false,
+        "desc": "update the http.request.setTimeout docs to be accurate"
+      },
+      {
+        "sha": "ac9b8f7645",
+        "pr": "24738",
+        "author": "Brian White",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "fix error check in `Execute()`"
+      },
+      {
+        "sha": "1d862610f8",
+        "pr": "25459",
+        "author": "Julien Gilli",
+        "topics": [
+          "http"
+        ],
+        "reverts": false,
+        "desc": "attach reused parser to correct domain"
+      },
+      {
+        "sha": "d3de1ed653",
+        "pr": "26439",
+        "author": "Anthony Tuininga",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "improve performance creating strings"
+      },
+      {
+        "sha": "2b2ad96ef2",
+        "pr": "25992",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "finalize during second-pass callback"
+      },
+      {
+        "sha": "d6ffabc37f",
+        "pr": "25556",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "mark thread-safe function as stable"
+      },
+      {
+        "sha": "44609d1274",
+        "pr": "19962",
+        "author": "Kyle Farnung",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "restrict exports by version"
+      },
+      {
+        "sha": "fe4328252a",
+        "pr": "24011",
+        "author": "Daniel Bevenius",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "add missing handle scopes"
+      },
+      {
+        "sha": "902b07959f",
+        "pr": "22259",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "clean up thread-safe function"
+      },
+      {
+        "sha": "09b88aabb3",
+        "pr": "22520",
+        "author": "Lars-Magnus Skog",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "remove idle\\_running from TsFn"
+      },
+      {
+        "sha": "367505940a",
+        "pr": "21871",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "guard against cond null dereference"
+      },
+      {
+        "sha": "c5a11dc58e",
+        "pr": "21597",
+        "author": "cjihrig",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "fix compiler warning"
+      },
+      {
+        "sha": "759a0180b5",
+        "pr": "17887",
+        "author": "Gabriel Schulhof",
+        "topics": [
+          "n-api"
+        ],
+        "reverts": false,
+        "desc": "add API for asynchronous functions"
+      },
+      {
+        "sha": "ea5628e77a",
+        "pr": "23053",
+        "author": "Anna Henningsen",
+        "topics": [
+          "process"
+        ],
+        "reverts": false,
+        "desc": "allow reading from stdout/stderr sockets"
+      },
+      {
+        "sha": "67b6e0d19c",
+        "pr": "21898",
+        "author": "Michael Dawson",
+        "topics": [
+          "src"
+        ],
+        "reverts": false,
+        "desc": "fix may be uninitialized warning in n-api"
+      },
+      {
+        "sha": "eaf474cc5d",
+        "pr": "19211",
+        "author": "Yihong Wang",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "shared lib build doesn't handle SIGPIPE"
+      },
+      {
+        "sha": "3128cb7da6",
+        "pr": "21298",
+        "author": "John Barboza",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "avoid running fsync on directory on AIX"
+      },
+      {
+        "sha": "b4c5435a46",
+        "pr": "23051",
+        "author": "Matteo Collina",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add process.stdin.end() TTY regression test"
+      },
+      {
+        "sha": "c56f3edb10",
+        "pr": "23053",
+        "author": "Anna Henningsen",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "add stdin writable regression test"
+      },
+      {
+        "sha": "f6ff8c51bc",
+        "pr": "25418",
+        "author": "Richard Lau",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "fix module loading error for AIX 7.1"
+      },
+      {
+        "sha": "d4b6643ac3",
+        "pr": "25032",
+        "author": "Rich Trott",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "mark test-cli-node-options flaky on arm"
+      },
+      {
+        "sha": "60db455961",
+        "pr": "24714",
+        "author": "Gireesh Punathil",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "mark test\\_threadsafe\\_function/test as flaky"
+      },
+      {
+        "sha": "fbafe8d311",
+        "pr": "25226",
+        "author": "Anna Henningsen",
+        "topics": [
+          "test"
+        ],
+        "reverts": false,
+        "desc": "fix test-repl-envvars"
+      },
+      {
+        "sha": "7573b55a15",
+        "pr": "26452",
+        "author": "Ben Noordhuis",
+        "topics": [
+          "tls"
+        ],
+        "reverts": false,
+        "desc": "fix legacy SecurePair clienthello race window"
+      },
+      {
+        "sha": "91620b8bd6",
+        "pr": "26452",
+        "author": "Ben Noordhuis",
+        "topics": [
+          "tls"
+        ],
+        "reverts": false,
+        "desc": "fix legacy SecurePair session resumption"
+      },
+      {
+        "sha": "1a9582b7a6",
+        "pr": "23053",
+        "author": "Anna Henningsen",
+        "topics": [
+          "tools"
+        ],
+        "reverts": false,
+        "desc": "allow input for TTY tests"
+      }
+    ],
+    "deprecations": []
+  },
   "v8.15.1": {
     "version": "v8.15.1",
     "line": "LTS",
